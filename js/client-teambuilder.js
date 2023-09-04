@@ -2968,8 +2968,8 @@
 			this.updateChart(false, wasIncomplete);
 		},
 		chartChange: function (e, selectNext) {
-			var name = e.currentTarget.name;
-			if (this.curChartName !== name) return;
+			var name = e.currentTarget.id;
+			if (this.curChartName !== id) return;
 			var id = toID(e.currentTarget.value);
 			if (id in BattleAliases) id = toID(BattleAliases[id]);
 			var val = '';
