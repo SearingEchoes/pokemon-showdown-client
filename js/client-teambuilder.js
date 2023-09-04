@@ -2997,7 +2997,7 @@
 				}
 				break;
 			case 'move1': case 'move2': case 'move3': case 'move4':
-				val = (id in BattleMovedex ? BattleMovedex[id].name : '');
+				val = (id in BattleMovedex ? BattleMovedex[id].id : '');
 				break;
 			}
 			if (!val) {
