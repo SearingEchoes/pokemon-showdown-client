@@ -2841,7 +2841,7 @@
 		},
 		chartClick: function (e) {
 			if (this.search.addFilter(e.currentTarget)) {
-				this.$('input[id=' + this.curChartName + ']').val('').select();
+				this.$('input[name=' + this.curChartName + ']').val('').select();
 				this.search.find('');
 				return;
 			}
