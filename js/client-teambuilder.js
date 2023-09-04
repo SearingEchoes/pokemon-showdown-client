@@ -2956,9 +2956,9 @@
 				this.curSetLoc = i;
 				this.update();
 				if (type === 'stats' || type === 'details') {
-					this.$('button[name=' + name + ']').click();
+					this.$('button[name=' + id + ']').click();
 				} else {
-					this.$('input[name=' + name + ']').select();
+					this.$('input[name=' + id + ']').select();
 				}
 				return;
 			}
