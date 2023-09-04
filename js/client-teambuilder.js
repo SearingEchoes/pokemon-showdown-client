@@ -2940,7 +2940,7 @@
 		},
 		chartFocus: function (e) {
 			var $target = $(e.currentTarget);
-			var name = e.currentTarget.name;
+			var name = e.currentTarget.id;
 			var type = this.chartTypes[name];
 			var wasIncomplete = false;
 			if ($target.hasClass('incomplete')) {
