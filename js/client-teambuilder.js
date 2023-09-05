@@ -3099,8 +3099,8 @@
 				break;
 			case 'move1':
 				this.unChooseMove(this.curSet.moves[0]);
-				this.curSet.moves[0] = toID(val);
-				this.chooseMove(val);
+				this.curSet.moves[0] = val;
+				this.chooseMove(toID(val));
 				if (selectNext) this.$('input[name=move2]').select();
 				break;
 			case 'move2':
