@@ -3100,7 +3100,7 @@
 			case 'move1':
 				this.unChooseMove(this.curSet.moves[0]);
 				this.curSet.moves[0] = val;
-				this.chooseMove(toID(val));
+				this.chooseMove(val);
 				if (selectNext) this.$('input[name=move2]').select();
 				break;
 			case 'move2':
