@@ -528,7 +528,7 @@
 		var buf = '<li class="result"><a' + attrs + ' data-entry="move|' + BattleLog.escapeHTML(move.id) + '">';
 
 		// name
-		var name = move.id;
+		var name = move.name;
 		var tagStart = (name.substr(0, 12) === 'Hidden Power' ? 12 : 0);
 		if (tagStart) name = name.substr(0, tagStart);
 		if (matchLength) {
