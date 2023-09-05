@@ -525,10 +525,10 @@
 		if (!move) return '<li class="result">Unrecognized move</li>';
 		var id = toID(move.name);
 		if (Search.urlRoot) attrs += ' href="' + Search.urlRoot + 'moves/' + id + '" data-target="push"';
-		var buf = '<li class="result"><a' + attrs + ' data-entry="move|' + BattleLog.escapeHTML(move.id) + '">';
+		var buf = '<li class="result"><a' + attrs + ' data-entry="move|' + BattleLog.escapeHTML(move.name) + '">';
 
 		// name
-		var name = move.id; //determines name in teambuilder megalist
+		var name = move.name;
 		var tagStart = (name.substr(0, 12) === 'Hidden Power' ? 12 : 0);
 		if (tagStart) name = name.substr(0, tagStart);
 		if (matchLength) {
@@ -576,7 +576,7 @@
 	Search.prototype.renderMoveRowInner = function (move, errorMessage) {
 		var attrs = '';
 		if (Search.urlRoot) attrs = ' href="' + Search.urlRoot + 'moves/' + toID(move.name) + '" data-target="push"';
-		var buf = '<a' + attrs + ' data-entry="move|' + BattleLog.escapeHTML(move.id) + '">';
+		var buf = '<a' + attrs + ' data-entry="move|' + BattleLog.escapeHTML(move.name) + '">';
 
 		// name
 		var name = move.name;
