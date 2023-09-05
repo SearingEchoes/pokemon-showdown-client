@@ -523,12 +523,12 @@
 	Search.prototype.renderMoveRow = function (move, matchStart, matchLength, errorMessage, attrs) {
 		if (!attrs) attrs = '';
 		if (!move) return '<li class="result">Unrecognized move</li>';
-		var id = toID(move.id);
+		var id = toID(move.name);
 		if (Search.urlRoot) attrs += ' href="' + Search.urlRoot + 'moves/' + id + '" data-target="push"';
 		var buf = '<li class="result"><a' + attrs + ' data-entry="move|' + BattleLog.escapeHTML(move.name) + '">';
 
 		// name
-		var name = move.name;
+		var name = move.id;
 		var tagStart = (name.substr(0, 12) === 'Hidden Power' ? 12 : 0);
 		if (tagStart) name = name.substr(0, tagStart);
 		if (matchLength) {
