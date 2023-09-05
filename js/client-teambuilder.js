@@ -2956,9 +2956,9 @@
 				this.curSetLoc = i;
 				this.update();
 				if (type === 'stats' || type === 'details') {
-					this.$('button[name=' + id + ']').click();
+					this.$('button[name=' + name + ']').click();
 				} else {
-					this.$('input[name=' + id + ']').select();
+					this.$('input[name=' + name + ']').select();
 				}
 				return;
 			}
@@ -2968,8 +2968,8 @@
 			this.updateChart(false, wasIncomplete);
 		},
 		chartChange: function (e, selectNext) {
-			var name = e.currentTarget.id;
-			if (this.curChartName !== id) return;
+			var name = e.currentTarget.name;
+			if (this.curChartName !== name) return;
 			var id = toID(e.currentTarget.value);
 			if (id in BattleAliases) id = toID(BattleAliases[id]);
 			var val = '';
@@ -2997,7 +2997,7 @@
 				}
 				break;
 			case 'move1': case 'move2': case 'move3': case 'move4':
-				val = (id in BattleMovedex ? BattleMovedex[id].id : '');
+				val = (id in BattleMovedex ? BattleMovedex[id].name : '');
 				break;
 			}
 			if (!val) {
