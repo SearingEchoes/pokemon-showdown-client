@@ -525,7 +525,7 @@
 		if (!move) return '<li class="result">Unrecognized move</li>';
 		var id = toID(move.name);
 		if (Search.urlRoot) attrs += ' href="' + Search.urlRoot + 'moves/' + id + '" data-target="push"';
-		var buf = '<li class="result"><a' + attrs + ' data-entry="move|' + BattleLog.escapeHTML(move.name) + '">';
+		var buf = '<li class="result"><a' + attrs + ' data-entry="move|' + BattleLog.escapeHTML(move.id) + '">';
 
 		// name
 		var name = move.id;
@@ -576,7 +576,7 @@
 	Search.prototype.renderMoveRowInner = function (move, errorMessage) {
 		var attrs = '';
 		if (Search.urlRoot) attrs = ' href="' + Search.urlRoot + 'moves/' + toID(move.name) + '" data-target="push"';
-		var buf = '<a' + attrs + ' data-entry="move|' + BattleLog.escapeHTML(move.name) + '">';
+		var buf = '<a' + attrs + ' data-entry="move|' + BattleLog.escapeHTML(move.id) + '">';
 
 		// name
 		var name = move.name;
