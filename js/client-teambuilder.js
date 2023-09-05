@@ -3083,7 +3083,7 @@
 			var inputName = this.curChartName;
 			var input = this.$('input[name=' + inputName + ']');
 			if (this.chartSetCustom(input.val())) return;
-			input.val(val).removeClass('incomplete');
+			input.val(toID(val)).removeClass('incomplete');
 			switch (inputName) {
 			case 'pokemon':
 				this.setPokemon(val, selectNext);
