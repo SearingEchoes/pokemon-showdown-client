@@ -2846,7 +2846,7 @@
 				return;
 			}
 			var entry = $(e.currentTarget).data('entry');
-			var val = entry.slice(entry.indexOf("|") + 1);
+			var val = toID(entry.slice(entry.indexOf("|") + 1));
 			if (this.curChartType === 'move' && e.currentTarget.className === 'cur') {
 				// clicked a move, remove it if we already have it
 				var moves = [];
