@@ -945,7 +945,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	miko: 1536 + 379,
 	chibimamizou: 1536 + 380,
 	mamizou: 1536 + 381,
-	twohu: 1536 + 382,
+	'2hu': 1536 + 382,
 	jksanae: 1536 + 383,
 	magistones: 1536 + 384,
 	chibikasen: 1536 + 385,
