@@ -179,7 +179,7 @@ const Dex = new class implements ModdedDex {
 
 	pokeballs: string[] | null = null;
 
-	resourcePrefix = 'https://raw.githubusercontent.com/searingechoes/pokemon-showdown-client/master/';
+	resourcePrefix = 'https://s.echoes.wtf/pokemon-showdown-client/';
 
 	fxPrefix = (() => {
 		const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
