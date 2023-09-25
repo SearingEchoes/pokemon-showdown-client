@@ -869,7 +869,27 @@ class ModdedDex {
 					Object.assign(data, table.overrideMoveData[id]);
 				}
 			}
-			if (this.gen <= 3 && data.category !== 'Status') {
+			if ((this.gen <= 3 && data.category !== 'Status') ||
+				this.type === 'Dream' || 
+				this.type === 'Nether' || 
+				this.type === 'Aero' || 
+				this.type === 'Beast' || 
+				this.type === 'Miasma' || 
+				this.type === 'Metal' || 
+				this.type === 'Umbral' || 
+				this.type === 'Earth' || 
+				this.type === 'Pyro' || 
+				this.type === 'Aqua' || 
+				this.type === 'Wind' || 
+				this.type === 'Nature' || 
+				this.type === 'Frost' || 
+				this.type === 'Faith' || 
+				this.type === 'Reason' || 
+				this.type === 'Heart' || 
+				this.type === 'Illusion' ||
+				this.type === 'Unknown' 
+			)
+			{
 				data.category = Dex.getGen3Category(data.type);
 			}
 
