@@ -869,24 +869,24 @@ class ModdedDex {
 					Object.assign(data, table.overrideMoveData[id]);
 				}
 			}
-			if ((this.gen <= 3 && data.category !== 'Status') ||
-				data.type !== 'Dream' || 
-				data.type !== 'Nether' || 
-				data.type !== 'Aero' || 
-				data.type !== 'Beast' || 
-				data.type !== 'Miasma' || 
-				data.type !== 'Metal' || 
-				data.type !== 'Umbral' || 
-				data.type !== 'Earth' || 
-				data.type !== 'Pyro' || 
-				data.type !== 'Aqua' || 
-				data.type !== 'Wind' || 
-				data.type !== 'Nature' || 
-				data.type !== 'Frost' || 
-				data.type !== 'Faith' || 
-				data.type !== 'Reason' || 
-				data.type !== 'Heart' || 
-				data.type !== 'Illusion' ||
+			if ((this.gen <= 3 && data.category !== 'Status') &&
+				data.type !== 'Dream' && 
+				data.type !== 'Nether' && 
+				data.type !== 'Aero' && 
+				data.type !== 'Beast' && 
+				data.type !== 'Miasma' && 
+				data.type !== 'Metal' && 
+				data.type !== 'Umbral' && 
+				data.type !== 'Earth' && 
+				data.type !== 'Pyro' && 
+				data.type !== 'Aqua' && 
+				data.type !== 'Wind' && 
+				data.type !== 'Nature' && 
+				data.type !== 'Frost' && 
+				data.type !== 'Faith' && 
+				data.type !== 'Reason' && 
+				data.type !== 'Heart' && 
+				data.type !== 'Illusion' &&
 				data.type !== 'Unknown' 
 			)
 			{
