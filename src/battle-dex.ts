@@ -1050,4 +1050,18 @@ class ModdedDex {
 	getPokeballs() {
 		if (this.pokeballs) return this.pokeballs;
 		this.pokeballs = [];
+		if (!window.BattleItems) window.BattleItems = {};
+		for (const data of Object.values(window.BattleItems) as AnyObject[]) {
+			if (data.gen && data.gen > this.gen) continue;
+			if (!data.isPokeball) continue;
+			this.pokeballs.push(data.name);
+		}
+		return this.pokeballs;
 	}
+}
+
+if (typeof require === 'function') {
+	// in Node
+	(global as any).Dex = Dex;
+	(global as any).toID = toID;
+}
