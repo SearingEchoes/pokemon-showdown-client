@@ -1050,3 +1050,4 @@ class ModdedDex {
 	getPokeballs() {
 		if (this.pokeballs) return this.pokeballs;
 		this.pokeballs = [];
+	};
