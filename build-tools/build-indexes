@@ -12,21 +12,21 @@ process.chdir(rootDir);
 const debug = true;
 
 process.stdout.write("Syncing data from Git repository... ");
-if (!fs.existsSync('DH2')) {
-	child_process.execSync('git clone ' + server_repo + ' DH2', {
+if (!fs.existsSync('pokemon-showdown')) {
+	child_process.execSync('git clone ' + server_repo + ' pokemon-showdown', {
 	});
-	child_process.execSync("git pull " + server_repo, {cwd: 'DH2'});
+	child_process.execSync("git pull " + server_repo, {cwd: 'pokemon-showdown'});
 }
 
-child_process.execSync('npm run build', {cwd: 'DH2'});
+child_process.execSync('npm run build', {cwd: 'pokemon-showdown'});
 
 console.log("DONE");
 
-const Dex = require('../DH2/dist/sim/dex').Dex;
+const Dex = require('../pokemon-showdown/dist/sim/dex').Dex;
 const toID = Dex.toID;
 const ModConfigData = require('../config/mod-config').ModConfigData;
 const ModConfig = ModConfigData.ClientMods;
-var Formats = require('../DH2/dist/config/formats.js').Formats;
+var Formats = require('../pokemon-showdown/dist/config/formats.js').Formats;
 
 for (const modid in Dex.dexes) {
 	try {
@@ -1653,7 +1653,7 @@ function buildTeambuilderTables() {
  *********************************************************/
 
 function buildPokedex() {
-	const Pokedex = requireNoCache('../DH2/dist/data/pokedex.js').Pokedex;
+	const Pokedex = requireNoCache('../pokemon-showdown/dist/data/pokedex.js').Pokedex;
 	for (const id in Pokedex) {
 		const entry = Pokedex[id];
 		if (Dex.data.FormatsData[id]) {
@@ -1674,7 +1674,7 @@ function buildPokedex() {
  *********************************************************/
 
 function buildMoves() {
-	const Moves = requireNoCache('../DH2/dist/data/moves.js').Moves;
+	const Moves = requireNoCache('../pokemon-showdown/dist/data/moves.js').Moves;
 	for (const id in Moves) {
 		const move = Dex.moves.get(Moves[id].name);
 		if (move.desc) Moves[id].desc = move.desc;
@@ -1690,7 +1690,7 @@ function buildMoves() {
  *********************************************************/
 
 function buildItems() {
-	const Items = requireNoCache('../DH2/dist/data/items.js').Items;
+	const Items = requireNoCache('../pokemon-showdown/dist/data/items.js').Items;
 	for (const id in Items) {
 		const item = Dex.items.get(Items[id].name);
 		if (item.desc) Items[id].desc = item.desc;
@@ -1705,7 +1705,7 @@ function buildItems() {
  *********************************************************/
 
 function buildAbilities() {
-	const Abilities = requireNoCache('../DH2/dist/data/abilities.js').Abilities;
+	const Abilities = requireNoCache('../pokemon-showdown/dist/data/abilities.js').Abilities;
 	for (const id in Abilities) {
 		const ability = Dex.abilities.get(Abilities[id].name);
 		if (ability.desc) Abilities[id].desc = ability.desc;
@@ -1720,7 +1720,7 @@ function buildAbilities() {
  *********************************************************/
 
 function buildTypechart() {
-	const TypeChart = requireNoCache('../DH2/dist/data/typechart.js').TypeChart;
+	const TypeChart = requireNoCache('../pokemon-showdown/dist/data/typechart.js').TypeChart;
 	const buf = 'exports.BattleTypeChart = ' + es3stringify(TypeChart) + ';';
 	fs.writeFileSync('data/typechart.js', buf);
 }
@@ -1730,7 +1730,7 @@ function buildTypechart() {
  *********************************************************/
 
 function buildAliases() {
-	const Aliases = requireNoCache('../DH2/dist/data/aliases.js').Aliases;
+	const Aliases = requireNoCache('../pokemon-showdown/dist/data/aliases.js').Aliases;
 	const buf = 'exports.BattleAliases = ' + es3stringify(Aliases) + ';';
 	fs.writeFileSync('data/aliases.js', buf);
 }
@@ -1740,7 +1740,7 @@ function buildAliases() {
  *********************************************************/
 
 function buildFormatsData() {
-	const FormatsData = requireNoCache('../DH2/dist/data/formats-data.js').FormatsData;
+	const FormatsData = requireNoCache('../pokemon-showdown/dist/data/formats-data.js').FormatsData;
 	const buf = 'exports.BattleFormatsData = ' + es3stringify(FormatsData) + ';';
 	fs.writeFileSync('data/formats-data.js', buf);
 }
@@ -1750,7 +1750,7 @@ function buildFormatsData() {
  *********************************************************/
 
 function buildFormats() {
-	Formats = requireNoCache('../DH2/dist/config/formats.js').Formats;
+	Formats = requireNoCache('../pokemon-showdown/dist/config/formats.js').Formats;
 	const buf = 'exports.Formats = ' + es3stringify(Formats) + ';';
 	fs.writeFileSync('data/formats.js', buf);
 }
@@ -1760,7 +1760,7 @@ function buildFormats() {
  *********************************************************/
 
 function buildLearnsets() {
-	const Learnsets = requireNoCache('../DH2/dist/data/learnsets.js').Learnsets;
+	const Learnsets = requireNoCache('../pokemon-showdown/dist/data/learnsets.js').Learnsets;
 	const buf = 'exports.BattleLearnsets = ' + es3stringify(Learnsets) + ';';
 	fs.writeFileSync('data/learnsets.js', buf);
 	fs.writeFileSync('data/learnsets.json', JSON.stringify(Learnsets));
@@ -1772,13 +1772,13 @@ function buildLearnsets() {
 
 function buildModSprites() {
 	const modSprites = {};
-	const modDir = fs.readdirSync('DH2/data/mods/');
+	const modDir = fs.readdirSync('pokemon-showdown/data/mods/');
 	for (const i in modDir) {
 		const modName = modDir[i];
 		const subFolders = ['anifront','aniback','front', 'front-shiny', 'back', 'back-shiny', 'icons', 'types', 'items'];
 		for (const j in subFolders) {
 			const subF = subFolders[j];
-			const spritePath = 'DH2/data/mods/' + modName + '/sprites/' + subF;
+			const spritePath = 'pokemon-showdown/data/mods/' + modName + '/sprites/' + subF;
 			const spriteDir = fs.existsSync(spritePath) ? fs.readdirSync(spritePath) : '';
 			for (const sprI in spriteDir) {
 				let id = spriteDir[sprI];
