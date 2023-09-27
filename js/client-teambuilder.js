@@ -140,9 +140,12 @@
 		update: function () {
 			teams = Storage.teams;
 			if (this.curTeam) {
+				// console.log(JSON.stringify(this.curTeam, null, 4))
 				this.ignoreEVLimits = (this.curTeam.gen < 3 ||
 					((this.curTeam.format.includes('hackmons') || this.curTeam.format.endsWith('bh')) && this.curTeam.gen !== 6) ||
-					this.curTeam.format.includes('metronomebattle'));
+					this.curTeam.format.includes('metronomebattle') || (this.curTeam.mod && ModConfig[this.curTeam.mod].ignoreEVLimits));
+					this.dex = this.curTeam.mod ? Dex.mod(this.curTeam.mod) : Dex; // keeping just in case for now
+					this.curTeam.dex = this.curTeam.mod ? Dex.mod(this.curTeam.mod) : Dex;
 				if (this.curSet) {
 					return this.updateSetView();
 				}
@@ -1193,7 +1196,7 @@
 			var isBDSP = this.curTeam.format.includes('bdsp');
 			var isNatDex = this.curTeam.format.includes('nationaldex') || this.curTeam.format.includes('natdex');
 			var buf = '<li value="' + i + '">';
-			if (!set.species) {
+			if (!set.species || !species) {
 				if (this.deletedSet) {
 					buf += '<div class="setmenu setmenu-left"><button name="undeleteSet"><i class="fa fa-undo"></i> Undo Delete</button></div>';
 				}
@@ -1206,7 +1209,7 @@
 			buf += '<div class="setchart-nickname">';
 			buf += '<label>Nickname</label><input type="text" name="nickname" class="textbox" value="' + BattleLog.escapeHTML(set.name || '') + '" placeholder="' + BattleLog.escapeHTML(species.baseSpecies) + '" />';
 			buf += '</div>';
-			buf += '<div class="setchart" style="' + Dex.getTeambuilderSprite(set, this.curTeam.gen) + ';">';
+			buf += '<div class="setchart" style="' + Dex.getTeambuilderSprite(set, this.curTeam.gen, this.curTeam.mod) + ';">';
 
 			// icon
 			buf += '<div class="setcol setcol-icon">';
@@ -1254,7 +1257,7 @@
 					}
 				}
 				if (this.curTeam.gen === 9) {
-					buf += '<span class="detailcell"><label>Tera Type</label>' + (set.teraType || species.types[0]) + '</span>';
+					buf += '<span class="detailcell"><label>Tera Type</label>' + (species.forceTeraType || set.teraType || species.types[0]) + '</span>';
 				}
 			}
 			buf += '</button></div></div>';
@@ -1300,7 +1303,7 @@
 			buf += '<div class="setcol setcol-stats"><div class="setrow"><label>Stats</label><button class="textbox setstats" name="stats">';
 			buf += '<span class="statrow statrow-head"><label></label> <span class="statgraph"></span> <em>' + (!isLetsGo ? 'EV' : 'AV') + '</em></span>';
 			var stats = {};
-			var defaultEV = (this.curTeam.gen > 2 ? 0 : 252);
+			var defaultEV = ((this.curTeam.gen > 2 && !this.ignoreEVLimits) ? 0 : 252);
 			for (var j in BattleStatNames) {
 				if (j === 'spd' && this.curTeam.gen === 1) continue;
 				stats[j] = this.getStat(j, set);
@@ -2168,7 +2171,7 @@
 
 			var supportsEVs = !this.curTeam.format.includes('letsgo');
 			// var supportsAVs = !supportsEVs && this.curTeam.format.endsWith('norestrictions');
-			var defaultEV = this.curTeam.gen <= 2 ? 252 : 0;
+			var defaultEV = (this.curTeam.gen > 2 && !this.ignoreEVLimits) ? 0 : 252;
 			var maxEV = supportsEVs ? 252 : 200;
 			var stepEV = supportsEVs ? 4 : 1;
 
@@ -2719,13 +2722,19 @@
 			}
 
 			if (this.curTeam.gen === 9) {
-				buf += '<div class="formrow"><label class="formlabel" title="Tera Type">Tera Type:</label><div><select name="teratype">';
-				var types = Dex.types.all();
-				var teraType = set.teraType || species.types[0];
-				for (var i = 0; i < types.length; i++) {
-					buf += '<option value="' + types[i].name + '"' + (teraType === types[i].name ? ' selected="selected"' : '') + '>' + types[i].name + '</option>';
+				buf += '<div class="formrow"><label class="formlabel" title="Tera Type">Tera Type:</label><div>';
+				if (species.forceTeraType) {
+					buf += species.forceTeraType;
+				} else {
+					buf += '<select name="teratype">';
+					var types = Dex.types.all();
+					var teraType = set.teraType || species.types[0];
+					for (var i = 0; i < types.length; i++) {
+						buf += '<option value="' + types[i].name + '"' + (teraType === types[i].name ? ' selected="selected"' : '') + '>' + types[i].name + '</option>';
+					}
+					buf += '</select>';
 				}
-				buf += '</select></div></div>';
+				buf += '</div></div>';
 			}
 
 			buf += '</form>';
@@ -2740,7 +2749,7 @@
 			e.stopPropagation();
 			var set = this.curSet;
 			if (!set) return;
-			var species = this.curTeam.dex.species.get(set.species);
+			var species = this.curTeam.dex.species.get(set.species, undefined, "from detailsChange");
 			var isLetsGo = this.curTeam.format.includes('letsgo');
 			var isBDSP = this.curTeam.format.includes('bdsp');
 			var isNatDex = this.curTeam.format.includes('nationaldex') || this.curTeam.format.includes('natdex');
@@ -2836,7 +2845,7 @@
 					}
 				}
 				if (this.curTeam.gen === 9) {
-					buf += '<span class="detailcell"><label>Tera Type</label>' + (set.teraType || species.types[0]) + '</span>';
+					buf += '<span class="detailcell"><label>Tera Type</label>' + (species.forceTeraType || set.teraType || species.types[0]) + '</span>';
 				}
 			}
 			this.$('button[name=details]').html(buf);
@@ -3480,14 +3489,26 @@
 			this.room = data.room;
 			this.curSet = data.curSet;
 			this.chartIndex = data.index;
+			const mod = this.room.curTeam && this.room.curTeam.mod ? this.room.curTeam.mod : ""; 
 			var species = this.room.curTeam.dex.species.get(this.curSet.species);
 			var baseid = toID(species.baseSpecies);
 			var forms = [baseid].concat(species.cosmeticFormes.map(toID));
+
+			let modSprite = Dex.getSpriteMod(mod, baseid, 'front', species.exists !== false);
+			if (!modSprite) modSprite = Dex.getSpriteMod(mod, species.id, 'front', species.exists !== false);
+			let resourcePrefix = Dex.resourcePrefix;
+			let d = "-";
+			if (modSprite) {
+				resourcePrefix = Dex.modResourcePrefix + mod + '/';
+				d = "";
+			} 
+
 			var spriteDir = Dex.resourcePrefix + 'sprites/';
 			var spriteSize = 96;
 			var spriteDim = 'width: 96px; height: 96px;';
 
 			var gen = Math.max(this.room.curTeam.gen, species.gen);
+			if (modSprite) gen = "front";
 			var dir = gen > 5 ? 'dex' : 'gen' + gen;
 			if (Dex.prefs('nopastgens')) gen = 'dex';
 			if (Dex.prefs('bwgfx') && dir === 'dex') gen = 'gen5';
@@ -3517,9 +3538,9 @@
 			this.$el.html(buf).css({'max-width': (4 + spriteSize) * width, 'height': 42 + (4 + spriteSize) * height});
 		},
 		setForm: function (form) {
-			var species = Dex.species.get(this.curSet.species);
+			var species = this.room.curTeam.dex.species.get(this.curSet.species);
 			if (form && form !== species.form) {
-				this.curSet.species = Dex.species.get(species.baseSpecies + form).name;
+				this.curSet.species = this.room.curTeam.dex.species.get(species.baseSpecies + form).name;
 			} else if (!form) {
 				this.curSet.species = species.baseSpecies;
 			}
