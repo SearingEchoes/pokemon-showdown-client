@@ -179,15 +179,12 @@ const Dex = new class implements ModdedDex {
 
 	pokeballs: string[] | null = null;
 
-<<<<<<< HEAD
+
 	//TODO we might want to move this to something like data/petmods
 	readonly modResourcePrefix = 'https://raw.githubusercontent.com/SearingEchoes/pokemon-showdown/master/data/mods/';
 
 
 	resourcePrefix = 'https://s.echoes.wtf/';
-=======
-	resourcePrefix = 'https://s.echoes.wtf/pokemon-showdown-client/';
->>>>>>> parent of 58c711be (Add files via upload)
 
 	fxPrefix = (() => {
 		const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
