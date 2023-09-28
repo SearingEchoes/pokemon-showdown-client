@@ -711,7 +711,7 @@ export const BattleMoveAnims: AnimTable = {
 					time: 1550,
 				}, 'decel');
 			}
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/weather-hail.png')`, 750, 1, 800);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/weather-hail.png')`, 750, 1, 800);
 		},
 	},
 	sandstorm: {
@@ -1537,7 +1537,7 @@ export const BattleMoveAnims: AnimTable = {
 			let zstep = (defender.z - attacker.z) / 5;
 
 			const tatsugiriSprite = {
-				url: `https://${Config.routes.client}/sprites/gen5/tatsugiri${['-droopy', '-stretchy', ''][Math.floor(Math.random() * 3)]}.png`,
+				url: `https://${Config.routes.psmain}/sprites/gen5/tatsugiri${['-droopy', '-stretchy', ''][Math.floor(Math.random() * 3)]}.png`,
 				w: 96,
 				h: 96,
 			};
@@ -3667,7 +3667,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	morningsun: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/weather-sunnyday.jpg')`, 700, 0.5);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/weather-sunnyday.jpg')`, 700, 0.5);
 			scene.showEffect('wisp', {
 				x: attacker.x + 40,
 				y: attacker.y - 40,
@@ -3720,7 +3720,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	moonlight: {
 		anim(scene, [attacker]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/bg-space.jpg')`, 800, 0.6);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/bg-space.jpg')`, 800, 0.6);
 			scene.showEffect('shine', {
 				x: attacker.x + 40,
 				y: attacker.y - 40,
@@ -3792,7 +3792,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	cosmicpower: {
 		anim(scene, [attacker]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/bg-space.jpg')`, 600, 0.6);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/bg-space.jpg')`, 600, 0.6);
 			scene.showEffect('wisp', {
 				x: attacker.x + 40,
 				y: attacker.y - 40,
@@ -5276,7 +5276,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	seismictoss: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/bg-space.jpg')`, 500, 0.6, 300);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/bg-space.jpg')`, 500, 0.6, 300);
 			scene.showEffect('wisp', {
 				x: defender.x,
 				y: defender.y + 10,
@@ -7877,7 +7877,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	meteormash: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/bg-space.jpg')`, 1000, 0.4);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/bg-space.jpg')`, 1000, 0.4);
 			scene.showEffect(attacker.sp, {
 				x: attacker.leftof(20),
 				y: attacker.y,
@@ -18090,7 +18090,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	psystrike: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/weather-psychicterrain.png')`, 950, 0.6);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/weather-psychicterrain.png')`, 950, 0.6);
 			scene.showEffect('poisonwisp', {
 				x: defender.x - 100,
 				y: defender.y,
@@ -18952,7 +18952,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	moonblast: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/bg-space.jpg')`, 800, 0.6);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/bg-space.jpg')`, 800, 0.6);
 			scene.showEffect('mistball', {
 				x: attacker.x,
 				y: attacker.y,
@@ -19243,7 +19243,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	wish: {
 		anim(scene, [attacker]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/bg-space.jpg')`, 600, 0.4);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/bg-space.jpg')`, 600, 0.4);
 
 			scene.showEffect('wisp', {
 				x: attacker.x,
@@ -19257,7 +19257,7 @@ export const BattleMoveAnims: AnimTable = {
 			}, 'accel');
 		},
 		residualAnim(scene, [attacker]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/bg-space.jpg')`, 600, 0.4);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/bg-space.jpg')`, 600, 0.4);
 
 			scene.showEffect('wisp', {
 				x: attacker.x,
@@ -20506,7 +20506,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	dracometeor: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/bg-space.jpg')`, 1100, 0.8);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/bg-space.jpg')`, 1100, 0.8);
 			scene.showEffect('flareball', {
 				x: defender.leftof(-200),
 				y: defender.y + 175,
@@ -22011,7 +22011,7 @@ export const BattleMoveAnims: AnimTable = {
 			let ystep = (defender.x - 200 - attacker.x) / 5;
 			let zstep = (defender.z - attacker.z) / 5;
 
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/weather-sunnyday.jpg')`, 900, 0.5);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/weather-sunnyday.jpg')`, 900, 0.5);
 
 			for (let i = 0; i < 5; i++) {
 				scene.showEffect('energyball', {
@@ -22155,7 +22155,7 @@ export const BattleMoveAnims: AnimTable = {
 			let ystep = 20;
 			let zstep = 0;
 
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/weather-sunnyday.jpg')`, 900, 0.5);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/weather-sunnyday.jpg')`, 900, 0.5);
 
 			scene.showEffect('sword', {
 				x: attacker.leftof(10),
@@ -22440,7 +22440,7 @@ export const BattleMoveAnims: AnimTable = {
 			let ystep = (defender.x - 200 - attacker.x) / 5;
 			let zstep = (defender.z - attacker.z) / 5;
 
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/weather-sandstorm.png')`, 900, 0.5);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/weather-sandstorm.png')`, 900, 0.5);
 
 			for (let i = 0; i < 5; i++) {
 				scene.showEffect('mudwisp', {
@@ -22640,7 +22640,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	sheercold: { // Reminder: Improve this later
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/sprites/gen6bgs/bg-icecave.jpg')`, 1000, 0.6);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/sprites/gen6bgs/bg-icecave.jpg')`, 1000, 0.6);
 			scene.showEffect('icicle', {
 				x: defender.x,
 				y: defender.y,
@@ -22658,7 +22658,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	glaciallance: {
 		anim(scene, [attacker, ...defenders]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/sprites/gen6bgs/bg-icecave.jpg')`, 1000, 0.6);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/sprites/gen6bgs/bg-icecave.jpg')`, 1000, 0.6);
 			for (const defender of defenders) {
 				scene.showEffect('icicle', {
 					x: defender.x,
@@ -24973,7 +24973,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	dragonascent: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/bg-space.jpg')`, 1000, 0.7);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/bg-space.jpg')`, 1000, 0.7);
 			scene.showEffect('iceball', {
 				x: attacker.leftof(-25),
 				y: attacker.y + 250,
@@ -28464,7 +28464,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	plasmafists: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/sprites/gen6bgs/bg-earthycave.jpg')`, 2000, 1);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/sprites/gen6bgs/bg-earthycave.jpg')`, 2000, 1);
 			scene.backgroundEffect('#000000', 1000, 0.6);
 			scene.backgroundEffect('#FFFFFF', 300, 0.6, 1000);
 			scene.showEffect('electroball', {
@@ -28707,7 +28707,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	collisioncourse: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/weather-sunnyday.jpg')`, 1300, 0.5);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/weather-sunnyday.jpg')`, 1300, 0.5);
 			scene.showEffect(attacker.sp, {
 				x: attacker.x,
 				y: attacker.y,
@@ -28853,7 +28853,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	electrodrift: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/weather-electricterrain.png')`, 1300, 0.5);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/weather-electricterrain.png')`, 1300, 0.5);
 			scene.showEffect(attacker.sp, {
 				x: attacker.x,
 				y: attacker.y,
@@ -32876,7 +32876,7 @@ export const BattleMoveAnims: AnimTable = {
 	oceanicoperetta: {
 		anim(scene, [attacker, defender]) {
 			scene.backgroundEffect('linear-gradient(#000000 20%, #0000DD)', 2700, 0.4);
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/weather-raindance.jpg')`, 700, 0.2, 2000);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/weather-raindance.jpg')`, 700, 0.2, 2000);
 			scene.showEffect('iceball', {
 				x: attacker.x,
 				y: attacker.y + 120,
@@ -33199,7 +33199,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	splinteredstormshards: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/sprites/gen6bgs/bg-earthycave.jpg')`, 2700, 0.8, 300);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/sprites/gen6bgs/bg-earthycave.jpg')`, 2700, 0.8, 300);
 			scene.backgroundEffect('linear-gradient(#FFC720 15%, #421800)', 2700, 0.7);
 			scene.backgroundEffect('#ffffff', 400, 0.6, 2500);
 			scene.showEffect('rock3', {
@@ -33922,7 +33922,7 @@ export const BattleMoveAnims: AnimTable = {
 			}
 			const defender = defenders[1] || defenders[0];
 			scene.backgroundEffect('#000000', 300, 0.9);
-			scene.backgroundEffect(`url('https://${Config.routes.client}/sprites/gen6bgs/bg-earthycave.jpg')`, 2000, 0.7, 300);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/sprites/gen6bgs/bg-earthycave.jpg')`, 2000, 0.7, 300);
 			scene.backgroundEffect('linear-gradient(#FB5C1E 20%, #3F1D0F', 2000, 0.6, 300);
 			scene.backgroundEffect('#FFFFFF', 1000, 0.9, 2200);
 			scene.showEffect('shine', {
@@ -34594,8 +34594,8 @@ export const BattleMoveAnims: AnimTable = {
 			let ystep = (defender.x - 200 - attacker.x) / 5;
 			let zstep = (defender.z - attacker.z) / 5;
 
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/weather-trickroom.png')`, 700, 1);
-			scene.backgroundEffect(`url('https://${Config.routes.client}/fx/bg-space.jpg')`, 2500, 1, 700);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/weather-trickroom.png')`, 700, 1);
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/fx/bg-space.jpg')`, 2500, 1, 700);
 			scene.backgroundEffect('#FFFFFF', 1500, 1, 2500);
 
 			scene.showEffect('flareball', {
@@ -35159,358 +35159,3 @@ BattleMoveAnims['trailblaze'] = {anim: BattleMoveAnims['powerwhip'].anim};
 BattleMoveAnims['tripledive'] = {anim: BattleMoveAnims['dive'].anim};
 BattleMoveAnims['hydrosteam'] = {anim: BattleMoveAnims['steameruption'].anim};
 BattleMoveAnims['psyblade'] = {anim: BattleMoveAnims['psychocut'].anim};
-
-//1.8 move anims begin here
-
-BattleMoveAnims['absorb2'] = {anim: BattleMoveAnims['absorb'].anim};
-BattleMoveAnims['aeroblast2'] = {anim: BattleMoveAnims['aeroblast'].anim};
-BattleMoveAnims['agility2'] = {anim: BattleMoveAnims['agility'].anim};
-BattleMoveAnims['airslash2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['amnesia2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['ancientpower2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['aquajet2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['aquashower'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['aromatherapy2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['assist2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['astonish2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['attract2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['aurorabeam2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['barrage2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['barrier2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['batonpass2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['batterycharge'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['battlechant'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['beatup2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bellydrum2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bind2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bindingvoice'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bite2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['blackripple'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bladeflash'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['blastburn2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['blazekick2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['blizzard2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['block2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bodyslam2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['boneclub2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bonerush2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bonemerang2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bounce2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bravebird2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['braver'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['brickbreak2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bubble2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bubblebeam2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bulkup2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['bulletseed2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['burnpowder'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['calmmind2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['camouflage2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['charminglook'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['coerce'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['cometpunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['confuseray2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['constrict2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['conversionb'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['conversion2b'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['cottonspore2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['counter2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['crosschop2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['crosspoison2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['crunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['crushclaw2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['curse2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['cut2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['darkpulse2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['decision'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['defensecurl2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['destinybond2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['detect2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['dig2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['disable2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['discharge2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['disperse'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['disturbance'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['dizzypunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['doubleedge2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['doublekick2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['meteorstorm'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['drainpunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['drawnline'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['dreameater2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['dynamicpunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['earthpower2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['earthquake2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['ember2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['encore2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['endeavor2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['endure2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['energyball2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['energylight'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['eruption2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['explosion2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['extrasensory2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['extremespeed2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['facade2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['feintattack2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['fakeout2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['faketears2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['falseswipe2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['feint2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['fireblast2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['firepunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['firespin2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['fissure2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['flail2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['flamewheel2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['flamethrower2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['flareblitz2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['flash2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['fly2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['focusenergy2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['focuspunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['forcepalm2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['foresight2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['frenzyplant2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['frustration2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['furycutter2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['gale'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['gigadrain2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['gigaimpact2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['growl2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['growth2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['guard'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['gunkshot2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['gust2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['hail2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['harden2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['haze2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['headrush'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['headsmash2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['headbutt2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['healbell2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['heartbreak'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['heartseye'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['beastclaw'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['heatwave2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['helpinghand2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['highjumpkick2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['howl2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['hydrocannon2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['hydropump2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['hyperbeam2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['hypervoice2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['hypnosis2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['iceball2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['icebeam2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['icepunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['iceshard2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['icywind2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['imprison2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['ingrain2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['irondefense2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['jamming'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['judgement'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['jumpkick2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['karatechop2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['killingbite'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['knifethrow'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['knockoff2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['lavaplume2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['leafblade2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['leechlife2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['leechseed2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['leer2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['lick2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['lightscreen2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['lockon2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['lovelykiss2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['lowkick2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['luckychant2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['lunatic'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['lusterpurge2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['machpunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['magiccoat2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['magicknife'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['magicalleaf2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['magnitude2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['manaburst'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['manacharge'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['manashield'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['megadrain2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['memento2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['metalclaw2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['meteormash2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['metronome2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['milkdrink2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['mimic2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['mindbomb'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['minimize2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['mirrorcoat2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['mirrorshot2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['mist2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['mistball2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['mudshot2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['mudslap2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['muddywater2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['mysticwater'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['nastyplot2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['naturepower2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['naturesound'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['needlearm2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['nightshade2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['nightslash2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['nightmare2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['ominouswind2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['outrage2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['painsplit2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['payday2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['peck2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['performance'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['perishsong2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['pinmissile2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['poisonbomb'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['poisonjab2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['poisonsting2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['poisontears'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['poisonpowder2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['pound2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['powdersnow2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['powerwhip2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['prank'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['protect2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['psybeam2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['psychup2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['psychoboost2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['psychocut2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['psyshot'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['psywave2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['pursuit2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['quickattack2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['rage2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['raindance2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['rapidspin2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['razorleaf2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['razorwind2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['recollection'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['recover2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['recycle2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['reflect2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['refresh2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['rest2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['return2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['revenge2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['reversal2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['roar2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['rockblast2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['rockbullet'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['rockslide2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['rocksmash2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['rocktomb2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['rockwrecker2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['rollingkick2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['roost2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sacredfire2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['safeguard2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['lunadial'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sandattack2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sandtomb2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sandstorm2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['scaryface2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['scratch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['screech2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sculpture'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sealingneedle'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['secretpower2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['seismictoss2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['selfdestruct2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['shadowball2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['shadowdance'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['shadowdive'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['shadowhit'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['shadowpunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sharpen2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sheercold2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['shockwave2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['signalbeam2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['silverwind2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sing2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sketch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['skillswap2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['skullbash2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['skyattack2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['slackoff2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['slash2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sleeppowder2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sleeptalk2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['smellingsalts2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['smile'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['smokescreen2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['snatch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['snore2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['soar'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['softboiled2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['solarbeam2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sonicboom2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['spiderweb2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['spikes2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['spite2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['splash2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['splashing'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['steelfist'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['steelwing2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['stomp2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['strength2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['stunspore2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['submission2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['substitute2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sunnyday2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['superpower2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['surf2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['swagger2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['sweetkiss2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['swift2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['swordsdance2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['synthesis2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['tackle2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['tailwhip2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['tailwind2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['taunt2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['teeterdance2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['teleport2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['thief2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['thrash2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['thunder2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['thunderwave2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['thunderbolt2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['thunderpunch2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['thundershock2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['tickle2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['torment2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['toxic2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['toxicgas'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['transform2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['tremors'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['triattack2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['trick2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['triplekick2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['twister2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['vinewhip2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['vitalthrow2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['volttackle2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['wanting'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['watergun2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['waterpulse2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['waterfall2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['weatherball2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['whirlpool2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['whirlwind2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['willowisp2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['wingattack2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['wireweb'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['wish2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['withdraw2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['wrap2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['yawn2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['zenheadbutt2'] = {anim: BattleMoveAnims['gigaimpact'].anim};
-BattleMoveAnims['checkmaid'] = {anim: BattleMoveAnims['gigaimpact'].anim};
