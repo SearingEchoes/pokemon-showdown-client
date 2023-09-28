@@ -126,8 +126,6 @@ class RoomsPanel extends PSRoomPanel {
 		} else {
 			roomList = [
 				this.renderRoomList("Chat rooms", rooms.chat),
-				this.renderRoomList("Official chat rooms", rooms.official),
-				this.renderRoomList("PSPL winner", rooms.pspl),
 			];
 		}
 

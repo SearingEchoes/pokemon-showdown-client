@@ -440,7 +440,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
 		// this.lastMove = pokemon.lastMove; // I think
 		if (!copySource) {
 			const volatilesToRemove = [
-				'airballoon', 'attract', 'autotomize', 'disable', 'encore', 'foresight', 'gmaxchistrike', 'imprison', 'laserfocus', 'mimic', 'miracleeye', 'nightmare', 'saltcure', 'smackdown', 'stockpile1', 'stockpile2', 'stockpile3', 'syrupbomb', 'torment', 'typeadd', 'typechange', 'yawn',
+				'airballoon', 'attract', 'autotomize', 'disable', 'encore', 'foresight', 'gmaxchistrike', 'imprison', 'laserfocus', 'mimic', 'miracleeye', 'nightmare', 'saltcure', 'smackdown', 'stockpile1', 'stockpile2', 'stockpile3', 'torment', 'typeadd', 'typechange', 'yawn',
 			];
 			for (const statName of Dex.statNamesExceptHP) {
 				volatilesToRemove.push('protosynthesis' + statName);
@@ -654,13 +654,8 @@ export class Side {
 	}
 	reset() {
 		this.clearPokemon();
-		this.updateSprites();
 		this.sideConditions = {};
 		this.faintCounter = 0;
-	}
-	updateSprites() {
-		this.z = (this.isFar ? 200 : 0);
-		this.battle.scene.updateSpritesForSide(this);
 	}
 	setAvatar(avatar: string) {
 		this.avatar = avatar;
@@ -1083,7 +1078,6 @@ export class Battle {
 	myAllyPokemon: ServerPokemon[] | null = null;
 	lastMove = '';
 
-	mod = '' as ID;
 	gen = 8;
 	dex: ModdedDex = Dex;
 	teamPreviewCount = 0;
@@ -1142,19 +1136,6 @@ export class Battle {
 		} else {
 			throw new Error(`You must specify $frame and $logFrame simultaneously`);
 		}
-
-		const format = this.id.slice(this.id.indexOf('-') + 1, this.id.lastIndexOf('-'));
-		for (const mod in window.ModConfig) {
-			for (const formatid in window.ModConfig[mod].formats) {
-				if (format === formatid) {
-					this.mod = mod as ID;
-					this.dex = Dex.mod(mod as ID);
-					break;
-				}
-			}
-			if (this.mod) break;
-		}
-		if (this.id.includes('digimon')) this.mod = 'digimon' as ID;
 
 		this.paused = !!options.paused;
 		this.started = !this.paused;
@@ -1519,7 +1500,7 @@ export class Battle {
 
 				if (
 					!target && this.gameType === 'singles' &&
-					!['self', 'allies', 'allySide', 'adjacentAlly', 'adjacentAllyOrSelf', 'anyAlly', 'allyTeam'].includes(moveTarget)
+					!['self', 'allies', 'allySide', 'adjacentAlly', 'adjacentAllyOrSelf', 'allyTeam'].includes(moveTarget)
 				) {
 					// Hardcode for moves without a target in singles
 					foeTargets.push(pokemon.side.foe.active[0]);
@@ -1752,15 +1733,14 @@ export class Battle {
 			break;
 		}
 		case '-heal': {
-			let poke = this.getPokemon(args[1], Dex.getEffect(kwArgs.from).id === 'revivalblessing')!;
+			let poke = this.getPokemon(args[1])!;
 			let damage = poke.healthParse(args[2], true, true);
 			if (damage === null) break;
 			let range = poke.getDamageRange(damage);
 
 			if (kwArgs.from) {
 				let effect = Dex.getEffect(kwArgs.from);
-				let ofpoke = this.getPokemon(kwArgs.of);
-				this.activateAbility(ofpoke || poke, effect);
+				this.activateAbility(poke, effect);
 				if (effect.effectType === 'Item' && !CONSUMED.includes(poke.prevItemEffect)) {
 					if (poke.prevItem !== effect.name) {
 						poke.item = effect.name;
@@ -3299,7 +3279,7 @@ export class Battle {
 		}
 		return null;
 	}
-	getPokemon(pokemonid: string | undefined, faintedOnly = false) {
+	getPokemon(pokemonid: string | undefined) {
 		if (!pokemonid || pokemonid === '??' || pokemonid === 'null' || pokemonid === 'false') {
 			return null;
 		}
@@ -3315,7 +3295,6 @@ export class Battle {
 
 		for (const pokemon of side.pokemon) {
 			if (isInactive && side.active.includes(pokemon)) continue;
-			if (faintedOnly && pokemon.hp) continue;
 			if (pokemon.ident === pokemonid) { // name matched, good enough
 				if (slot >= 0) pokemon.slot = slot;
 				return pokemon;
@@ -3540,9 +3519,9 @@ export class Battle {
 			side.setName(args[2]);
 			if (args[3]) side.setAvatar(args[3]);
 			if (args[4]) side.rating = args[4];
-			this.scene.updateSidebar(side);
 			if (this.joinButtons) this.scene.hideJoinButtons();
 			this.log(args);
+			this.scene.updateSidebar(side);
 			break;
 		}
 		case 'teamsize': {
@@ -3659,7 +3638,7 @@ export class Battle {
 		}
 		case 'gen': {
 			this.gen = parseInt(args[1], 10);
-			this.dex = this.mod ? Dex.mod(this.mod) : Dex.forGen(this.gen);
+			this.dex = Dex.forGen(this.gen);
 			this.scene.updateGen();
 			this.log(args);
 			break;

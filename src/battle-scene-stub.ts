@@ -75,7 +75,6 @@ export class BattleSceneStub {
 	anim(pokemon: Pokemon, end: ScenePos, transition?: string) { }
 	beforeMove(pokemon: Pokemon) { }
 	afterMove(pokemon: Pokemon) { }
-	updateSpritesForSide(side: Side) { }
 }
 
 if (typeof require === 'function') {

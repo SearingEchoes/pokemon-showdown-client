@@ -183,12 +183,6 @@ class BattleTextParser {
 			break;
 		}
 
-		case '-heal': {
-			const id = BattleTextParser.effectId(kwArgs.from);
-			if (['dryskin', 'eartheater', 'voltabsorb', 'waterabsorb'].includes(id)) kwArgs.of = '';
-			break;
-		}
-
 		case '-nothing':
 			// OLD: |-nothing
 			// NEW: |-activate||move:Splash
@@ -936,7 +930,7 @@ class BattleTextParser {
 		case '-heal': {
 			let [, pokemon] = args;
 			let template = this.template('heal', kwArgs.from, 'NODEFAULT');
-			const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
+			const line1 = this.maybeAbility(kwArgs.from, pokemon);
 			if (template) {
 				return line1 + template.replace('[POKEMON]', this.pokemon(pokemon)).replace('[SOURCE]', this.pokemon(kwArgs.of)).replace('[NICKNAME]', kwArgs.wisher);
 			}
@@ -966,7 +960,7 @@ class BattleTextParser {
 				return line1 + template.replace('[POKEMON]', this.pokemon(pokemon)).replace('[STAT]', BattleTextParser.stat(stat)).replace('[ITEM]', this.effect(kwArgs.from));
 			}
 			const template = this.template(templateId, kwArgs.from);
-			return line1 + template.replace(/\[POKEMON\]/g, this.pokemon(pokemon)).replace('[STAT]', BattleTextParser.stat(stat));
+			return line1 + template.replace('[POKEMON]', this.pokemon(pokemon)).replace('[STAT]', BattleTextParser.stat(stat));
 		}
 
 		case '-setboost': {
