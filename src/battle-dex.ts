@@ -186,10 +186,12 @@ const Dex = new class implements ModdedDex {
 
 	resourcePrefix = 'https://s.echoes.wtf/';
 
-	fxPrefix = (() => {
-		const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
-		return `${protocol}//${'play.pokemonshowdown.com'}/fx/`;
-	})();
+	fxPrefix  = 'https://s.echoes.wtf/';
+
+	//fxPrefix = (() => {
+	//	const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
+	//	return `${protocol}//${'play.pokemonshowdown.com'}/fx/`;
+	//})();
 
 	loadedSpriteData = {xy: 1, bw: 0};
 	moddedDexes: {[mod: string]: ModdedDex} = {};
