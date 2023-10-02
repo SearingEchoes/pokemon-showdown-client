@@ -1,6 +1,6 @@
 {
-    "root": "191.101.232.116",
-    "client": "localhost",
+    "root": "https://p.echoes.wtf/",
+    "client": "https://p.echoes.wtf/",
     "dex": "dex.pokemonshowdown.com",
     "replays": "replay.pokemonshowdown.com",
     "users": "pokemonshowdown.com/users",
