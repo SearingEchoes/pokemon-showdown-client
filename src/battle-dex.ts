@@ -960,17 +960,17 @@ class ModdedDex {
 				data.type !== 'Unknown' 
 			)
 			{
-//				switch(this.modid) {
-//					case 'gen1expansionpack':
-//						data.category = Dex.getKEPCategory(data.type);
-//						break;
-//					case 'gen2crystalseviiislands':
-//						data.category = Dex.getCSICategory(data.type);	
-//						break;
-//					default: 
-//						data.category = Dex.getGen3Category(data.type);
-//						break;
-//				}
+				switch(this.modid) {
+					case 'gen1expansionpack':
+						data.category = Dex.getKEPCategory(data.type);
+						break;
+					case 'gen2crystalseviiislands':
+						data.category = Dex.getCSICategory(data.type);	
+						break;
+					default: 
+						data.category = Dex.getGen3Category(data.type);
+						break;
+				}
 			}
 			const move = new Move(id, name, data);
 			this.cache.Moves[id] = move;
