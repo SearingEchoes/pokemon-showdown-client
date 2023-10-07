@@ -3153,6 +3153,7 @@ const BattleBackdropsThree = [
 	'bg-gen3-sand.png',
 	'bg-gen3-forest.png',
 	'bg-gen3-arena.png',
+	'bg-gen3-end.png',
 ];
 const BattleBackdropsFour = [
 	'bg-gen4.png',
