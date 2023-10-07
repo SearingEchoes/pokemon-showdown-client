@@ -106,8 +106,8 @@ export const BattleSound = new class {
 	bgm: BattleBGM[] = [];
 
 	// options
-	effectVolume = 50;
-	bgmVolume = 50;
+	effectVolume = 25;
+	bgmVolume = 25;
 	muted = false;
 
 	getSound(url: string) {
@@ -115,7 +115,7 @@ export const BattleSound = new class {
 		if (this.soundCache[url]) return this.soundCache[url];
 		try {
 			const sound = document.createElement('audio');
-			sound.src = 'https://' + Config.routes.psmain + '/' + url;
+			sound.src = 'https://' + 's.echoes.wtf' + '/' + url;
 			sound.volume = this.effectVolume / 100;
 			this.soundCache[url] = sound;
 			return sound;
