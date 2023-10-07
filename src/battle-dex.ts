@@ -186,7 +186,7 @@ const Dex = new class implements ModdedDex {
 
 	resourcePrefix = 'https://s.echoes.wtf/';
 
-	fxPrefix  = 'https://s.echoes.wtf/';
+	fxPrefix  = 'https://s.echoes.wtf/fx/';
 
 	//fxPrefix = (() => {
 	//	const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
