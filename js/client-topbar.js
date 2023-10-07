@@ -424,7 +424,7 @@
 		},
 		getEffectVolume: function () {
 			var volume = Dex.prefs('effectvolume');
-			return typeof volume === 'number' ? volume : 50;
+			return typeof volume === 'number' ? volume : 25;
 		},
 		setMusicVolume: function (volume) {
 			BattleSound.setBgmVolume(volume);
@@ -432,14 +432,14 @@
 		},
 		getMusicVolume: function () {
 			var volume = Dex.prefs('musicvolume');
-			return typeof volume === 'number' ? volume : 50;
+			return typeof volume === 'number' ? volume : 25;
 		},
 		setNotifVolume: function (volume) {
 			Storage.prefs('notifvolume', volume);
 		},
 		getNotifVolume: function () {
 			var volume = Dex.prefs('notifvolume');
-			return typeof volume === 'number' ? volume : 50;
+			return typeof volume === 'number' ? volume : 40;
 		}
 	});
 
