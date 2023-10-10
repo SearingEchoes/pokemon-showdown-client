@@ -1706,17 +1706,17 @@ class Move implements Effect {
 
 		this.num = data.num || 0;
 		if (!this.gen) {
-			if (this.num >= 743) {
+			if (this.num >= 743 && this.num < 1199) {
 				this.gen = 8;
-			} else if (this.num >= 622) {
+			} else if (this.num >= 622 && this.num < 1199) {
 				this.gen = 7;
-			} else if (this.num >= 560) {
+			} else if (this.num >= 560 && this.num < 1199) {
 				this.gen = 6;
-			} else if (this.num >= 468) {
+			} else if (this.num >= 468 && this.num < 1199) {
 				this.gen = 5;
-			} else if (this.num >= 355) {
+			} else if (this.num >= 355 && this.num < 1199) {
 				this.gen = 4;
-			} else if (this.num >= 252) {
+			} else if (this.num >= 252 || this.num >= 1199) {
 				this.gen = 3;
 			} else if (this.num >= 166) {
 				this.gen = 2;
