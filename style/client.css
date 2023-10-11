@@ -1260,10 +1260,10 @@ p.or:after {
 }
 .roomcounters .usercount {
 	display: block;
-	width: 49px;
-	height: 63px;
+	width: 76px;
+	height: 76px;
 	position: absolute;
-	left: -30px;
+	left: -50px;
 	bottom: -5px;
 	background: url(https://s.echoes.wtf/sprites/misc/reimu.png) center no-repeat;
 }
@@ -1272,10 +1272,10 @@ p.or:after {
 }
 .roomcounters .battlecount {
 	display: block;
-	width: 46px;
+	width: 76px;
 	height: 76px;
 	position: absolute;
-	right: -30px;
+	right: -50px;
 	bottom: -10px;
 	background: url(https://s.echoes.wtf/sprites/misc/marisa.png) center no-repeat;
 }
