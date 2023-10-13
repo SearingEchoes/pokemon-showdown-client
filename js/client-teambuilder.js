@@ -196,7 +196,7 @@
 					buf = '<div class="pad"><p class="message-error">We got an error trying to load teams: ' + Storage.whenTeamsLoaded.error.message + '.</p>';
 					buf += '<p>This might be because you didn\'t give us permission to load teams: on macOS, this is in System Preferences → Security &amp; Privacy → Privacy → Files and Folders → Pokemon Showdown</p></div>';
 				} else {
-					buf = '<div class="pad"><p>lol zarel this is a horrible teambuilder</p>';
+					buf = '<div class="pad"><p>this is a horrible teambuilder</p>';
 					buf += '<p>that\'s because we\'re not done loading it...</p></div>';
 				}
 				this.$el.html(buf);
@@ -354,8 +354,8 @@
 
 			if (!this.curFolder) {
 				buf += '<h2>Hi</h2>';
-				buf += '<p>Did you have a good day?</p>';
-				buf += '<p><button class="button" name="greeting" value="Y"><i class="fa fa-smile-o"></i> Yes, my day was pretty good</button> <button class="button" name="greeting" value="N"><i class="fa fa-frown-o"></i> No, it wasn\'t great</button></p>';
+				buf += '<p>Are you Basiney?</p>';
+				buf += '<p><button class="button" name="greeting" value="Y"><i class="fa fa-smile-o"></i> yes im basiney</button> <button class="button" name="greeting" value="N"><i class="fa fa-frown-o"></i> no im not basiney</button></p>';
 				buf += '<h2>All teams <small style="font-weight: normal">(' + teams.length + ')</small></h2>';
 			} else {
 				if (this.curFolder.slice(-1) === '/') {
@@ -396,7 +396,7 @@
 				if (this.deletedTeamLoc >= 0) {
 					buf += '<li><button name="undoDelete"><i class="fa fa-undo"></i> Undo Delete</button></li>';
 				}
-				buf += '<li><p><em>you don\'t have any teams lol</em></p></li>';
+				buf += '<li><p><em>No teams found.</em></p></li>';
 			} else {
 
 				for (var i = 0; i < teams.length + 1; i++) {
@@ -460,9 +460,9 @@
 				}
 				if (!atLeastOne) {
 					if (filterFolder) {
-						buf += '<li><p><em>you don\'t have any teams in this folder lol</em></p></li>';
+						buf += '<li><p><em>No teams found.</em></p></li>';
 					} else {
-						buf += '<li><p><em>you don\'t have any ' + this.curFolder + ' teams lol</em></p></li>';
+						buf += '<li><p><em>You don\'t have any teams in ' + this.curFolder + ' .</em></p></li>';
 					}
 				}
 			}
@@ -516,12 +516,12 @@
 		greeting: function (answer, button) {
 			var buf = '<p><strong>' + $(button).html() + '</p></strong>';
 			if (answer === 'N') {
-				buf += '<p>Aww, that\'s too bad. :( I hope playing on Pok&eacute;mon Showdown today can help cheer you up!</p>';
+				buf += '<p>why not? being basiney is fun.</p>';
 			} else if (answer === 'Y') {
-				buf += '<p>Cool! I just added some pretty cool teambuilder features, so I\'m pretty happy, too. Did you know you can drag and drop teams to different format-folders? You can also drag and drop them to and from your computer (works best in Chrome).</p>';
+				buf += '<p>cool im basiney too!!!.</p>';
 				buf += '<p><button class="button" name="greeting" value="W"><i class="fa fa-question-circle"></i> Wait, who are you? Talking to a teambuilder is weird.</button></p>';
 			} else if (answer === 'W') {
-				buf += '<p>Oh, I\'m Zarel! I made a Credits button for this...</p>';
+				buf += '<p>im basiney!</p>';
 				buf += '<div class="menugroup"><p><a href="//pokemonshowdown.com/credits" target="_blank"><button class="button mainmenu4"><i class="fa fa-info-circle"></i> Credits</button></a></p></div>';
 				buf += '<p>Isn\'t it pretty? Matches your background and everything. It used to be in the Main Menu but we had to get rid of it to save space.</p>';
 				buf += '<p>Speaking of, you should try <button class="button" name="background"><i class="fa fa-picture-o"></i> changing your background</button>.';
@@ -1157,7 +1157,7 @@
 					buf += ' <button name="validate" class="' + btnClass + '"><i class="fa fa-check"></i> Validate</button></li>';
 				}
 				if (!this.curSetList.length) {
-					buf += '<li><em>you have no pokemon lol</em></li>';
+					buf += '<li><em>You have no party members!</em></li>';
 				}
 				for (i = 0; i < this.curSetList.length; i++) {
 					if (this.curSetList.length < this.curTeam.capacity && this.deletedSet && i === this.deletedSetLoc) {
