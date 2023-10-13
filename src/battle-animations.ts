@@ -1558,6 +1558,8 @@ export class BattleScene implements BattleSceneStub {
 		}
 		this.preloadImage(Dex.resourcePrefix + 'sprites/ani/substitute.gif');
 		this.preloadImage(Dex.resourcePrefix + 'sprites/ani-back/substitute.gif');
+		//this.preloadImage(Dex.resourcePrefix + 'sprites/ani/substitute2.gif');
+		//this.preloadImage(Dex.resourcePrefix + 'sprites/ani-back/substitute2.gif');
 	}
 	rollBgm() {
 		this.setBgm(1 + this.numericId % 16);
