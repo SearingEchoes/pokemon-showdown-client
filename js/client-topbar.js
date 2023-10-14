@@ -439,7 +439,7 @@
 		},
 		getNotifVolume: function () {
 			var volume = Dex.prefs('notifvolume');
-			return typeof volume === 'number' ? volume : 40;
+			return typeof volume === 'number' ? volume : 25;
 		}
 	});
 
