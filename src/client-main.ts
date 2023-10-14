@@ -53,9 +53,9 @@ class PSPrefs extends PSStreamModel<string | null> {
 	onepanel = false;
 
 	mute = false;
-	effectvolume = 50;
-	musicvolume = 50;
-	notifvolume = 50;
+	effectvolume = 25;
+	musicvolume = 25;
+	notifvolume = 25;
 
 	storageEngine: 'localStorage' | 'iframeLocalStorage' | '' = '';
 	storage: {[k: string]: any} = {};
