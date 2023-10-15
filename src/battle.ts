@@ -829,7 +829,7 @@ export class Side {
 		pokemon.lastMove = '';
 		this.battle.lastMove = 'switch-in';
 		const effect = Dex.getEffect(kwArgs.from);
-		if (['batonpass', 'zbatonpass', 'shedtail'].includes(effect.id)) {
+		if (['batonpass', 'zbatonpass', 'batonpass2', 'shedtail'].includes(effect.id)) {
 			pokemon.copyVolatileFrom(this.lastPokemon!, effect.id === 'shedtail' ? 'shedtail' : false);
 		}
 
