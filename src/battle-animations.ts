@@ -1562,7 +1562,7 @@ export class BattleScene implements BattleSceneStub {
 		//this.preloadImage(Dex.resourcePrefix + 'sprites/ani-back/substitute2.gif');
 	}
 	rollBgm() {
-		this.setBgm(1 + this.numericId % 16);
+		this.setBgm(1 + this.numericId % 23);
 	}
 	setBgm(bgmNum: number) {
 		if (this.bgmNum === bgmNum) return;
@@ -1629,6 +1629,27 @@ export class BattleScene implements BattleSceneStub {
 		case 16:
 		default:
 			this.bgm = BattleSound.loadBgm('audio/x-vs-zero.mp3', 2659, 67261, this.bgm);
+			break;
+		case 17:
+			this.bgm = BattleSound.loadBgm('audio/bd-boss.mp3', 12319, 165313, this.bgm);
+			break;
+		case 18:
+			this.bgm = BattleSound.loadBgm('audio/bis-boss.mp3', 0, 65620, this.bgm);
+			break;
+		case 19:
+			this.bgm = BattleSound.loadBgm('audio/bn5-battle.mp3', 1752, 33532, this.bgm);
+			break;
+		case 20:
+			this.bgm = BattleSound.loadBgm('audio/cotm-boss.mp3', 0, 55668, this.bgm);
+			break;
+		case 21:
+			this.bgm = BattleSound.loadBgm('audio/hod-boss.mp3', 489, 59884, this.bgm);
+			break;
+		case 22:
+			this.bgm = BattleSound.loadBgm('audio/mf-boss.mp3', 0, 55795, this.bgm);
+			break;
+		case 23:
+			this.bgm = BattleSound.loadBgm('audio/x3-final.mp3', 0, 57324, this.bgm);
 			break;
 		}
 
