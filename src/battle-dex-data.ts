@@ -808,7 +808,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	technicalaya: 1536 + 226,
 	attacktenshi: 1536 + 227,
 	defensetenshi: 1536 + 228,
-	defenseparsee: 1536 + 239,
+	defenseparsee: 1536 + 229,
 	technicalparsee: 1536 + 230,
 	attackkoishi: 1536 + 231,
 	speedkoishi: 1536 + 232,
