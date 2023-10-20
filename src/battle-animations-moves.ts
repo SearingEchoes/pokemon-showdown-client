@@ -34771,6 +34771,10 @@ export const BattleMoveAnims: AnimTable = {
 			}, 'swing');
 		},
 	},
+
+	steelfist:  {
+		anim: BattleOtherAnims.punchattack.anim,
+	},
 };
 
 // placeholder animations
@@ -35457,9 +35461,7 @@ BattleMoveAnims['spikes2'] = {anim: BattleMoveAnims['spikes'].anim};
 BattleMoveAnims['spite2'] = {anim: BattleMoveAnims['spite'].anim};
 BattleMoveAnims['splash2'] = {anim: BattleMoveAnims['splash'].anim};
 BattleMoveAnims['splashing'] = {anim: BattleMoveAnims['splash'].anim};
-steelfist:  {
-		anim: BattleOtherAnims.punchattack.anim,
-	},
+
 BattleMoveAnims['steelwing2'] = {anim: BattleMoveAnims['steelwing'].anim};
 BattleMoveAnims['stomp2'] = {anim: BattleMoveAnims['stomp'].anim};
 BattleMoveAnims['strength2'] = {anim: BattleMoveAnims['strength'].anim};
