@@ -685,7 +685,7 @@
 .movemenu button.type-Faith {
 	/* bg: 97 to 90, border: 70 */
 	background: hsl(37,69%,65%);
-	background: linear-gradient(to bottom,  hsl(37,69%,75%),  hsl(37,69%,94%));
+	background: linear-gradient(to bottom,  hsl(37,69%,94%),  hsl(37,69%,75%));
 	border-color: hsl(37,45%,70%);
 }
 .movemenu button.type-Faith small {
@@ -694,13 +694,13 @@
 .movemenu button.type-Faith:hover {
 	/* bg: 95 to 83, border: 45 */
 	background: hsl(37,45%,87%);
-	background: linear-gradient(to bottom,  hsl(37,68%,85%),  hsl(37,45%,90%));
+	background: linear-gradient(to bottom,  hsl(37,68%,100%),  hsl(37,45%,80%));
 	border-color: hsl(37,45%,45%);
 }
 .movemenu button.type-Faith:active, .movemenu button.type-Faith.pressed {
 	/* bg: 83 to 88, border: 45 */
 	background: hsl(37,69%,65%);
-	background: linear-gradient(to bottom,  hsl(37,69%,55%),  hsl(37,69%,90%));
+	background: linear-gradient(to bottom,  hsl(37,69%,90%),  hsl(37,69%,55%));
 	border-color: hsl(37,45%,45%);
 }
 
