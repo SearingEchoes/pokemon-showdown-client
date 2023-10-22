@@ -10,7 +10,7 @@
  * @author Guangcong Luo <guangcongluo@gmail.com>
  * @license MIT
  */
-
+.
 import type {Battle, Pokemon, Side, WeatherState} from './battle';
 import type {BattleSceneStub} from './battle-scene-stub';
 import {BattleMoveAnims} from './battle-animations-moves';
