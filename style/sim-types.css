@@ -393,3 +393,49 @@
 	background: linear-gradient(to bottom,  hsl(310,41%,77%),  hsl(310,41%,83%));
 	border-color: hsl(310,41%,41%);
 }
+
+/* 1.8 types here//////////////////////////////////////////////////////////////*/
+
+.movemenu button.type-Dream {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(60,14%,93%);
+	background: linear-gradient(to bottom,  hsl(60,14%,97%),  hsl(60,14%,84%));
+	border-color: hsl(60,14%,70%);
+}
+.movemenu button.type-Dream small {
+	color: hsl(60,14%,41%);
+}
+.movemenu button.type-Dream:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(60,14%,87%);
+	background: linear-gradient(to bottom,  hsl(60,14%,94%),  hsl(60,14%,77%));
+	border-color: hsl(60,14%,41%);
+}
+.movemenu button.type-Dream:active, .movemenu button.type-Dream.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(60,14%,77%);
+	background: linear-gradient(to bottom,  hsl(60,14%,77%),  hsl(60,14%,83%));
+	border-color: hsl(60,14%,41%);
+}
+
+.movemenu button.type-Nether {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(262,21%,93%);
+	background: linear-gradient(to bottom,  hsl(262,21%,97%),  hsl(262,21%,84%));
+	border-color: hsl(262,21%,70%);
+}
+.movemenu button.type-Nether small {
+	color: hsl(262,21%,41%);
+}
+.movemenu button.type-Nether:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(262,21%,87%);
+	background: linear-gradient(to bottom,  hsl(262,21%,94%),  hsl(262,21%,77%));
+	border-color: hsl(262,21%,41%);
+}
+.movemenu button.type-Nether:active, .movemenu button.type-Nether.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(262,21%,77%);
+	background: linear-gradient(to bottom,  hsl(262,21%,77%),  hsl(262,21%,83%));
+	border-color: hsl(262,21%,41%);
+}
