@@ -12,7 +12,7 @@ Introduction
 
 This is a repository for most of the client code for Pokémon Showdown.
 
-This is what runs `play.pokemonshowdown.com`.
+This is what runs `play.pokemonshowdown.com`..
 
 **WARNING: You probably want the [Pokémon Showdown server][4]**, if you're
 setting up a server.
