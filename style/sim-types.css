@@ -439,3 +439,333 @@
 	background: linear-gradient(to bottom,  hsl(262,21%,77%),  hsl(262,21%,83%));
 	border-color: hsl(262,21%,41%);
 }
+
+.movemenu button.type-Aero {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(255,20%,93%);
+	background: linear-gradient(to bottom,  hsl(255,20%,97%),  hsl(255,20%,84%));
+	border-color: hsl(255,20%,70%);
+}
+.movemenu button.type-Aero small {
+	color: hsl(255,20%,41%);
+}
+.movemenu button.type-Aero:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(255,20%,87%);
+	background: linear-gradient(to bottom,  hsl(255,20%,94%),  hsl(255,20%,77%));
+	border-color: hsl(255,20%,41%);
+}
+.movemenu button.type-Aero:active, .movemenu button.type-Aero.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(255,20%,77%);
+	background: linear-gradient(to bottom,  hsl(255,20%,77%),  hsl(255,20%,83%));
+	border-color: hsl(255,20%,41%);
+}
+
+.movemenu button.type-Beast {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(49,35%,93%);
+	background: linear-gradient(to bottom,  hsl(49,35%,97%),  hsl(49,35%,84%));
+	border-color: hsl(49,35%,70%);
+}
+.movemenu button.type-Beast small {
+	color: hsl(49,35%,41%);
+}
+.movemenu button.type-Beast:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(49,35%,87%);
+	background: linear-gradient(to bottom,  hsl(49,35%,94%),  hsl(49,35%,77%));
+	border-color: hsl(49,35%,41%);
+}
+.movemenu button.type-Beast:active, .movemenu button.type-Beast.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(49,35%,77%);
+	background: linear-gradient(to bottom,  hsl(49,35%,77%),  hsl(49,35%,83%));
+	border-color: hsl(49,35%,41%);
+}
+
+.movemenu button.type-Miasma {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(300,30%,93%);
+	background: linear-gradient(to bottom,  hsl(300,30%,97%),  hsl(300,30%,84%));
+	border-color: hsl(300,30%,70%);
+}
+.movemenu button.type-Miasma small {
+	color: hsl(300,30%,41%);
+}
+.movemenu button.type-Miasma:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(300,30%,87%);
+	background: linear-gradient(to bottom,  hsl(300,30%,94%),  hsl(300,30%,77%));
+	border-color: hsl(300,30%,41%);
+}
+.movemenu button.type-Miasma:active, .movemenu button.type-Miasma.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(300,30%,77%);
+	background: linear-gradient(to bottom,  hsl(300,30%,77%),  hsl(300,30%,83%));
+	border-color: hsl(300,30%,41%);
+}
+
+.movemenu button.type-Metal {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(240,6%,93%);
+	background: linear-gradient(to bottom,  hsl(240,6%,97%),  hsl(240,6%,84%));
+	border-color: hsl(240,6%,70%);
+}
+.movemenu button.type-Metal small {
+	color: hsl(240,6%,41%);
+}
+.movemenu button.type-Metal:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(240,6%,87%);
+	background: linear-gradient(to bottom,  hsl(240,6%,94%),  hsl(240,6%,77%));
+	border-color: hsl(240,6%,41%);
+}
+.movemenu button.type-Metal:active, .movemenu button.type-Metal.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(240,6%,77%);
+	background: linear-gradient(to bottom,  hsl(240,6%,77%),  hsl(240,6%,83%));
+	border-color: hsl(240,6%,41%);
+}
+
+.movemenu button.type-Umbral {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(24,18%,93%);
+	background: linear-gradient(to bottom,  hsl(24,18%,97%),  hsl(24,18%,84%));
+	border-color: hsl(24,18%,70%);
+}
+.movemenu button.type-Umbral small {
+	color: hsl(24,18%,41%);
+}
+.movemenu button.type-Umbral:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(24,18%,87%);
+	background: linear-gradient(to bottom,  hsl(24,18%,94%),  hsl(24,18%,77%));
+	border-color: hsl(24,18%,41%);
+}
+.movemenu button.type-Umbral:active, .movemenu button.type-Umbral.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(24,18%,77%);
+	background: linear-gradient(to bottom,  hsl(24,18%,77%),  hsl(24,18%,83%));
+	border-color: hsl(24,18%,41%);
+}
+
+.movemenu button.type-Earth {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(44,27%,93%);
+	background: linear-gradient(to bottom,  hsl(44,27%,97%),  hsl(44,27%,84%));
+	border-color: hsl(44,27%,70%);
+}
+.movemenu button.type-Earth small {
+	color: hsl(44,27%,41%);
+}
+.movemenu button.type-Earth:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(44,27%,87%);
+	background: linear-gradient(to bottom,  hsl(44,27%,94%),  hsl(44,27%,77%));
+	border-color: hsl(44,27%,41%);
+}
+.movemenu button.type-Earth:active, .movemenu button.type-Earth.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(44,27%,77%);
+	background: linear-gradient(to bottom,  hsl(44,27%,77%),  hsl(44,27%,83%));
+	border-color: hsl(44,27%,41%);
+}
+
+.movemenu button.type-Pyro {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(25,40%,93%);
+	background: linear-gradient(to bottom,  hsl(25,40%,97%),  hsl(25,40%,84%));
+	border-color: hsl(25,40%,70%);
+}
+.movemenu button.type-Pyro small {
+	color: hsl(25,40%,41%);
+}
+.movemenu button.type-Pyro:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(25,40%,87%);
+	background: linear-gradient(to bottom,  hsl(25,40%,94%),  hsl(25,40%,77%));
+	border-color: hsl(25,40%,41%);
+}
+.movemenu button.type-Pyro:active, .movemenu button.type-Pyro.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(25,40%,77%);
+	background: linear-gradient(to bottom,  hsl(25,40%,77%),  hsl(25,40%,83%));
+	border-color: hsl(25,40%,41%);
+}
+
+.movemenu button.type-Aqua {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(222,29%,93%);
+	background: linear-gradient(to bottom,  hsl(222,29%,97%),  hsl(222,29%,84%));
+	border-color: hsl(222,29%,70%);
+}
+.movemenu button.type-Aqua small {
+	color: hsl(222,29%,41%);
+}
+.movemenu button.type-Aqua:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(222,29%,87%);
+	background: linear-gradient(to bottom,  hsl(222,29%,94%),  hsl(222,29%,77%));
+	border-color: hsl(222,29%,41%);
+}
+.movemenu button.type-Aqua:active, .movemenu button.type-Aqua.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(222,29%,77%);
+	background: linear-gradient(to bottom,  hsl(222,29%,77%),  hsl(222,29%,83%));
+	border-color: hsl(222,29%,41%);
+}
+
+.movemenu button.type-Wind {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(68,39%,93%);
+	background: linear-gradient(to bottom,  hsl(68,39%,97%),  hsl(68,39%,84%));
+	border-color: hsl(68,39%,70%);
+}
+.movemenu button.type-Wind small {
+	color: hsl(68,39%,41%);
+}
+.movemenu button.type-Wind:hover {
+	/* bg: 95 to 83, border: 39 */
+	background: hsl(68,39%,87%);
+	background: linear-gradient(to bottom,  hsl(68,39%,94%),  hsl(62,49%,77%));
+	border-color: hsl(68,39%,41%);
+}
+.movemenu button.type-Wind:active, .movemenu button.type-Wind.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(68,39%,77%);
+	background: linear-gradient(to bottom,  hsl(68,39%,77%),  hsl(68,39%,83%));
+	border-color: hsl(68,39%,41%);
+}
+
+.movemenu button.type-Nature {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(100,30%,93%);
+	background: linear-gradient(to bottom,  hsl(100,30%,97%),  hsl(100,30%,84%));
+	border-color: hsl(100,30%,70%);
+}
+.movemenu button.type-Nature small {
+	color: hsl(100,30%,41%);
+}
+.movemenu button.type-Nature:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(100,30%,87%);
+	background: linear-gradient(to bottom,  hsl(100,30%,94%),  hsl(100,30%,77%));
+	border-color: hsl(100,30%,41%);
+}
+.movemenu button.type-Nature:active, .movemenu button.type-Nature.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(100,30%,77%);
+	background: linear-gradient(to bottom,  hsl(100,30%,77%),  hsl(100,30%,83%));
+	border-color: hsl(100,30%,41%);
+}
+
+.movemenu button.type-Frost {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(180,15%,93%);
+	background: linear-gradient(to bottom,  hsl(180,15%,97%),  hsl(180,15%,84%));
+	border-color: hsl(180,15%,70%);
+}
+.movemenu button.type-Frost small {
+	color: hsl(180,15%,41%);
+}
+.movemenu button.type-Frost:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(180,15%,87%);
+	background: linear-gradient(to bottom,  hsl(180,15%,94%),  hsl(180,15%,77%));
+	border-color: hsl(180,15%,41%);
+}
+.movemenu button.type-Frost:active, .movemenu button.type-Frost.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(180,15%,77%);
+	background: linear-gradient(to bottom,  hsl(180,15%,77%),  hsl(180,15%,83%));
+	border-color: hsl(180,15%,41%);
+}
+
+.movemenu button.type-Faith {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(37,69%,65%);
+	background: linear-gradient(to bottom,  hsl(37,69%,75%),  hsl(37,69%,94%));
+	border-color: hsl(37,45%,70%);
+}
+.movemenu button.type-Faith small {
+	color: hsl(37,45%,45%);
+}
+.movemenu button.type-Faith:hover {
+	/* bg: 95 to 83, border: 45 */
+	background: hsl(37,45%,87%);
+	background: linear-gradient(to bottom,  hsl(37,68%,85%),  hsl(37,45%,90%));
+	border-color: hsl(37,45%,45%);
+}
+.movemenu button.type-Faith:active, .movemenu button.type-Faith.pressed {
+	/* bg: 83 to 88, border: 45 */
+	background: hsl(37,69%,65%);
+	background: linear-gradient(to bottom,  hsl(37,69%,55%),  hsl(37,69%,90%));
+	border-color: hsl(37,45%,45%);
+}
+
+.movemenu button.type-Reason {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(342,33%,93%);
+	background: linear-gradient(to bottom,  hsl(342,33%,97%),  hsl(342,33%,84%));
+	border-color: hsl(342,33%,70%);
+}
+.movemenu button.type-Reason small {
+	color: hsl(342,33%,41%);
+}
+.movemenu button.type-Reason:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(342,33%,87%);
+	background: linear-gradient(to bottom,  hsl(342,33%,94%),  hsl(342,33%,77%));
+	border-color: hsl(342,33%,41%);
+}
+.movemenu button.type-Reason:active, .movemenu button.type-Reason.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(342,33%,77%);
+	background: linear-gradient(to bottom,  hsl(342,33%,77%),  hsl(342,33%,83%));
+	border-color: hsl(342,33%,41%);
+}
+
+.movemenu button.type-Heart {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(316,37%,93%);
+	background: linear-gradient(to bottom,  hsl(316,37%,100%),  hsl(316,37%,84%));
+	border-color: hsl(316,37%,70%);
+}
+.movemenu button.type-Heart small {
+	color: hsl(316,37%,37%);
+}
+.movemenu button.type-Heart:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(316,37%,87%);
+	background: linear-gradient(to bottom,  hsl(316,37%,100%),  hsl(316,37%,77%));
+	border-color: hsl(316,37%,41%);
+}
+.movemenu button.type-Heart:active, .movemenu button.type-Heart.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(316,37%,77%);
+	background: linear-gradient(to bottom,  hsl(316,37%,77%),  hsl(316,37%,100%));
+	border-color: hsl(316,37%,41%);
+}
+
+.movemenu button.type-Unknown {
+	/* bg: 97 to 90, border: 70 */
+	background: hsl(162,54%,93%);
+	background: linear-gradient(to bottom,  hsl(162,54%,97%),  hsl(162,54%,84%));
+	border-color: hsl(162,54%,70%);
+}
+.movemenu button.type-Unknown small {
+	color: hsl(162,54%,41%);
+}
+.movemenu button.type-Unknown:hover {
+	/* bg: 95 to 83, border: 41 */
+	background: hsl(143, 31%, 87%);
+	background: linear-gradient(to bottom,  hsl(162,54%,94%),  hsl(162,54%,57%));
+	border-color: hsl(162,54%,41%);
+}
+.movemenu button.type-Unknown:active, .movemenu button.type-Unknown.pressed {
+	/* bg: 83 to 88, border: 41 */
+	background: hsl(143, 31%, 87%);
+	background: linear-gradient(to bottom,  hsl(162,54%,87%),  hsl(162,54%,43%));
+	border-color: hsl(162,54%,41%);
+}
