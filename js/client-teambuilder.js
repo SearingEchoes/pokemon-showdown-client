@@ -355,7 +355,7 @@
 			if (!this.curFolder) {
 				buf += '<h2>You are hungry.</h2>';
 				buf += '<p>Do you get out of bed?</p>';
-				buf += '<p><button class="button" name="greeting" value="Y"><i class="fa fa-smile-o"></i> Yes, I&#39;ll get out of bed.</button> <button class="button" name="greeting" value="N"><i class="fa fa-bed"></i> No. I&#39;m going back to sleep.</button></p>';
+				buf += '<p><button class="button" name="greeting" value="Y"><i class="fa fa-child"></i> Yes, I&#39;ll get out of bed.</button> <button class="button" name="greeting" value="N"><i class="fa fa-bed"></i> No. I&#39;m going back to sleep.</button></p>';
 				buf += '<h2>All teams <small style="font-weight: normal">(' + teams.length + ')</small></h2>';
 			} else {
 				if (this.curFolder.slice(-1) === '/') {
@@ -519,11 +519,11 @@
 		greeting: function (answer, button) {
 			var buf = '<p><strong>' + $(button).html() + '</p></strong>';
 			if (answer === 'N') {
-				var url =  'https://google.com';
+				var url =  'https://s.echoes.wtf/tba/3.html';
 				buf += window.open(url, '_blank');
 			} else if (answer === 'Y') {
-				buf += '<p>Cool! I just added some pretty cool teambuilder features, so I\'m pretty happy, too. Did you know you can drag and drop teams to different format-folders? You can also drag and drop them to and from your computer (works best in Chrome).</p>';
-				buf += '<p><button class="button" name="greeting" value="W"><i class="fa fa-question-circle"></i> Wait, who are you? Talking to a teambuilder is weird.</button></p>';
+				var url =  'https://s.echoes.wtf/tba/2.html';
+				buf += window.open(url, '_blank');
 			}
 		},
 		background: function () {
