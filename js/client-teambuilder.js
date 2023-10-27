@@ -516,7 +516,7 @@
 		greeting: function (answer, button) {
 			var buf = '<p><strong>' + $(button).html() + '</p></strong>';
 			if (answer === 'N') {
-				buf += '<p><button class="button" name="greeting" value="W"><i class="fa fa-question-circle"></i><a style=  href="http://s.echoes.wtf/rules.html" target="_blank">click me</a> Wait, who are you? Talking to a teambuilder is weird.</button></p>';
+				buf += '<p><button onclick="location.href='https://s.echoes.wtf/typechart/'" type="button"> www.example.com </button></p>';
 			} else if (answer === 'Y') {
 				buf += '<p>Cool! I just added some pretty cool teambuilder features, so I\'m pretty happy, too. Did you know you can drag and drop teams to different format-folders? You can also drag and drop them to and from your computer (works best in Chrome).</p>';
 				buf += '<p><button class="button" name="greeting" value="W"><i class="fa fa-question-circle"></i> Wait, who are you? Talking to a teambuilder is weird.</button></p>';
