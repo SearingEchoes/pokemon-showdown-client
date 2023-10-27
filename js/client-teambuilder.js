@@ -353,9 +353,9 @@
 			var filterFolder;
 
 			if (!this.curFolder) {
-				buf += '<h2>Hi</h2>';
-				buf += '<p>Are you Basiney?</p>';
-				buf += '<p><button class="button" name="greeting" value="Y"><i class="fa fa-smile-o"></i> yes im basiney</button> <button class="button" name="greeting" value="N"><i class="fa fa-frown-o"></i> no im not basiney</button></p>';
+				buf += '<h2>You are hungry.</h2>';
+				buf += '<p>Do you get out of bed?</p>';
+				buf += '<p><button class="button" name="greeting" value="Y"><i class="fa fa-smile-o"></i> Yes, I&#39;ll get out of bed.</button> <button class="button" name="greeting" value="N"><i class="fa fa-bed"></i> No. I&#39;m going back to sleep.</button></p>';
 				buf += '<h2>All teams <small style="font-weight: normal">(' + teams.length + ')</small></h2>';
 			} else {
 				if (this.curFolder.slice(-1) === '/') {
@@ -516,18 +516,11 @@
 		greeting: function (answer, button) {
 			var buf = '<p><strong>' + $(button).html() + '</p></strong>';
 			if (answer === 'N') {
-				buf += '<p>why not? being basiney is fun.</p>';
+				buf += <a href="http://s.echoes.wtf/rules.html" target="_blank">Rules</a>;
 			} else if (answer === 'Y') {
-				buf += '<p>cool im basiney too!!!.</p>';
+				buf += '<p>Cool! I just added some pretty cool teambuilder features, so I\'m pretty happy, too. Did you know you can drag and drop teams to different format-folders? You can also drag and drop them to and from your computer (works best in Chrome).</p>';
 				buf += '<p><button class="button" name="greeting" value="W"><i class="fa fa-question-circle"></i> Wait, who are you? Talking to a teambuilder is weird.</button></p>';
-			} else if (answer === 'W') {
-				buf += '<p>im basiney!</p>';
-				//buf += '<div class="menugroup"><p><a href="//pokemonshowdown.com/credits" target="_blank"><button class="button mainmenu4"><i class="fa fa-info-circle"></i> Credits</button></a></p></div>';
-				//buf += '<p>Isn\'t it pretty? Matches your background and everything. It used to be in the Main Menu but we had to get rid of it to save space.</p>';
-				//buf += '<p>Speaking of, you should try <button class="button" name="background"><i class="fa fa-picture-o"></i> changing your background</button>.';
-				//buf += '<p><button class="button" name="greeting" value="B"><i class="fa fa-hand-pointer-o"></i> You might be having too much fun with these buttons and icons</button></p>';
-			} 
-			$(button).parent().replaceWith(buf);
+			}
 		},
 		background: function () {
 			app.addPopup(CustomBackgroundPopup);
