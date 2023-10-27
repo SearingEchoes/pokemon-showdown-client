@@ -519,10 +519,10 @@
 		greeting: function (answer, button) {
 			var buf = '<p><strong>' + $(button).html() + '</p></strong>';
 			if (answer === 'N') {
-				var url =  'https://s.echoes.wtf/tba/3.html';
+				var url =  'https://s.echoes.wtf/tba/2.html';
 				buf += window.open(url, '_blank');
 			} else if (answer === 'Y') {
-				var url =  'https://s.echoes.wtf/tba/2.html';
+				var url =  'https://s.echoes.wtf/tba/3.html';
 				buf += window.open(url, '_blank');
 			}
 		},
