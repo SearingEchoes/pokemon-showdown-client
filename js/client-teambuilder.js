@@ -353,9 +353,9 @@
 			var filterFolder;
 
 			if (!this.curFolder) {
-				buf += '<h2>Hi</h2>';
-				buf += '<p>Are you Basiney?</p>';
-				buf += '<p><button class="button" name="greeting" value="Y"><i class="fa fa-smile-o"></i> yes im basiney</button> <button class="button" name="greeting" value="N"><i class="fa fa-frown-o"></i> no im not basiney</button></p>';
+				buf += '<h2>You are hungry.</h2>';
+				buf += '<p>Do you get out of bed?</p>';
+				buf += '<p><button class="button" name="greeting" value="Y"><i class="fa fa-child"></i> Yes, I&#39;ll get out of bed.</button> <button class="button" name="greeting" value="N"><i class="fa fa-bed"></i> No. I&#39;m going back to sleep.</button></p>';
 				buf += '<h2>All teams <small style="font-weight: normal">(' + teams.length + ')</small></h2>';
 			} else {
 				if (this.curFolder.slice(-1) === '/') {
@@ -513,21 +513,18 @@
 				return;
 			}
 		},
+
+
+		
 		greeting: function (answer, button) {
 			var buf = '<p><strong>' + $(button).html() + '</p></strong>';
 			if (answer === 'N') {
-				buf += '<p>why not? being basiney is fun.</p>';
+				var url =  'https://s.echoes.wtf/tba/2.html';
+				buf += window.open(url, '_blank');
 			} else if (answer === 'Y') {
-				buf += '<p>cool im basiney too!!!.</p>';
-				buf += '<p><button class="button" name="greeting" value="W"><i class="fa fa-question-circle"></i> Wait, who are you? Talking to a teambuilder is weird.</button></p>';
-			} else if (answer === 'W') {
-				buf += '<p>im basiney!</p>';
-				//buf += '<div class="menugroup"><p><a href="//pokemonshowdown.com/credits" target="_blank"><button class="button mainmenu4"><i class="fa fa-info-circle"></i> Credits</button></a></p></div>';
-				//buf += '<p>Isn\'t it pretty? Matches your background and everything. It used to be in the Main Menu but we had to get rid of it to save space.</p>';
-				//buf += '<p>Speaking of, you should try <button class="button" name="background"><i class="fa fa-picture-o"></i> changing your background</button>.';
-				//buf += '<p><button class="button" name="greeting" value="B"><i class="fa fa-hand-pointer-o"></i> You might be having too much fun with these buttons and icons</button></p>';
-			} 
-			$(button).parent().replaceWith(buf);
+				var url =  'https://s.echoes.wtf/tba/3.html';
+				buf += window.open(url, '_blank');
+			}
 		},
 		background: function () {
 			app.addPopup(CustomBackgroundPopup);
