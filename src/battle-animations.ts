@@ -1651,6 +1651,15 @@ export class BattleScene implements BattleSceneStub {
 		case 23:
 			this.bgm = BattleSound.loadBgm('audio/x3-final.mp3', 0, 57324, this.bgm);
 			break;
+		case 24:
+			this.bgm = BattleSound.loadBgm('audio/gs-battle.mp3', 2029, 72045, this.bgm);
+			break;
+		case 25:
+			this.bgm = BattleSound.loadBgm('audio/ffx-battle.mp3', 22882, 101209, this.bgm);
+			break;
+		case 26:
+			this.bgm = BattleSound.loadBgm('audio/bn5-boss.mp3', 3104, 41508, this.bgm);
+			break;
 		}
 
 		this.updateBgm();

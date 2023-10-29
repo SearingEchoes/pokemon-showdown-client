@@ -1782,6 +1782,7 @@ const BattleAvatarNumbers: {[k: string]: string} = {
 	302: 'militia',
 	303: 'scout',
 	304: 'petard',
+	305: 'rsbot',
 	'#bw2elesa': 'elesa-gen5bw2',
 	'#teamrocket': 'teamrocket',
 	'#yellow': 'yellow',
