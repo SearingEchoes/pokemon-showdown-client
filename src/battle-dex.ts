@@ -939,39 +939,39 @@ class ModdedDex {
 					data = {...Dex.moves.get(name), ...table.overrideMoveInfo[id]};
 				}
 			}
-			if ((this.gen <= 3 && data.category !== 'Status') &&
-				data.type !== 'Dream' && 
-				data.type !== 'Nether' && 
-				data.type !== 'Aero' && 
-				data.type !== 'Beast' && 
-				data.type !== 'Miasma' && 
-				data.type !== 'Metal' && 
-				data.type !== 'Umbral' && 
-				data.type !== 'Earth' && 
-				data.type !== 'Pyro' && 
-				data.type !== 'Aqua' && 
-				data.type !== 'Wind' && 
-				data.type !== 'Nature' && 
-				data.type !== 'Frost' && 
-				data.type !== 'Faith' && 
-				data.type !== 'Reason' && 
-				data.type !== 'Heart' && 
-				data.type !== 'Illusion' &&
-				data.type !== 'Unknown' 
-			)
-			{
-				switch(this.modid) {
-					case 'gen1expansionpack':
-						data.category = Dex.getKEPCategory(data.type);
-						break;
-					case 'gen2crystalseviiislands':
-						data.category = Dex.getCSICategory(data.type);	
-						break;
-					default: 
-						data.category = Dex.getGen3Category(data.type);
-						break;
-				}
-			}
+			// if ((this.gen <= 3 && data.category !== 'Status') &&
+				// data.type !== 'Dream' && 
+				// data.type !== 'Nether' && 
+				// data.type !== 'Aero' && 
+				// data.type !== 'Beast' && 
+				// data.type !== 'Miasma' && 
+				// data.type !== 'Metal' && 
+				// data.type !== 'Umbral' && 
+				// data.type !== 'Earth' && 
+				// data.type !== 'Pyro' && 
+				// data.type !== 'Aqua' && 
+				// data.type !== 'Wind' && 
+				// data.type !== 'Nature' && 
+				// data.type !== 'Frost' && 
+				// data.type !== 'Faith' && 
+				// data.type !== 'Reason' && 
+				// data.type !== 'Heart' && 
+				// data.type !== 'Illusion' &&
+				// data.type !== 'Unknown' 
+			// )
+			// {
+				// switch(this.modid) {
+					// case 'gen1expansionpack':
+						// data.category = Dex.getKEPCategory(data.type);
+						// break;
+					// case 'gen2crystalseviiislands':
+						// data.category = Dex.getCSICategory(data.type);	
+						// break;
+					// default: 
+						// data.category = Dex.getGen3Category(data.type);
+						// break;
+				// }
+			// }
 			const move = new Move(id, name, data);
 			this.cache.Moves[id] = move;
 			return move;
