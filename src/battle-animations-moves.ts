@@ -35858,3 +35858,4 @@ BattleMoveAnims['chaoswave'] = {anim: BattleMoveAnims['psybeam'].anim};
 BattleMoveAnims['kakarot'] = {anim: BattleMoveAnims['roar'].anim};
 BattleMoveAnims['explode'] = {anim: BattleMoveAnims['explosion'].anim};
 BattleMoveAnims['chaosplit'] = {anim: BattleMoveAnims['skillswap'].anim};
+BattleMoveAnims['takeheart'] = {anim: BattleMoveAnims['stockpile'].anim};
