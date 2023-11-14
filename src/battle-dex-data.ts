@@ -972,6 +972,14 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	xsuwako: 1548 + 390,
 	xutsuho: 1548 + 391,
 	xtenshi: 1548 + 392,
+	dlruukoto: 1548 + 393,
+	
+	turles: 2484 + 0,
+	lssjbroly: 2484 + 1,
+	superpiccolo: 2484 + 2,
+	saibaman: 2484 + 3,
+	craziney: 2484 + 4,
+	miku: 2484 + 5,
 };
 
 const BattlePokemonIconIndexesLeft: {[id: string]: number} = {
@@ -1782,6 +1790,7 @@ const BattleAvatarNumbers: {[k: string]: string} = {
 	302: 'militia',
 	303: 'scout',
 	304: 'petard',
+	305: 'rsbot',
 	'#bw2elesa': 'elesa-gen5bw2',
 	'#teamrocket': 'teamrocket',
 	'#yellow': 'yellow',
