@@ -15,7 +15,7 @@ process.stdout.write("Syncing data from Git repository... ");
 if (!fs.existsSync('pokemon-showdown')) {
 	child_process.execSync('git clone -b testing ' + server_repo + ' pokemon-showdown', {
 	});
-	child_process.execSync("git pull -b testing" + server_repo, {cwd: 'pokemon-showdown'});
+	child_process.execSync("git pull" + server_repo, {cwd: 'pokemon-showdown'});
 }
 
 child_process.execSync('npm run build', {cwd: 'pokemon-showdown'});
