@@ -35110,6 +35110,125 @@ export const BattleMoveAnims: AnimTable = {
 			}, 'decel', 'explode');
 		},
 	},
+	gigarockfall: {
+		anim(scene, [attacker, ...defenders]) {
+			for (const defender of defenders) {
+				defender.delay(200);
+				defender.anim({
+					y: defender.y - 7,
+					yscale: 0.9,
+					time: 100,
+				}, 'decel');
+				defender.anim({
+					time: 200,
+				});
+				defender.delay(200);
+				defender.anim({
+					y: defender.y - 7,
+					yscale: 0.9,
+					time: 100,
+				}, 'decel');
+				defender.anim({
+					time: 200,
+				});
+
+				scene.showEffect('rock1', {
+					x: defender.x + 15,
+					y: defender.y + 100,
+					z: defender.z,
+					opacity: 0,
+					scale: 1,
+				}, {
+					y: defender.y - 30,
+					opacity: 1,
+					time: 300,
+				}, 'accel', 'explode');
+				scene.showEffect('rock2', {
+					x: defender.x + 30,
+					y: defender.y + 100,
+					z: defender.z,
+					opacity: 0,
+					scale: 1,
+					time: 100,
+				}, {
+					y: defender.y - 30,
+					opacity: 1,
+					time: 400,
+				}, 'accel', 'explode');
+				scene.showEffect('rock1', {
+					x: defender.x - 30,
+					y: defender.y + 100,
+					z: defender.z,
+					opacity: 0,
+					scale: 1,
+					time: 200,
+				}, {
+					y: defender.y - 30,
+					opacity: 1,
+					time: 500,
+				}, 'accel', 'explode');
+				scene.showEffect('rock2', {
+					x: defender.x,
+					y: defender.y + 100,
+					z: defender.z,
+					opacity: 0,
+					scale: 1,
+					time: 300,
+				}, {
+					y: defender.y - 30,
+					opacity: 1,
+					time: 600,
+				}, 'accel', 'explode');
+				scene.showEffect('rock1', {
+					x: defender.x - 15,
+					y: defender.y + 100,
+					z: defender.z,
+					opacity: 0,
+					scale: 1,
+					time: 400,
+				}, {
+					y: defender.y - 30,
+					opacity: 1,
+					time: 700,
+				}, 'accel', 'explode');
+
+				scene.showEffect('mudwisp', {
+					x: defender.x + 40,
+					y: defender.y - 40,
+					z: defender.z,
+					scale: 1,
+					opacity: 0.4,
+					time: 300,
+				}, {
+					scale: 2,
+					opacity: 0,
+				}, 'decel');
+				scene.showEffect('mudwisp', {
+					x: defender.x - 40,
+					y: defender.y - 40,
+					z: defender.z,
+					scale: 1,
+					opacity: 0.4,
+					time: 450,
+				}, {
+					scale: 2,
+					opacity: 0,
+				}, 'decel');
+				scene.showEffect('mudwisp', {
+					x: defender.x + 10,
+					y: defender.y - 40,
+					z: defender.z,
+					scale: 1,
+					opacity: 0.4,
+					time: 600,
+				}, {
+					scale: 2,
+					opacity: 0,
+				}, 'decel');
+			}
+		},
+		prepareAnim: BattleOtherAnims.chargestatus.anim,
+	},
 };
 
 // placeholder animations
