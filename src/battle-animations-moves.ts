@@ -36094,3 +36094,5 @@ BattleMoveAnims['explode'] = {anim: BattleMoveAnims['explosion'].anim};
 BattleMoveAnims['chaosplit'] = {anim: BattleMoveAnims['skillswap'].anim};
 BattleMoveAnims['takeheart'] = {anim: BattleMoveAnims['stockpile'].anim};
 BattleMoveAnims['gigacrunch'] = {anim: BattleMoveAnims['crunch'].anim};
+BattleMoveAnims['megid'] = {anim: BattleMoveAnims['shadowball'].anim};
+BattleMoveAnims['rapidpeck'] = {anim: BattleMoveAnims['peck'].anim};

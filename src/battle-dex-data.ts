@@ -981,6 +981,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	craziney: 2484 + 4,
 	miku: 2484 + 5,
 	tztokjad: 2484 + 6,
+	oblily: 2484 + 7,
 };
 
 const BattlePokemonIconIndexesLeft: {[id: string]: number} = {
