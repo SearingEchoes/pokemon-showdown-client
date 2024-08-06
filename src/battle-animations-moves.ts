@@ -36096,3 +36096,6 @@ BattleMoveAnims['takeheart'] = {anim: BattleMoveAnims['stockpile'].anim};
 BattleMoveAnims['gigacrunch'] = {anim: BattleMoveAnims['crunch'].anim};
 BattleMoveAnims['megid'] = {anim: BattleMoveAnims['shadowball'].anim};
 BattleMoveAnims['rapidpeck'] = {anim: BattleMoveAnims['peck'].anim};
+BattleMoveAnims['puncture'] = {anim: BattleMoveAnims['xscissor'].anim};
+BattleMoveAnims['descentofdragons'] = {anim: BattleMoveAnims['spiritshackle'].anim};
+BattleMoveAnims['iceblitz'] = {anim: BattleMoveAnims['blizzard'].anim};
