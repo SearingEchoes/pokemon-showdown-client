@@ -36099,3 +36099,6 @@ BattleMoveAnims['rapidpeck'] = {anim: BattleMoveAnims['peck'].anim};
 BattleMoveAnims['puncture'] = {anim: BattleMoveAnims['xscissor'].anim};
 BattleMoveAnims['descentofdragons'] = {anim: BattleMoveAnims['spiritshackle'].anim};
 BattleMoveAnims['iceblitz'] = {anim: BattleMoveAnims['blizzard'].anim};
+BattleMoveAnims['saradominstrike'] = {anim: BattleMoveAnims['thunder'].anim};
+BattleMoveAnims['clawsofguthix'] = {anim: BattleMoveAnims['quash'].anim};
+BattleMoveAnims['flamesofzamorak'] = {anim: BattleMoveAnims['magmastorm'].anim};

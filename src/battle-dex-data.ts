@@ -985,6 +985,9 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	rubi: 2484 + 8,
 	emmi: 2484 + 9,
 	saffi: 2484 + 10,
+	bellibolts: 2484 + 11,
+	meganiumg: 2484 + 12,
+	houndoomz: 2484 + 13,
 };
 
 const BattlePokemonIconIndexesLeft: {[id: string]: number} = {
