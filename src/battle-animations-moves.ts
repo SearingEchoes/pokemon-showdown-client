@@ -36102,3 +36102,5 @@ BattleMoveAnims['iceblitz'] = {anim: BattleMoveAnims['blizzard'].anim};
 BattleMoveAnims['saradominstrike'] = {anim: BattleMoveAnims['thunder'].anim};
 BattleMoveAnims['clawsofguthix'] = {anim: BattleMoveAnims['quash'].anim};
 BattleMoveAnims['flamesofzamorak'] = {anim: BattleMoveAnims['magmastorm'].anim};
+BattleMoveAnims['honeyboiled'] = {anim: BattleMoveAnims['recover'].anim};
+BattleMoveAnims['madhoney'] = {anim: BattleMoveAnims['gunkshot'].anim};
