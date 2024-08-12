@@ -2685,6 +2685,9 @@ export class Battle {
 					this.scene.resultAnim(poke, 'Blocked', 'neutral');
 				}
 				break;
+			case 'regen':
+				this.scene.resultAnim(poke, 'Ingrained', 'good');
+				break;
 
 			// Gen 1-2
 			case 'mist':
