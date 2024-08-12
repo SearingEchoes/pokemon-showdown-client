@@ -973,13 +973,22 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	xutsuho: 1548 + 391,
 	xtenshi: 1548 + 392,
 	dlruukoto: 1548 + 393,
-	
+	//customs
 	turles: 2484 + 0,
 	lssjbroly: 2484 + 1,
 	superpiccolo: 2484 + 2,
 	saibaman: 2484 + 3,
 	craziney: 2484 + 4,
 	miku: 2484 + 5,
+	tztokjad: 2484 + 6,
+	oblily: 2484 + 7,
+	rubi: 2484 + 8,
+	emmi: 2484 + 9,
+	saffi: 2484 + 10,
+	bellibolts: 2484 + 11,
+	meganiumg: 2484 + 12,
+	houndoomz: 2484 + 13,
+	beesiney: 2484 + 14,
 };
 
 const BattlePokemonIconIndexesLeft: {[id: string]: number} = {
