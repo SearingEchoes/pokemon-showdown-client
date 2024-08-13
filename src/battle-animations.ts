@@ -1900,6 +1900,8 @@ export class PokemonSprite extends Sprite {
 		bind: ['Bind', 'bad'],
 		clamp: ['Clamp', 'bad'],
 		firespin: ['Fire Spin', 'bad'],
+		madhoney: ['Mad Honey', 'bad'],
+		iceblitz: ['Ice Blitz', 'bad'],
 		infestation: ['Infestation', 'bad'],
 		magmastorm: ['Magma Storm', 'bad'],
 		sandtomb: ['Sand Tomb', 'bad'],
