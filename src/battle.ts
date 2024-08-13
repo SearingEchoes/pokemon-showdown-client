@@ -2686,7 +2686,7 @@ export class Battle {
 				}
 				break;
 			case 'regen':
-				this.scene.resultAnim(poke, 'Ingrained', 'good');
+				this.scene.resultAnim(poke, 'Regen', 'good');
 				break;
 
 			// Gen 1-2
