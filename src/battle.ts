@@ -2688,6 +2688,9 @@ export class Battle {
 			case 'regen':
 				this.scene.resultAnim(poke, 'Regen', 'good');
 				break;
+			case 'bound':
+				this.scene.resultAnim(poke, 'Bound', 'bad');
+				break;
 
 			// Gen 1-2
 			case 'mist':

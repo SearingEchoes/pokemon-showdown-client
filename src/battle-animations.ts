@@ -1911,6 +1911,7 @@ export class PokemonSprite extends Sprite {
 		wrap: ['Wrap', 'bad'],
 		//customs
 		regen: ['Regen', 'good'],
+		bound: ['Bound', 'bad'],
 		// Gen 1-2
 		mist: ['Mist', 'good'],
 		// Gen 1
