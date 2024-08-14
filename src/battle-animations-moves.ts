@@ -36104,3 +36104,6 @@ BattleMoveAnims['clawsofguthix'] = {anim: BattleMoveAnims['quash'].anim};
 BattleMoveAnims['flamesofzamorak'] = {anim: BattleMoveAnims['magmastorm'].anim};
 BattleMoveAnims['honeyboiled'] = {anim: BattleMoveAnims['recover'].anim};
 BattleMoveAnims['madhoney'] = {anim: BattleMoveAnims['gunkshot'].anim};
+BattleMoveAnims['phantomdance'] = {anim: BattleMoveAnims['bravebird'].anim};
+BattleMoveAnims['snapback'] = {anim: BattleMoveAnims['karatechop'].anim};
+BattleMoveAnims['samuraiedge'] = {anim: BattleMoveAnims['mirrorshot'].anim};
