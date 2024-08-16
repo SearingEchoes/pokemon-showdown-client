@@ -2929,6 +2929,14 @@ interface AnimData {
 export type AnimTable = {[k: string]: AnimData};
 
 const BattleEffects: {[k: string]: SpriteData} = {
+	lightball: {
+		url: 'lightball.png',
+		w: 100, h: 100,
+	},
+	amuletwisp: {
+		url: 'amuletwisp.png',
+		w: 100, h: 100,
+	},
 	kdriver: {
 		url: 'kdriver.png',
 		w: 100, h: 100,
