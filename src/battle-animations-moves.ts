@@ -36192,3 +36192,5 @@ BattleMoveAnims['madhoney'] = {anim: BattleMoveAnims['gunkshot'].anim};
 BattleMoveAnims['phantomdance'] = {anim: BattleMoveAnims['bravebird'].anim};
 BattleMoveAnims['snapback'] = {anim: BattleMoveAnims['karatechop'].anim};
 BattleMoveAnims['samuraiedge'] = {anim: BattleMoveAnims['mirrorshot'].anim};
+BattleMoveAnims['meteorstormlv3'] = {anim: BattleMoveAnims['dracometeor'].anim};
+BattleMoveAnims['frostnovalv5'] = {anim: BattleMoveAnims['autobomb'].anim};
