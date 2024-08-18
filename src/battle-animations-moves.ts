@@ -35429,6 +35429,196 @@ export const BattleMoveAnims: AnimTable = {
 			}
 		},
 	},
+	zerkertribeon: {
+		anim(scene, [attacker]) {
+			scene.backgroundEffect('#000000', 600, 0.5);
+			scene.backgroundEffect('#ffffff', 500, 1, 550);
+			scene.showEffect('wisp', {
+				x: attacker.x - 60,
+				y: attacker.y + 40,
+				z: attacker.z,
+				scale: 0.7,
+				opacity: 0.7,
+				time: 0,
+			}, {
+				x: attacker.x,
+				y: attacker.y,
+				scale: 0.2,
+				opacity: 0.2,
+				time: 150,
+			}, 'linear', 'fade');
+			scene.showEffect('wisp', {
+				x: attacker.x + 60,
+				y: attacker.y - 5,
+				z: attacker.z,
+				scale: 0.7,
+				opacity: 0.7,
+				time: 100,
+			}, {
+				x: attacker.x,
+				y: attacker.y,
+				scale: 0.2,
+				opacity: 0.2,
+				time: 150,
+			}, 'linear', 'fade');
+			scene.showEffect('wisp', {
+				x: attacker.x - 30,
+				y: attacker.y + 60,
+				z: attacker.z,
+				scale: 0.7,
+				opacity: 0.7,
+				time: 100,
+			}, {
+				x: attacker.x,
+				y: attacker.y,
+				scale: 0.2,
+				opacity: 0.2,
+				time: 250,
+			}, 'linear', 'fade');
+			scene.showEffect('wisp', {
+				x: attacker.x + 20,
+				y: attacker.y - 50,
+				z: attacker.z,
+				scale: 0.7,
+				opacity: 0.7,
+				time: 100,
+			}, {
+				x: attacker.x,
+				y: attacker.y,
+				scale: 0.2,
+				opacity: 0.2,
+				time: 250,
+			}, 'linear', 'fade');
+			scene.showEffect('wisp', {
+				x: attacker.x - 70,
+				y: attacker.y - 50,
+				z: attacker.z,
+				scale: 0.7,
+				opacity: 0.7,
+				time: 100,
+			}, {
+				x: attacker.x,
+				y: attacker.y,
+				scale: 0.2,
+				opacity: 0.2,
+				time: 300,
+			}, 'linear', 'fade');
+
+			scene.showEffect('wisp', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 1.5,
+				opacity: 1,
+			}, {
+				scale: 4,
+				time: 600,
+			}, 'linear', 'explode');
+			scene.showEffect('electroball', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 2,
+				opacity: 0,
+			}, {
+				scale: 2.25,
+				opacity: 0.1,
+				time: 600,
+			}, 'linear', 'explode');
+			scene.showEffect('energyball', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 2,
+				opacity: 0,
+				time: 200,
+			}, {
+				scale: 2.25,
+				opacity: 0.1,
+				time: 600,
+			}, 'linear', 'explode');
+
+			scene.showEffect('electroball', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 6,
+				opacity: 0.2,
+			}, {
+				scale: 1,
+				opacity: 0,
+				time: 300,
+			}, 'linear');
+			scene.showEffect('electroball', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 6,
+				opacity: 0.2,
+				time: 150,
+			}, {
+				scale: 1,
+				opacity: 0,
+				time: 450,
+			}, 'linear');
+			scene.showEffect('electroball', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 6,
+				opacity: 0.2,
+				time: 300,
+			}, {
+				scale: 1,
+				opacity: 0,
+				time: 600,
+			}, 'linear');
+			scene.showEffect('zerker', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 1,
+				time: 600,
+			}, {
+				scale: 1,
+				opacity: 0,
+				time: 900,
+			}, 'decel');
+			scene.showEffect('iceball', {
+				x: attacker.x,
+				y: attacker.y - 60,
+				z: attacker.z,
+				scale: 0.5,
+				xscale: 0.25,
+				yscale: 0,
+				opacity: 0.5,
+				time: 600,
+			}, {
+				scale: 2,
+				xscale: 6,
+				yscale: 1,
+				opacity: 0,
+				time: 800,
+			}, 'linear');
+			scene.showEffect('iceball', {
+				x: attacker.x,
+				y: attacker.y - 60,
+				z: attacker.z,
+				scale: 0.5,
+				xscale: 0.25,
+				yscale: 0.75,
+				opacity: 0.5,
+				time: 800,
+			}, {
+				scale: 2,
+				xscale: 6,
+				opacity: 0.1,
+				time: 1000,
+			}, 'linear');
+		},
+	},
+	
 };
 
 // placeholder animations
