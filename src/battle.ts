@@ -1501,13 +1501,17 @@ export class Battle {
 				if (move.isZ) {
 					pokemon.item = move.isZ;
 					let item = Dex.items.get(move.isZ);
-					if (item.zMoveFrom) moveName = item.zMoveFrom;
-				} else if (move.name.slice(0, 2) === 'Z-') {
-					moveName = moveName.slice(2);
-					move = Dex.moves.get(moveName);
-					if (window.BattleItems) {
-						for (let item in BattleItems) {
-							if (BattleItems[item].zMoveType === move.type) pokemon.item = item;
+					if (item.id === 'swordofzerker') {
+						moveName = item.zMoveFrom;	
+					} else if (item.zMoveFrom) {
+						moveName = item.zMoveFrom;
+					} else if (move.name.slice(0, 2) === 'Z-') {
+						moveName = moveName.slice(2);
+						move = Dex.moves.get(moveName);
+						if (window.BattleItems) {
+							for (let item in BattleItems) {
+								if (BattleItems[item].zMoveType === move.type) pokemon.item = item;
+							}
 						}
 					}
 				}
