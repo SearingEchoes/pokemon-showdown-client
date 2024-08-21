@@ -2933,6 +2933,14 @@ const BattleEffects: {[k: string]: SpriteData} = {
 		url: 'zerker.png',
 		w: 113, h: 165,
 	},
+	saurian: {
+		url: 'saurian.png',
+		w: 113, h: 165,
+	},
+	ninja: {
+		url: 'ninja.png',
+		w: 113, h: 165,
+	},
 	lightball: {
 		url: 'lightball.png',
 		w: 100, h: 100,
