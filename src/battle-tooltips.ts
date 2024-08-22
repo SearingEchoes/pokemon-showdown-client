@@ -547,6 +547,7 @@ class BattleTooltips {
 				move = this.battle.dex.moves.get(item.zMove as string);
 			} else if (item.id === 'swordofzerker' || item.id === 'rockofsaurian' || item.id === 'starofninja') {
 				move = this.battle.dex.moves.get(item.zMove as string);
+				moveType = this.battle.dex.moves.get(move.type as string);
 			} else if (move.category === 'Status') {
 				move = new Move(move.id, "", {
 					...move,
