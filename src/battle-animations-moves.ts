@@ -36727,3 +36727,4 @@ BattleMoveAnims['thunderboltblade'] = {
 		BattleMoveAnims['thunder'].anim(scene, [attacker, defender]);
 	},
 };
+BattleMoveAnims['demonflurry'] = {anim: BattleMoveAnims['watershuriken'].anim};
