@@ -594,7 +594,7 @@ class BattlePanel extends PSRoomPanel<BattleRoom> {
 						</label>}
 						{canZMove && <label class={`megaevo${choices.current.z ? ' cur' : ''}`}>
 							<input type="checkbox" name="z" checked={choices.current.z} onChange={this.toggleBoostedMove} /> {}
-							Z-Power
+							Spell Card Attack
 						</label>}
 					</div>
 				</div>
