@@ -698,7 +698,7 @@
 				if (canMegaEvo) {
 					moveMenu += '<br /><label class="megaevo"><input type="checkbox" name="megaevo" />&nbsp;Mega&nbsp;Evolution</label>';
 				} else if (canZMove) {
-					moveMenu += '<br /><label class="megaevo"><input type="checkbox" name="zmove" />&nbsp;Z-Power</label>';
+					moveMenu += '<br /><label class="megaevo"><input type="checkbox" name="zmove" />&nbsp;Spell Card Attack</label>';
 				} else if (canUltraBurst) {
 					moveMenu += '<br /><label class="megaevo"><input type="checkbox" name="ultraburst" />&nbsp;Ultra Burst</label>';
 				} else if (canDynamax) {
