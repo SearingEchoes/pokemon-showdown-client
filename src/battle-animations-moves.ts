@@ -36145,6 +36145,135 @@ export const BattleMoveAnims: AnimTable = {
 			}, 'linear');
 		},
 	},
+	antidamage: {
+		anim(scene, [attacker, defender]) {
+			scene.showEffect('ninjastar', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 0.2,
+			}, {
+				x: defender.x,
+				y: defender.y,
+				z: defender.behind(20),
+				opacity: 0.6,
+				time: 200,
+			}, 'linear', 'explode');
+			scene.showEffect('ninjastar', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 0.2,
+				time: 50,
+			}, {
+				x: defender.x + 10,
+				y: defender.y - 5,
+				z: defender.behind(20),
+				opacity: 0.6,
+				time: 250,
+			}, 'linear', 'explode');
+			scene.showEffect('ninjastar', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 0.2,
+				time: 100,
+			}, {
+				x: defender.x - 10,
+				y: defender.y + 5,
+				z: defender.behind(20),
+				opacity: 0.6,
+				time: 300,
+			}, 'linear', 'explode');
+			scene.showEffect('ninjastar', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 0.2,
+				time: 150,
+			}, {
+				x: defender.x,
+				y: defender.y - 5,
+				z: defender.behind(20),
+				opacity: 0.6,
+				time: 350,
+			}, 'linear', 'explode');
+		},
+	},
+		demonflurry: {
+		anim(scene, [attacker, ...defenders]) {
+			for (const defender of defenders) {
+				defender.delay(125);
+				defender.anim({
+					z: defender.behind(5),
+					time: 75,
+				}, 'swing');
+				defender.anim({
+					time: 75,
+				}, 'swing');
+				defender.anim({
+					z: defender.behind(5),
+					time: 75,
+				}, 'swing');
+				defender.anim({
+					time: 75,
+				}, 'swing');
+				defender.anim({
+					z: defender.behind(5),
+					time: 75,
+				}, 'swing');
+				defender.anim({
+					time: 75,
+				}, 'swing');
+			}
+			const defender = defenders[1] || defenders[0];
+
+			scene.backgroundEffect('#00DD4A', 700, 0.2);
+			scene.showEffect('ninjastar', {
+				x: attacker.x,
+				y: attacker.y - 25,
+				z: attacker.z,
+				scale: 0.4,
+				opacity: 0.3,
+			}, {
+				x: defender.x,
+				y: defender.y + 10,
+				z: defender.behind(50),
+				scale: 1,
+				opacity: 0.6,
+			}, 'decel', 'explode');
+			scene.showEffect('ninjastar', {
+				x: attacker.x - 30,
+				y: attacker.y - 25,
+				z: attacker.z,
+				scale: 0.4,
+				opacity: 0.3,
+			}, {
+				x: defender.x - 60,
+				y: defender.y,
+				z: defender.behind(50),
+				scale: 1,
+				opacity: 0.6,
+			}, 'decel', 'explode');
+			scene.showEffect('ninjastar', {
+				x: attacker.x + 30,
+				y: attacker.y - 25,
+				z: attacker.z,
+				scale: 0.4,
+				opacity: 0.3,
+			}, {
+				x: defender.x + 60,
+				y: defender.y,
+				z: defender.behind(50),
+				scale: 1,
+				opacity: 0.6,
+			}, 'decel', 'explode');
+		},
+	},
 };
 
 // placeholder animations
@@ -36916,4 +37045,3 @@ BattleMoveAnims['thunderboltblade'] = {
 		BattleMoveAnims['thunder'].anim(scene, [attacker, defender]);
 	},
 };
-BattleMoveAnims['demonflurry'] = {anim: BattleMoveAnims['watershuriken'].anim};

@@ -2941,6 +2941,10 @@ const BattleEffects: {[k: string]: SpriteData} = {
 		url: 'ninja.png',
 		w: 113, h: 165,
 	},
+	ninjastar: {
+		url: 'ninjastar.png',
+		w: 100, h: 100,
+	},
 	lightball: {
 		url: 'lightball.png',
 		w: 100, h: 100,
