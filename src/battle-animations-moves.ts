@@ -37045,3 +37045,10 @@ BattleMoveAnims['thunderboltblade'] = {
 		BattleMoveAnims['thunder'].anim(scene, [attacker, defender]);
 	},
 };
+BattleMoveAnims['ragingdemon'] = {
+	anim(scene, [attacker, defender]) {
+		BattleMoveAnims['extremespeed'].anim(scene, [attacker, defender]);
+		scene.backgroundEffect('#00DD4A', 700, 0.0);
+		BattleMoveAnims['closecombat'].anim(scene, [attacker, defender]);
+	},
+};
