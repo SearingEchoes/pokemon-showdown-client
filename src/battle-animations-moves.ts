@@ -37231,3 +37231,22 @@ BattleMoveAnims['ragingdemon'] = {
 			}, 'linear', 'explode');
 	},
 };
+	icebarrage: { // Reminder: Improve this later
+		anim(scene, [attacker, defender]) {
+			scene.backgroundEffect(`url('https://${Config.routes.psmain}/sprites/gen6bgs/bg-icecave.jpg')`, 1000, 0.6);
+			scene.showEffect('icicle', {
+				x: defender.x,
+				y: defender.y,
+				z: defender.z,
+				xscale: 2,
+				yscale: 5,
+				opacity: 0.6,
+			}, {
+				xscale: 2.2,
+				yscale: 5.25,
+				scale: 0.6,
+				time: 800,
+			}, 'linear', 'explode');
+		},
+	},
+BattleMoveAnims['hellsrolling'] = {anim: BattleMoveAnims['aerialace'].anim};

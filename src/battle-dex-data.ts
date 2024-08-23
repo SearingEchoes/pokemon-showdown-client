@@ -991,6 +991,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	beesiney: 2484 + 14,
 	wesker: 2484 + 15,
 	akuma: 2484 + 16,
+	koishixx: 2484 + 17,
 };
 
 const BattlePokemonIconIndexesLeft: {[id: string]: number} = {
