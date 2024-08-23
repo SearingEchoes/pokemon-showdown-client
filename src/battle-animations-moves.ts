@@ -37047,7 +37047,7 @@ BattleMoveAnims['thunderboltblade'] = {
 };
 BattleMoveAnims['ragingdemon'] = {
 	anim(scene, [attacker, defender]) {
-		scene.backgroundEffect('#000000', 700, 1.0);
+		scene.backgroundEffect('#000000', 1400, 1.0);
 		BattleMoveAnims['extremespeed'].anim(scene, [attacker, defender]);
 			scene.showEffect('fist', {
 				x: defender.x,
@@ -37139,30 +37139,95 @@ BattleMoveAnims['ragingdemon'] = {
 				opacity: 1,
 				time: 800,
 			}, 'linear', 'explode');
-
-			scene.showEffect('impact', {
+			scene.showEffect('fist', {
 				x: defender.x,
 				y: defender.y,
 				z: defender.z,
-				scale: 0,
-				opacity: 0.4,
-				time: 525,
-			}, {
-				scale: 3,
-				opacity: 0,
+				scale: 0.6,
+				opacity: 0.6,
 				time: 825,
-			}, 'linear');
-			scene.showEffect('impact', {
+			}, {
 				x: defender.x,
 				y: defender.y,
 				z: defender.z,
-				scale: 0,
-				opacity: 0.4,
-				time: 750,
+				scale: 1,
+				opacity: 1,
+				time: 925,
+			}, 'linear', 'explode');
+			scene.showEffect('fist', {
+				x: defender.x - 10,
+				y: defender.y + 20,
+				z: defender.z,
+				scale: 0.6,
+				opacity: 0.6,
+				time: 850,
 			}, {
-				scale: 3,
-				opacity: 0,
+				x: defender.x - 20,
+				y: defender.y + 30,
+				z: defender.z,
+				scale: 1,
+				opacity: 1,
+				time: 950,
+			}, 'linear', 'explode');
+			scene.showEffect('fist', {
+				x: defender.x + 30,
+				y: defender.y - 20,
+				z: defender.z,
+				scale: 0.6,
+				opacity: 0.6,
+				time: 875,
+			}, {
+				x: defender.x + 35,
+				y: defender.y - 30,
+				z: defender.z,
+				scale: 1,
+				opacity: 1,
+				time: 975,
+			}, 'linear', 'explode');
+			scene.showEffect('fist', {
+				x: defender.x - 30,
+				y: defender.y - 20,
+				z: defender.z,
+				scale: 0.6,
+				opacity: 0.6,
+				time: 975,
+			}, {
+				x: defender.x - 35,
+				y: defender.y - 30,
+				z: defender.z,
+				scale: 1,
+				opacity: 1,
+				time: 1175,
+			}, 'linear', 'explode');
+			scene.showEffect('fist', {
+				x: defender.x,
+				y: defender.y - 10,
+				z: defender.z,
+				scale: 0.6,
+				opacity: 0.6,
+				time: 1000,
+			}, {
+				x: defender.x + 10,
+				y: defender.y - 15,
+				z: defender.z,
+				scale: 1,
+				opacity: 1,
+				time: 1150,
+			}, 'linear', 'explode');
+			scene.showEffect('fist', {
+				x: defender.x,
+				y: defender.y + 10,
+				z: defender.z,
+				scale: 0.6,
+				opacity: 0.6,
 				time: 1050,
-			}, 'linear');
+			}, {
+				x: defender.x - 10,
+				y: defender.y + 15,
+				z: defender.z,
+				scale: 1,
+				opacity: 1,
+				time: 1200,
+			}, 'linear', 'explode');
 	},
 };
