@@ -990,6 +990,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	houndoomz: 2484 + 13,
 	beesiney: 2484 + 14,
 	wesker: 2484 + 15,
+	akuma: 2484 + 16,
 };
 
 const BattlePokemonIconIndexesLeft: {[id: string]: number} = {
