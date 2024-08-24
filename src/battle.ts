@@ -2685,6 +2685,12 @@ export class Battle {
 					this.scene.resultAnim(poke, 'Blocked', 'neutral');
 				}
 				break;
+			case 'regen':
+				this.scene.resultAnim(poke, 'Regen', 'good');
+				break;
+			case 'bound':
+				this.scene.resultAnim(poke, 'Bound', 'bad');
+				break;
 
 			// Gen 1-2
 			case 'mist':
@@ -2800,6 +2806,9 @@ export class Battle {
 						}
 						if (effect.name === 'Future Sight') {
 							this.scene.runOtherAnim('futuresighthit' as ID, [poke]);
+						}
+						if (effect.name === "Alice's Broom") {
+							this.scene.runOtherAnim('alicesbroomhit' as ID, [poke]);
 						}
 					}
 				}

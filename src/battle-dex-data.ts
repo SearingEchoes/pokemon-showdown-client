@@ -977,7 +977,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	turles: 2484 + 0,
 	lssjbroly: 2484 + 1,
 	superpiccolo: 2484 + 2,
-	saibaman: 2484 + 3,
+	saibamen: 2484 + 3,
 	craziney: 2484 + 4,
 	miku: 2484 + 5,
 	tztokjad: 2484 + 6,
@@ -989,6 +989,9 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	meganiumg: 2484 + 12,
 	houndoomz: 2484 + 13,
 	beesiney: 2484 + 14,
+	wesker: 2484 + 15,
+	akuma: 2484 + 16,
+	koishixx: 2484 + 17,
 };
 
 const BattlePokemonIconIndexesLeft: {[id: string]: number} = {

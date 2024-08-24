@@ -1863,6 +1863,7 @@ export class PokemonSprite extends Sprite {
 		syrupbomb: ['Syrupy', 'bad'],
 		doomdesire: null,
 		futuresight: null,
+		alicesbroom: null,
 		mimic: ['Mimic', 'good'],
 		watersport: ['Water Sport', 'good'],
 		mudsport: ['Mud Sport', 'good'],
@@ -1900,6 +1901,8 @@ export class PokemonSprite extends Sprite {
 		bind: ['Bind', 'bad'],
 		clamp: ['Clamp', 'bad'],
 		firespin: ['Fire Spin', 'bad'],
+		madhoney: ['Mad Honey', 'bad'],
+		iceblitz: ['Ice Blitz', 'bad'],
 		infestation: ['Infestation', 'bad'],
 		magmastorm: ['Magma Storm', 'bad'],
 		sandtomb: ['Sand Tomb', 'bad'],
@@ -1907,6 +1910,9 @@ export class PokemonSprite extends Sprite {
 		thundercage: ['Thunder Cage', 'bad'],
 		whirlpool: ['Whirlpool', 'bad'],
 		wrap: ['Wrap', 'bad'],
+		//customs
+		regen: ['Regen', 'good'],
+		bound: ['Bound', 'bad'],
 		// Gen 1-2
 		mist: ['Mist', 'good'],
 		// Gen 1
@@ -2924,6 +2930,38 @@ interface AnimData {
 export type AnimTable = {[k: string]: AnimData};
 
 const BattleEffects: {[k: string]: SpriteData} = {
+	zerker: {
+		url: 'zerker.png',
+		w: 113, h: 165,
+	},
+	saurian: {
+		url: 'saurian.png',
+		w: 113, h: 165,
+	},
+	ninja: {
+		url: 'ninja.png',
+		w: 113, h: 165,
+	},
+	ninjastar: {
+		url: 'ninjastar.png',
+		w: 100, h: 100,
+	},
+	iceblock: {
+		url: 'iceblock.png',
+		w: 100, h: 173,
+	},
+	helzrol: {
+		url: 'helzrol.png',
+		w: 48, h: 48,
+	},
+	lightball: {
+		url: 'lightball.png',
+		w: 100, h: 100,
+	},
+	amuletwisp: {
+		url: 'amuletwisp.png',
+		w: 100, h: 100,
+	},
 	kdriver: {
 		url: 'kdriver.png',
 		w: 100, h: 100,
@@ -4608,6 +4646,65 @@ export const BattleOtherAnims: AnimTable = {
 			});
 		},
 	},
+alicesbroomhit: {
+		anim(scene, [defender]) {
+			scene.backgroundEffect('#ffffff', 600, 0.6);
+			scene.showEffect('fireball', {
+				x: defender.x + 40,
+				y: defender.y,
+				z: defender.z,
+				scale: 0,
+				opacity: 0.6,
+			}, {
+				scale: 6,
+				opacity: 0,
+			}, 'linear');
+			scene.showEffect('fireball', {
+				x: defender.x - 40,
+				y: defender.y - 20,
+				z: defender.z,
+				scale: 0,
+				opacity: 0.6,
+				time: 150,
+			}, {
+				scale: 6,
+				opacity: 0,
+			}, 'linear');
+			scene.showEffect('fireball', {
+				x: defender.x + 10,
+				y: defender.y + 20,
+				z: defender.z,
+				scale: 0,
+				opacity: 0.6,
+				time: 300,
+			}, {
+				scale: 6,
+				opacity: 0,
+			}, 'linear');
+
+			defender.delay(100);
+			defender.anim({
+				x: defender.x - 30,
+				time: 75,
+			});
+			defender.anim({
+				x: defender.x + 30,
+				time: 100,
+			});
+			defender.anim({
+				x: defender.x - 30,
+				time: 100,
+			});
+			defender.anim({
+				x: defender.x + 30,
+				time: 100,
+			});
+			defender.anim({
+				x: defender.x,
+				time: 100,
+			});
+		},
+	},
 	itemoff: {
 		anim(scene, [defender]) {
 			scene.showEffect('pokeball', {
@@ -5845,6 +5942,7 @@ export const BattleOtherAnims: AnimTable = {
 			}, 'linear');
 		},
 	},
+
 };
 export const BattleStatusAnims: AnimTable = {
 	brn: {
