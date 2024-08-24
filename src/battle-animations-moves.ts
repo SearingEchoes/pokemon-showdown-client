@@ -36420,7 +36420,7 @@ export const BattleMoveAnims: AnimTable = {
 		},
 	},
 	lordofvermilion: {
-		anim(scene, [attacker]) {
+		anim(scene, [defender]) {
 			scene.showEffect('fireball', {
 				x: defender.x + 40,
 				y: defender.y,
