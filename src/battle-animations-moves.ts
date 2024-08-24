@@ -36281,18 +36281,18 @@ export const BattleMoveAnims: AnimTable = {
 				x: defender.x,
 				y: defender.y,
 				z: defender.z,
-				xscale: 2,
-				yscale: 5,
-				opacity: 0.9,
+				xscale: 1.7,
+				yscale: 1.7,
+				opacity: 1,
 			}, {
 				xscale: 1.7,
-				yscale: 5.25,
+				yscale: 1.7,
 				scale: 0.6,
 				time: 800,
 			}, 'linear', 'explode');
 		},
 	},
-	aerialace: {
+	hellsrolling: {
 		anim(scene, [attacker, defender]) {
 			scene.showEffect('leftslash', {
 				x: defender.x - 10,
