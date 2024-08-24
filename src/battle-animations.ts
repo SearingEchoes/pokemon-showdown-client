@@ -2945,6 +2945,14 @@ const BattleEffects: {[k: string]: SpriteData} = {
 		url: 'ninjastar.png',
 		w: 100, h: 100,
 	},
+	iceblock: {
+		url: 'iceblock.png',
+		w: 100, h: 173,
+	},
+	helzrol: {
+		url: 'helzrol.png',
+		w: 48, h: 48,
+	},
 	lightball: {
 		url: 'lightball.png',
 		w: 100, h: 100,
