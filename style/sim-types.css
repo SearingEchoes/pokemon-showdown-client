@@ -755,7 +755,7 @@
 	border-color: hsl(162,54%,70%);
 }
 .movemenu button.type-Unknown small {
-	color: hsl(162,54%,41%);
+	color: hsl(162,54%,21%);
 }
 .movemenu button.type-Unknown:hover {
 	/* bg: 95 to 83, border: 41 */
@@ -776,7 +776,7 @@
 	border-color: hsl(37,45%,60%);
 }
 .movemenu button.type-Saiyan small {
-	color: hsl(37,45%,60%);
+	color: hsl(37,45%,0%);
 }
 .movemenu button.type-Saiyan:hover {
 	background: hsl(18,83%,80%);
