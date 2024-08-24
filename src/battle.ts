@@ -2807,6 +2807,9 @@ export class Battle {
 						if (effect.name === 'Future Sight') {
 							this.scene.runOtherAnim('futuresighthit' as ID, [poke]);
 						}
+						if (effect.name === "Alice's Broom") {
+							this.scene.runOtherAnim('alicesbroomhit' as ID, [poke]);
+						}
 					}
 				}
 			}
