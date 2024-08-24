@@ -37319,6 +37319,7 @@ BattleMoveAnims['samuraiedge'] = {anim: BattleMoveAnims['mirrorshot'].anim};
 BattleMoveAnims['meteorstormlv3'] = {anim: BattleMoveAnims['dracometeor'].anim};
 BattleMoveAnims['frostnovalv5'] = {anim: BattleMoveAnims['autobomb'].anim};
 BattleMoveAnims['phantasmaltentacle'] = {anim: BattleMoveAnims['powerwhip'].anim};
+BattleMoveAnims['alicesbroom'] = {anim: BattleMoveAnims['doomdesire'].anim};
 BattleMoveAnims['thunderboltblade'] = {
 	anim(scene, [attacker, defender]) {
 		BattleMoveAnims['xscissor'].anim(scene, [attacker, defender]);
