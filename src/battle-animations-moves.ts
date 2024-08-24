@@ -36420,7 +36420,7 @@ export const BattleMoveAnims: AnimTable = {
 		},
 	},
 	lordofvermilion: {
-		anim(scene, [defender]) {
+		anim(scene, [attacker, defender]) {
 			scene.showEffect('fireball', {
 				x: defender.x + 40,
 				y: defender.y,
@@ -37318,6 +37318,7 @@ BattleMoveAnims['snapback'] = {anim: BattleMoveAnims['karatechop'].anim};
 BattleMoveAnims['samuraiedge'] = {anim: BattleMoveAnims['mirrorshot'].anim};
 BattleMoveAnims['meteorstormlv3'] = {anim: BattleMoveAnims['dracometeor'].anim};
 BattleMoveAnims['frostnovalv5'] = {anim: BattleMoveAnims['autobomb'].anim};
+BattleMoveAnims['phantasmaltentacle'] = {anim: BattleMoveAnims['powerwhip'].anim};
 BattleMoveAnims['thunderboltblade'] = {
 	anim(scene, [attacker, defender]) {
 		BattleMoveAnims['xscissor'].anim(scene, [attacker, defender]);
