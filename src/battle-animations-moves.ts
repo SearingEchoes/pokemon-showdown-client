@@ -36334,7 +36334,8 @@ export const BattleMoveAnims: AnimTable = {
 				x: attacker.x,
 				y: attacker.y,
 				z: attacker.z,
-				opacity: 0.3,
+				scale: 1.5,
+				opacity: 0.8,
 				time: 50,
 			}, {
 				x: defender.x - 60,
@@ -36346,7 +36347,8 @@ export const BattleMoveAnims: AnimTable = {
 				x: attacker.x,
 				y: attacker.y,
 				z: attacker.z,
-				opacity: 0.3,
+				scale: 1.5,
+				opacity: 0.8,
 				time: 100,
 			}, {
 				x: defender.leftof(20),
@@ -36358,7 +36360,8 @@ export const BattleMoveAnims: AnimTable = {
 				x: defender.x - 60,
 				y: defender.y + 60,
 				z: defender.behind(-40),
-				opacity: 0.5,
+				scale: 1.5,
+				opacity: 0.8,
 				time: 250,
 			}, {
 				x: defender.leftof(-5),
@@ -36370,7 +36373,8 @@ export const BattleMoveAnims: AnimTable = {
 				x: defender.leftof(20),
 				y: defender.y,
 				z: defender.behind(-40),
-				opacity: 0.5,
+				scale: 1.5,
+				opacity: 0.8,
 				time: 300,
 			}, {
 				x: defender.leftof(-5),
@@ -36384,7 +36388,8 @@ export const BattleMoveAnims: AnimTable = {
 				y: defender.y + 60,
 				z: defender.behind(-80),
 				time: 200,
-				opacity: 0.5,
+				scale: 1.5,
+				opacity: 0.8,
 			}, 'ballistic');
 			scene.showEffect('helzrol', {
 				x: defender.leftof(-5),
@@ -36398,6 +36403,8 @@ export const BattleMoveAnims: AnimTable = {
 				y: defender.y + 5,
 				z: defender.z,
 				time: 100,
+				scale: 1.5,
+				opacity: 0.8,
 			});
 			scene.showEffect('helzrol', {
 				time: 500,
