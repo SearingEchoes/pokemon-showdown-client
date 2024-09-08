@@ -977,7 +977,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	turles: 2484 + 0,
 	lssjbroly: 2484 + 1,
 	superpiccolo: 2484 + 2,
-	saibaman: 2484 + 3,
+	saibamen: 2484 + 3,
 	craziney: 2484 + 4,
 	miku: 2484 + 5,
 	tztokjad: 2484 + 6,
