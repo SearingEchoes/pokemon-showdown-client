@@ -1677,6 +1677,7 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 			(dex.gen === 9 && this.formatType !== 'natdex');
 		// Hoenn Gaiden Baton Pass Gaiden Declaration
 		const isHoennGaiden = this.modFormat === 'gen3hoenngaiden' || this.modFormat.endsWith('hoenngaiden');
+		const isRevised = this.modFormat === 'gen3revised' || this.modFormat.endsWith('revised');
 
 		let learnsetid = this.firstLearnsetid(species.id);
 		let moves: string[] = [];
@@ -1730,8 +1731,14 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 					moves.push(moveid);
 					if (moveid === 'sketch') sketch = true;
 					if (moveid === 'hiddenpower') {
-						moves.push(
-							'hiddenpowerbug', 'hiddenpowerdark', 'hiddenpowerdragon', 'hiddenpowerelectric', 'hiddenpowerfighting', 'hiddenpowerfire', 'hiddenpowerflying', 'hiddenpowerghost', 'hiddenpowergrass', 'hiddenpowerground', 'hiddenpowerice', 'hiddenpowerpoison', 'hiddenpowerpsychic', 'hiddenpowerrock', 'hiddenpowersteel', 'hiddenpowerwater'
+						if (isRevised) {
+							moves.push(
+								'hiddenpowerbug', 'hiddenpowerdark', 'hiddenpowerfaith', 'hiddenpowerelectric', 'hiddenpowerfighting', 'hiddenpowerfire', 'hiddenpowerflying', 'hiddenpowerghost', 'hiddenpowergrass', 'hiddenpowerground', 'hiddenpowerice', 'hiddenpowerpoison', 'hiddenpowerpsychic', 'hiddenpowerrock', 'hiddenpowersteel', 'hiddenpowerwater'
+							}
+						} else {
+							moves.push(
+								'hiddenpowerbug', 'hiddenpowerdark', 'hiddenpowerdragon', 'hiddenpowerelectric', 'hiddenpowerfighting', 'hiddenpowerfire', 'hiddenpowerflying', 'hiddenpowerghost', 'hiddenpowergrass', 'hiddenpowerground', 'hiddenpowerice', 'hiddenpowerpoison', 'hiddenpowerpsychic', 'hiddenpowerrock', 'hiddenpowersteel', 'hiddenpowerwater'
+							}
 						);
 					}
 					if (isHoennGaiden && moveid === 'batonpass') {

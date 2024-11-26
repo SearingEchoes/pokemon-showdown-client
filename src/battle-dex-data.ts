@@ -1096,7 +1096,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	noroiko: 3228 + 100,
 	exmeira: 3228 + 101,
 	matenshi: 3228 + 102,
-	exllen: 3228 + 103,
+	exellen: 3228 + 103,
 	exkotohime: 3228 + 104,
 	exkana: 3228 + 105,
 	exrikako: 3228 + 106,
@@ -1111,7 +1111,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	exgengetsu: 3228 + 115,
 	wayousei: 3228 + 116,
 	exsara: 3228 + 117,
-	ungaikyoaangel: 3228 + 118,
+	ungaikyoangel: 3228 + 118,
 	exlouise: 3228 + 119,
 	exyuki: 3228 + 120,
 	exmai: 3228 + 121,
@@ -1166,6 +1166,9 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
 	xsanae: 3228 + 170,
 	xyoumu: 3228 + 171,
 	xreisen: 3228 + 172,
+	chibisendai: 3228 + 173,
+	chibisatsuki: 3228 + 174,
+	satsuki: 3228 + 175,
 
 };
 
@@ -1774,7 +1777,7 @@ const BattlePokemonIconIndexesLeft: {[id: string]: number} = {
 	noroiko: 3420 + 100,
 	exmeira: 3420 + 101,
 	matenshi: 3420 + 102,
-	exllen: 3420 + 103,
+	exellen: 3420 + 103,
 	exkotohime: 3420 + 104,
 	exkana: 3420 + 105,
 	exrikako: 3420 + 106,
@@ -1789,7 +1792,7 @@ const BattlePokemonIconIndexesLeft: {[id: string]: number} = {
 	exgengetsu: 3420 + 115,
 	wayousei: 3420 + 116,
 	exsara: 3420 + 117,
-	ungaikyoaangel: 3420 + 118,
+	ungaikyoangel: 3420 + 118,
 	exlouise: 3420 + 119,
 	exyuki: 3420 + 120,
 	exmai: 3420 + 121,
@@ -1844,6 +1847,9 @@ const BattlePokemonIconIndexesLeft: {[id: string]: number} = {
 	xsanae: 3420 + 170,
 	xyoumu: 3420 + 171,
 	xreisen: 3420 + 172,
+	chibisendai: 3420 + 173,
+	chibisatsuki: 3420 + 174,
+	satsuki: 3420 + 175,
 
 };
 
