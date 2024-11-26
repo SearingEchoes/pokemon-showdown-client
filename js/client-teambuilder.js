@@ -2205,7 +2205,7 @@
 					switch (hpType) {
 					case 'dark':
 						hpIVs = ['111111']; break;
-					case 'faith':
+					case 'dragon':
 						hpIVs = ['011111', '101111', '110111']; break;
 					case 'ice':
 						hpIVs = ['010111', '100111', '111110']; break;
