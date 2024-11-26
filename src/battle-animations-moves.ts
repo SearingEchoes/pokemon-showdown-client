@@ -36989,7 +36989,7 @@ BattleMoveAnims['subterraneansun'] = {
 		},
 };
 BattleMoveAnims['powertrance'] = {anim: BattleMoveAnims['dragondance'].anim};
-BattleMoveAnims['mysticbomb'] = {anim: BattleMoveAnims['mindbomb'].anim};
+BattleMoveAnims['mysticbomb'] = {anim: BattleMoveAnims['shadowball'].anim};
 BattleMoveAnims['buggrip'] = {anim: BattleMoveAnims['crushgrip'].anim};
 BattleMoveAnims['holyneedle'] = {anim: BattleMoveAnims['pinmissile'].anim};
 BattleMoveAnims['shockabsorb'] = {anim: BattleMoveAnims['paraboliccharge'].anim};
