@@ -36942,6 +36942,94 @@ BattleMoveAnims['tripledive'] = {anim: BattleMoveAnims['dive'].anim};
 BattleMoveAnims['hydrosteam'] = {anim: BattleMoveAnims['steameruption'].anim};
 BattleMoveAnims['psyblade'] = {anim: BattleMoveAnims['psychocut'].anim};
 
+//1.5 move anims
+
+BattleMoveAnims['mineralpelt'] = {anim: BattleMoveAnims['powergem'].anim};
+BattleMoveAnims['laevatein'] = {anim: BattleMoveAnims['bitterblade'].anim};
+BattleMoveAnims['sandymash'] = {anim: BattleMoveAnims['sandtomb'].anim};
+BattleMoveAnims['boltkick'] = {
+	anim(scene, [attacker, defender]) {
+		BattleMoveAnims['tackle'].anim(scene, [attacker, defender]);
+		BattleMoveAnims['thunder'].anim(scene, [attacker, defender]);
+	},
+};
+BattleMoveAnims['knifewave'] = {anim: BattleMoveAnims['furyattack'].anim};
+BattleMoveAnims['onibinding'] = {anim: BattleMoveAnims['bind'].anim};
+BattleMoveAnims['tenkolaser'] = {anim: BattleMoveAnims['hyperbeam'].anim};
+BattleMoveAnims['coldinferno'] = {anim: BattleMoveAnims['blueflare'].anim};
+BattleMoveAnims['subterraneansun'] = {
+		anim(scene, [attacker, defender]) {
+		scene.backgroundEffect('linear-gradient(#390000 30%, #B84038)', 700, 0.4);
+			scene.showEffect('kdriver', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 1,
+				opacity: 0.8,
+			}, {
+				x: defender.x,
+				y: defender.y,
+				z: defender.behind(0),
+				opacity: 0.7,
+				time: 400,
+			}, 'decel', 'explode');
+			scene.showEffect('kdriver2', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0.7,
+				opacity: 0.3,
+			}, {
+				x: defender.x,
+				y: defender.y,
+				z: defender.behind(0),
+				opacity: 0.7,
+				time: 400,
+			}, 'decel', 'explode');
+		},
+};
+BattleMoveAnims['powertrance'] = {anim: BattleMoveAnims['dragondance'].anim};
+BattleMoveAnims['mysticbomb'] = {anim: BattleMoveAnims['shadowball'].anim};
+BattleMoveAnims['buggrip'] = {anim: BattleMoveAnims['crushgrip'].anim};
+BattleMoveAnims['holyneedle'] = {anim: BattleMoveAnims['pinmissile'].anim};
+BattleMoveAnims['shockabsorb'] = {anim: BattleMoveAnims['paraboliccharge'].anim};
+BattleMoveAnims['spectralray'] = {anim: BattleMoveAnims['moongeistbeam'].anim};
+BattleMoveAnims['hisousword'] = {
+	anim(scene, [attacker, defender]) {
+		BattleMoveAnims['skyuppercut'].anim(scene, [attacker, defender]);
+		BattleMoveAnims['slash'].anim(scene, [attacker, defender]);
+	},
+};
+BattleMoveAnims['skitterrush'] = {anim: BattleMoveAnims['firstimpression'].anim};
+BattleMoveAnims['mindseye'] = {anim: BattleMoveAnims['quiverdance'].anim};
+BattleMoveAnims['manapunch'] = {anim: BattleMoveAnims['shadowpunch'].anim};
+BattleMoveAnims['gapzone'] = {anim: BattleMoveAnims['assist'].anim};
+BattleMoveAnims['powerdrum'] = {anim: BattleMoveAnims['bellydrum'].anim};
+BattleMoveAnims['draculacradle'] = {anim: BattleMoveAnims['bravebird'].anim};
+BattleMoveAnims['sakedrink'] = {anim: BattleMoveAnims['milkdrink'].anim};
+BattleMoveAnims['butterfly'] = {anim: BattleMoveAnims['attackorder'].anim};
+BattleMoveAnims['superego'] = {anim: BattleMoveAnims['attract'].anim};
+BattleMoveAnims['zapflare'] = {anim: BattleMoveAnims['zapcannon'].anim};
+BattleMoveAnims['savagesting'] = {anim: BattleMoveAnims['fellstinger'].anim};
+BattleMoveAnims['divinepulse'] = {anim: BattleMoveAnims['dragonpulse'].anim};
+BattleMoveAnims['holystrike'] = {anim: BattleMoveAnims['thunderpunch'].anim};
+BattleMoveAnims['firebullets'] = {anim: BattleMoveAnims['flamethrower'].anim};
+BattleMoveAnims['aquaveil'] = {anim: BattleMoveAnims['aquaring'].anim};
+BattleMoveAnims['fujiyamavolcano'] = {anim: BattleMoveAnims['eruption'].anim};
+BattleMoveAnims['corpserush'] = {anim: BattleMoveAnims['flareblitz'].anim};
+BattleMoveAnims['poisonclaw'] = {anim: BattleMoveAnims['poisonjab'].anim};
+BattleMoveAnims['ringoffire'] = {anim: BattleMoveAnims['explosion'].anim};
+BattleMoveAnims['suwadeluge'] = {anim: BattleMoveAnims['hydropump'].anim};
+BattleMoveAnims['apollo13'] = {anim: BattleMoveAnims['spiritshackle'].anim};
+BattleMoveAnims['bugwhistle'] = {anim: BattleMoveAnims['grasswhistle'].anim};
+BattleMoveAnims['hourairend'] = {anim: BattleMoveAnims['spacialrend'].anim};
+BattleMoveAnims['watergeyser'] = {anim: BattleMoveAnims['waterspout'].anim};
+BattleMoveAnims['rockgale'] = {anim: BattleMoveAnims['accelerock'].anim};
+BattleMoveAnims['poisonwave'] = {anim: BattleMoveAnims['sludgewave'].anim};
+BattleMoveAnims['glacialbash'] = {anim: BattleMoveAnims['iciclecrash'].anim};
+BattleMoveAnims['mysticfire'] = {anim: BattleMoveAnims['mysticalfire'].anim};
+BattleMoveAnims['cheer'] = {anim: BattleMoveAnims['helpinghand'].anim};
+
 //1.8 move anims begin here
 
 BattleMoveAnims['absorb2'] = {anim: BattleMoveAnims['absorb'].anim};
@@ -37309,7 +37397,7 @@ BattleMoveAnims['puncture'] = {anim: BattleMoveAnims['xscissor'].anim};
 BattleMoveAnims['descentofdragons'] = {anim: BattleMoveAnims['spiritshackle'].anim};
 BattleMoveAnims['iceblitz'] = {anim: BattleMoveAnims['blizzard'].anim};
 BattleMoveAnims['saradominstrike'] = {anim: BattleMoveAnims['thunder'].anim};
-BattleMoveAnims['clawsofguthix'] = {anim: BattleMoveAnims['quash'].anim};
+BattleMoveAnims['clawsofguthix'] = {anim: BattleMoveAnims['stoneedge'].anim};
 BattleMoveAnims['flamesofzamorak'] = {anim: BattleMoveAnims['magmastorm'].anim};
 BattleMoveAnims['honeyboiled'] = {anim: BattleMoveAnims['recover'].anim};
 BattleMoveAnims['madhoney'] = {anim: BattleMoveAnims['gunkshot'].anim};
