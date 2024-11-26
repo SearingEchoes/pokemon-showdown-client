@@ -36953,7 +36953,7 @@ BattleMoveAnims['boltkick'] = {
 		BattleMoveAnims['thunder'].anim(scene, [attacker, defender]);
 	},
 };
-BattleMoveAnims['knifewave'] = {anim: BattleMoveAnims['magicknife'].anim};
+BattleMoveAnims['knifewave'] = {anim: BattleMoveAnims['furyattack'].anim};
 BattleMoveAnims['onibinding'] = {anim: BattleMoveAnims['bind'].anim};
 BattleMoveAnims['tenkolaser'] = {anim: BattleMoveAnims['hyperbeam'].anim};
 BattleMoveAnims['coldinferno'] = {anim: BattleMoveAnims['blueflare'].anim};
