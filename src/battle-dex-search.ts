@@ -1729,15 +1729,13 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 					}
 					if (moves.includes(moveid)) continue;
 					moves.push(moveid);
-					if (moveid === 'sketch') sketch = true;
+					//disabling this for sanity purposes for now, backend would have to be greatly redone
+					// if (moveid === 'sketch') sketch = true;
 					if (moveid === 'hiddenpower') {
-						if (isRevised) {
-							moves.push(
-								'hiddenpowerbug', 'hiddenpowerdark', 'hiddenpowerfaith', 'hiddenpowerelectric', 'hiddenpowerfighting', 'hiddenpowerfire', 'hiddenpowerflying', 'hiddenpowerghost', 'hiddenpowergrass', 'hiddenpowerground', 'hiddenpowerice', 'hiddenpowerpoison', 'hiddenpowerpsychic', 'hiddenpowerrock', 'hiddenpowersteel', 'hiddenpowerwater' );
-							} else {
+
 							moves.push(
 								'hiddenpowerbug', 'hiddenpowerdark', 'hiddenpowerdragon', 'hiddenpowerelectric', 'hiddenpowerfighting', 'hiddenpowerfire', 'hiddenpowerflying', 'hiddenpowerghost', 'hiddenpowergrass', 'hiddenpowerground', 'hiddenpowerice', 'hiddenpowerpoison', 'hiddenpowerpsychic', 'hiddenpowerrock', 'hiddenpowersteel', 'hiddenpowerwater' );
-						}
+
 					}
 					if (isHoennGaiden && moveid === 'batonpass') {
 						moves.push('batonpassgaiden');
