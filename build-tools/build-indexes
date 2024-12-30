@@ -778,7 +778,6 @@ function buildTeambuilderTables() {
 			case 'metalpowder':
 			case 'deepseascale':
 			case 'deepseatooth':
-			case 'icyball':
 				specificItems.push(id);
 				break;
 			// Fling-only
