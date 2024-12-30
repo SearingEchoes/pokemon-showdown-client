@@ -1729,8 +1729,8 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 					}
 					if (moves.includes(moveid)) continue;
 					moves.push(moveid);
-					//disabling this for sanity purposes for now, backend would have to be greatly redone
-					// if (moveid === 'sketch') sketch = true;
+
+					if (moveid === 'sketch') sketch = true;
 					if (moveid === 'hiddenpower') {
 
 							moves.push(
