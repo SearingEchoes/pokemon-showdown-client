@@ -1730,7 +1730,7 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 					if (moves.includes(moveid)) continue;
 					moves.push(moveid);
 
-					if (moveid === 'sketch') sketch = true;
+					//if (moveid === 'sketch') sketch = true;
 					if (moveid === 'hiddenpower') {
 
 							moves.push(
