@@ -973,7 +973,6 @@ const itemList = Object.keys(Dex.data.Items);
 	const overrideSpeciesKeys = ['abilities', 'baseStats', 'cosmeticFormes', 'isNonstandard', 'requiredItems', 'types', 'unreleasedHidden'];
 	const overrideMoveKeys = ['accuracy', 'basePower', 'category', 'desc', 'flags', 'isNonstandard', 'noSketch', 'pp', 'priority', 'shortDesc', 'target', 'type'];
 	const overrideAbilityKeys = ['desc', 'isNonstandard', 'rating', 'shortDesc'];
-	const overrideItemKeys = ['desc', 'isNonstandard', 'rating', 'shortDesc'];
 
 	//
 	// Past gen table
@@ -1016,13 +1015,10 @@ const itemList = Object.keys(Dex.data.Items);
 				const baseString = JSON.stringify(baseEntry[key]);
 				if (modString !== baseString) {
 					if (!overrideDexInfo[id]) overrideDexInfo[id] = {};
-					if (modString === undefined) overrideDexInfo[id][key] = null;
-					else try {
+					try {
 						overrideDexInfo[id][key] = JSON.parse(modString);
 					} catch (e) {
-						// Vivillon-Fancy coded with intentional undefined fields in the source, so we'll escape it
-						if (id === 'vivillonfancy') continue;
-						console.log(gen + " " + id + " " + key + " parsed an invalid value: " + modString);
+						console.log(modString + " " + id + " " + key + " parsed an invalid value: " + modString);
 						continue;
 					}
 				}
@@ -1085,21 +1081,13 @@ const itemList = Object.keys(Dex.data.Items);
 			}
 		}
 
-		const overrideItemInfo = {};
-		BattleTeambuilderTable[gen].overrideItemInfo = overrideItemInfo;
+		const overrideItemDesc = {};
+		BattleTeambuilderTable[gen].overrideItemDesc = overrideItemDesc;
 		for (const id in genData.Items) {
 			const curEntry = genDex.items.get(id);
 			const nextEntry = nextGenDex.items.get(id);
-			for (const key in curEntry) {
-				if (!overrideItemKeys.includes(key)) continue;
-				const curString = JSON.stringify(curEntry[key]);
-				const nextString = JSON.stringify(nextEntry[key]);
-				if (curString !== nextString) {
-					if (!overrideItemInfo[id]) overrideItemInfo[id] = {};
-					if (curString === undefined) overrideItemInfo[id][key] = null;
-					else overrideItemInfo[id][key] = JSON.parse(curString);
-					if(key === 'desc' && !curEntry['shortDesc']) overrideItemInfo[id]['shortDesc'] = JSON.parse(curString);
-				}
+			if ((curEntry.shortDesc || curEntry.desc) !== (nextEntry.shortDesc || nextEntry.desc)) {
+				overrideItemDesc[id] = (curEntry.shortDesc || curEntry.desc);
 			}
 		}
 
@@ -1322,87 +1310,29 @@ const itemList = Object.keys(Dex.data.Items);
 					}
 				}
 			}
-			//items			
+			//items
 			let items = [];
 			const fullItemName = {};
 			BattleTeambuilderTable[modConfigId].fullItemName = fullItemName;
 			BattleTeambuilderTable[modConfigId].items = items;
-			const overrideItemInfo = {};
-			BattleTeambuilderTable[modConfigId].overrideItemInfo = overrideItemInfo;
-
-			const greatItems = [];
-			const goodItems = [];
-			const specificItems = [];
-			const poorItems = [];
-			const badItems = [];
+			const overrideItemDesc = {};
+			BattleTeambuilderTable[modConfigId].overrideItemDesc = overrideItemDesc;
+			items.push(BattleTeambuilderTable.items[0]);
 			for (const id in modData.Items) {
 				const modEntry = modData.Items[id];
 				const baseEntry = Dex.data.Items[id];
-				if (typeof baseEntry === 'undefined') {
-					overrideItemInfo[id] = {};
-					overrideItemInfo[id] = modEntry;
-					overrideItemInfo[id].exists = true;
+				const fakeItem = (typeof baseEntry === 'undefined');
+				if (fakeItem) {
+					items.push(id);
 					fullItemName[id] = modData.Items[id].name;
-				} else {
-					if(baseEntry.gen > modGen) continue;
-					for (const key in modEntry) {
-						if (!overrideItemKeys.includes(key)) continue;
-						const modString = JSON.stringify(modEntry[key]);
-						const baseString = JSON.stringify(baseEntry[key]);
-						if (modString !== baseString) {
-							if (!overrideItemInfo[id]) overrideItemInfo[id] = {};
-							overrideItemInfo[id][key] = JSON.parse(modString);
-							if(key === 'desc' && !modEntry['shortDesc']) overrideItemInfo[id]['shortDesc'] = JSON.parse(modString);
-						}
-					}
 				}
-				
-				if (modEntry.itemUser || modEntry.megaStone || id === 'boosterenergy') {
-					specificItems.push(id);
-					continue;
-				}
-				if (modEntry.isPokeball || modEntry.name.startsWith("TR")) {
-					badItems.push(id);
-					continue;
-				}
-				switch (modEntry.rating) {
-				case 3:
-					greatItems.push(id);
-					break;
-				case 2:
-					goodItems.push(id);
-					break;
-				// outclassed items
-				case 1:
-					poorItems.push(id);
-					break;
-				// Fling-only
-				case 0:
-					badItems.push(id);
-					break;
-				// Allows mods to manually set Pokemon-specific items
-				case -1:
-					specificItems.push(id);
-					break;
-				default:
-					goodItems.push(id);
+				if (fakeItem || (modEntry.shortDesc || modEntry.desc) !== (baseEntry.shortDesc || baseEntry.desc)) {
+					overrideItemDesc[id] = (modEntry.shortDesc || modEntry.desc);
 				}
 			}
-			greatItems.sort();
-			greatItems.unshift(['header', "Popular items"]);
-			items.push(...greatItems);
-			goodItems.sort();
-			goodItems.unshift(['header', "Items"]);
-			items.push(...goodItems);
-			specificItems.sort();
-			specificItems.unshift(['header', "Pok&eacute;mon-specific items"]);
-			items.push(...specificItems);
-			poorItems.sort();
-			poorItems.unshift(['header', "Usually useless items"]);
-			items.push(...poorItems);
-			badItems.sort();
-			badItems.unshift(['header', "Useless items"]);
-			items.push(...badItems);
+			let itemTable = BattleTeambuilderTable.items;
+			modGen === 9 ? itemTable = BattleTeambuilderTable.items : itemTable = BattleTeambuilderTable['gen' + modGen].items;
+			items.push(...itemTable.slice(1));
 			//moves
 			const overrideMoveInfo = {};
 			const overrideMoveKeys = ['basePower', 'accuracy', 'category', 'pp', 'isNonstandard', 'shortDesc', 'type', 'unviable', 'isViable'];
