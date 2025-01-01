@@ -708,6 +708,10 @@ const itemList = Object.keys(Dex.data.Items);
 					continue;
 				}
 			}
+			// if (modConfigId === 'gen3purple') {
+				// specificItems.push(id);
+				// continue;
+			// }
 			if (isMetBattle) {
 				const banlist = Dex.formats.getRuleTable(Dex.formats.get(gen + 'metronomebattle'));
 				if (banlist.isBanned('item:' + item.id)) continue;
@@ -750,7 +754,7 @@ const itemList = Object.keys(Dex.data.Items);
 				break;
 			case 'sitrusberry':
 				if (genNum > 6) goodItems.push(id);
-				else if (genNum > 3 && genNum < 7) greatItems.push(id);
+				else if ((genNum > 3 && genNum < 7) || ) greatItems.push(id);
 				else poorItems.push(id);
 				break;
 			case 'aguavberry':
@@ -758,7 +762,7 @@ const itemList = Object.keys(Dex.data.Items);
 			case 'iapapaberry':
 			case 'magoberry':
 			case 'wikiberry':
-				if (genNum >= 7) greatItems.push(id);
+				if ((genNum >= 7) || modConfigId === 'gen3purple') greatItems.push(id);
 				else poorItems.push(id);
 				break;
 			case 'berryjuice':
@@ -851,6 +855,7 @@ const itemList = Object.keys(Dex.data.Items);
 			case 'rowapberry':
 			case 'bigroot':
 			case 'focusband':
+			case 'staminaribbon':
 			// gen 2
 			case 'psncureberry':
 			case 'przcureberry':
