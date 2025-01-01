@@ -762,7 +762,7 @@ const itemList = Object.keys(Dex.data.Items);
 			case 'iapapaberry':
 			case 'magoberry':
 			case 'wikiberry':
-				if ((genNum >= 7) || this.format.mod === 'gen3purple') greatItems.push(id);
+				if ((genNum >= 7) || this.mod === 'gen3purple') greatItems.push(id);
 				else poorItems.push(id);
 				break;
 			case 'berryjuice':
