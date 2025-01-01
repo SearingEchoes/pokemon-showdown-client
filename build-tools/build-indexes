@@ -384,7 +384,7 @@ function buildSearchIndex() {
 
 	buf += 'exports.BattleArticleTitles = ' + JSON.stringify(BattleArticleTitles) + ';\n\n';
 
-	fs.writeFileSync('play.pokemonshowdown.com/data/search-index.js', buf);
+	fs.writeFileSync('data/search-index.js', buf);
 }
 
 /*********************************************************
@@ -1594,7 +1594,7 @@ function buildTeambuilderTables() {
 	let blockIndex = 0;
 
 	console.log("writing BattleTeambuilderTable...");
-	const tableDir = 'play.pokemonshowdown.com/data/teambuilder-tables.js';
+	const tableDir = 'data/teambuilder-tables.js';
 	fs.writeFileSync(tableDir, '// DO NOT EDIT - automatically built with build-tools/build-indexes\n\n');
 	fs.appendFileSync(tableDir, 'exports.BattleTeambuilderTable = JSON.parse(\'{')
 
@@ -1625,7 +1625,7 @@ function buildTeambuilderTables() {
 	console.log("DONE");
 
 	console.log("writing ModConfig...");
-	fs.writeFileSync('play.pokemonshowdown.com/data/mod-config.js', 'exports.ModConfig = ' + JSON.stringify(ModConfig) + ';\n\n');
+	fs.writeFileSync('data/mod-config.js', 'exports.ModConfig = ' + JSON.stringify(ModConfig) + ';\n\n');
 	console.log("DONE");
 }
 
