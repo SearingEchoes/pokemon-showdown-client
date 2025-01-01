@@ -1310,29 +1310,87 @@ const itemList = Object.keys(Dex.data.Items);
 					}
 				}
 			}
-			//items
+			//items			
 			let items = [];
 			const fullItemName = {};
 			BattleTeambuilderTable[modConfigId].fullItemName = fullItemName;
 			BattleTeambuilderTable[modConfigId].items = items;
-			const overrideItemDesc = {};
-			BattleTeambuilderTable[modConfigId].overrideItemDesc = overrideItemDesc;
-			items.push(BattleTeambuilderTable.items[0]);
+			const overrideItemInfo = {};
+			BattleTeambuilderTable[modConfigId].overrideItemInfo = overrideItemInfo;
+
+			const greatItems = [];
+			const goodItems = [];
+			const specificItems = [];
+			const poorItems = [];
+			const badItems = [];
 			for (const id in modData.Items) {
 				const modEntry = modData.Items[id];
 				const baseEntry = Dex.data.Items[id];
-				const fakeItem = (typeof baseEntry === 'undefined');
-				if (fakeItem) {
-					items.push(id);
+				if (typeof baseEntry === 'undefined') {
+					overrideItemInfo[id] = {};
+					overrideItemInfo[id] = modEntry;
+					overrideItemInfo[id].exists = true;
 					fullItemName[id] = modData.Items[id].name;
+				} else {
+					if(baseEntry.gen > modGen) continue;
+					for (const key in modEntry) {
+						if (!overrideItemKeys.includes(key)) continue;
+						const modString = JSON.stringify(modEntry[key]);
+						const baseString = JSON.stringify(baseEntry[key]);
+						if (modString !== baseString) {
+							if (!overrideItemInfo[id]) overrideItemInfo[id] = {};
+							overrideItemInfo[id][key] = JSON.parse(modString);
+							if(key === 'desc' && !modEntry['shortDesc']) overrideItemInfo[id]['shortDesc'] = JSON.parse(modString);
+						}
+					}
 				}
-				if (fakeItem || (modEntry.shortDesc || modEntry.desc) !== (baseEntry.shortDesc || baseEntry.desc)) {
-					overrideItemDesc[id] = (modEntry.shortDesc || modEntry.desc);
+				
+				if (modEntry.itemUser || modEntry.megaStone || id === 'boosterenergy') {
+					specificItems.push(id);
+					continue;
+				}
+				if (modEntry.isPokeball || modEntry.name.startsWith("TR")) {
+					badItems.push(id);
+					continue;
+				}
+				switch (modEntry.rating) {
+				case 3:
+					greatItems.push(id);
+					break;
+				case 2:
+					goodItems.push(id);
+					break;
+				// outclassed items
+				case 1:
+					poorItems.push(id);
+					break;
+				// Fling-only
+				case 0:
+					badItems.push(id);
+					break;
+				// Allows mods to manually set Pokemon-specific items
+				case -1:
+					specificItems.push(id);
+					break;
+				default:
+					goodItems.push(id);
 				}
 			}
-			let itemTable = BattleTeambuilderTable.items;
-			modGen === 9 ? itemTable = BattleTeambuilderTable.items : itemTable = BattleTeambuilderTable['gen' + modGen].items;
-			items.push(...itemTable.slice(1));
+			greatItems.sort();
+			greatItems.unshift(['header', "Popular items"]);
+			items.push(...greatItems);
+			goodItems.sort();
+			goodItems.unshift(['header', "Items"]);
+			items.push(...goodItems);
+			specificItems.sort();
+			specificItems.unshift(['header', "Pok&eacute;mon-specific items"]);
+			items.push(...specificItems);
+			poorItems.sort();
+			poorItems.unshift(['header', "Usually useless items"]);
+			items.push(...poorItems);
+			badItems.sort();
+			badItems.unshift(['header', "Useless items"]);
+			items.push(...badItems);
 			//moves
 			const overrideMoveInfo = {};
 			const overrideMoveKeys = ['basePower', 'accuracy', 'category', 'pp', 'isNonstandard', 'shortDesc', 'type', 'unviable', 'isViable'];
