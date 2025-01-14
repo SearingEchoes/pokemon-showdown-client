@@ -181,17 +181,19 @@ const Dex = new class implements ModdedDex {
 
 
 	//TODO we might want to move this to something like data/petmods
-	readonly modResourcePrefix = 'https://raw.githubusercontent.com/SearingEchoes/pokemon-showdown/master/data/mods/';
+	readonly modResourcePrefix = 'https://raw.githubusercontent.com/SearingEchoes/pokemon-showdown/testing/data/mods/';
 
 
-	resourcePrefix = 'https://s.echoes.wtf/';
+	resourcePrefix = (() => {
+		let prefix = '';
+		if (window.document?.location?.protocol !== 'http:') prefix = 'https:';
+		return `${prefix}//${'s.echoes.wtf'}/`;
+	})();
 
-	fxPrefix  = 'https://s.echoes.wtf/fx/';
-
-	//fxPrefix = (() => {
-	//	const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
-	//	return `${protocol}//${'play.pokemonshowdown.com'}/fx/`;
-	//})();
+	fxPrefix = (() => {
+		const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
+		return `${protocol}//${'s.echoes.wtf'}/fx/`;
+	})();
 
 	loadedSpriteData = {xy: 1, bw: 0};
 	moddedDexes: {[mod: string]: ModdedDex} = {};
