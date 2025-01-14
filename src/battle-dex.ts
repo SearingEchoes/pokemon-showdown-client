@@ -179,20 +179,19 @@ const Dex = new class implements ModdedDex {
 
 	pokeballs: string[] | null = null;
 
+
 	//TODO we might want to move this to something like data/petmods
-	readonly modResourcePrefix = 'https://raw.githubusercontent.com/SearingEchoes/pokemon-showdown/testing/data/mods/';
+	readonly modResourcePrefix = 'https://raw.githubusercontent.com/SearingEchoes/pokemon-showdown/master/data/mods/';
 
 
-	resourcePrefix = (() => {
-		let prefix = '';
-		if (window.document?.location?.protocol !== 'http:') prefix = 'https:';
-		return `${prefix}//${'s.echoes.wtf'}/`;
-	})();
+	resourcePrefix = 'https://s.echoes.wtf/';
 
-	fxPrefix = (() => {
-		const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
-		return `${protocol}//${'s.echoes.wtf'}/fx/`;
-	})();
+	fxPrefix  = 'https://s.echoes.wtf/fx/';
+
+	//fxPrefix = (() => {
+	//	const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
+	//	return `${protocol}//${'play.pokemonshowdown.com'}/fx/`;
+	//})();
 
 	loadedSpriteData = {xy: 1, bw: 0};
 	moddedDexes: {[mod: string]: ModdedDex} = {};
@@ -306,8 +305,8 @@ const Dex = new class implements ModdedDex {
 					basePower: Number(id.slice(11)),
 				};
 			}
+
 			if (!data) data = {exists: false};
-			
 			let move = new Move(id, name, data);
 			window.BattleMovedex[id] = move;
 			return move;
@@ -474,19 +473,16 @@ const Dex = new class implements ModdedDex {
 	}
 	// getSpriteMod is used to find the correct mod folder for the sprite url to use
 	// id is the name of the pokemon, type, or item. folder refers to "front", or "back-shiny" etc. overrideStandard is false for custom elements and true for canon elements
-	getSpriteMod(optionsMod: string, spriteId: string, filepath: string, overrideStandard: boolean = false) {
-		if (!window.ModSprites[spriteId]) return '';
-		if ((!optionsMod || !window.ModSprites[spriteId][optionsMod]) && !overrideStandard) { // for custom elements only, it will use sprites from another mod if the mod provided doesn't have one
-			for (const modName in window.ModSprites[spriteId]) {
-				if (window.ModSprites[spriteId][modName].includes(filepath)) return modName;
-				if (window.ModSprites[spriteId][modName].includes('ani' + filepath)) return modName;
+	getSpriteMod(mod: string, id: string, folder: string, overrideStandard: boolean = false) { 
+		if (!window.ModSprites[id]) return '';
+		if ((!mod || !window.ModSprites[id][mod]) && !overrideStandard) { // for custom elements only, it will use sprites from another mod if the mod provided doesn't have one
+			for (const modName in window.ModSprites[id]) {
+				if (window.ModSprites[id][modName].includes(folder)) return modName;
+				if (window.ModSprites[id][modName].includes('ani' + folder)) return modName;
 			}
 		}
-		if (optionsMod && window.ModSprites[spriteId][optionsMod]) {		
-			if (window.ModSprites[spriteId][optionsMod].includes('ani' + filepath)) return optionsMod;
-			if (window.ModSprites[spriteId][optionsMod].includes(filepath)) return optionsMod;
-		}
-		return ''; // must be a real Pokemon or not have custom sprite data
+		if (mod && window.ModSprites[id][mod] && window.ModSprites[id][mod].includes(folder)) return mod;
+		return '';
 	}
 
 	loadSpriteData(gen: 'xy' | 'bw') {
@@ -535,14 +531,15 @@ const Dex = new class implements ModdedDex {
 		const modSpecies = Dex.species.get(pokemon);
 		let resourcePrefix = Dex.resourcePrefix;
 		let spriteDir = 'sprites/';
-		let hasCustomSprite = false;
-		let modSpriteId = toID(modSpecies.spriteid);		
-		options.mod = this.getSpriteMod(options.mod, modSpriteId, isFront ? 'front' : 'back', modSpecies.exists);
+		let fakeSprite = false;
+		let modName = modSpecies.spriteid;
+		let id = toID(modName);
+		options.mod = this.getSpriteMod(options.mod, id, isFront ? 'front' : 'back', modSpecies.exists !== false);
 		if (options.mod) {
 			resourcePrefix = Dex.modResourcePrefix;
 			spriteDir = `${options.mod}/sprites/`;
-			hasCustomSprite = true;
-			if (this.getSpriteMod(options.mod, modSpriteId, (isFront ? 'front' : 'back') + '-shiny', modSpecies.exists) === '') options.shiny = false;
+			fakeSprite = true;
+			if (this.getSpriteMod(options.mod, id, (isFront ? 'front' : 'back') + '-shiny', modSpecies.exists !== false) === '') options.shiny = false;
 		}
 
 		const species = Dex.species.get(pokemon);
@@ -570,7 +567,7 @@ const Dex = new class implements ModdedDex {
 			dir = '-back';
 			facing = 'back';
 		}
-		if (hasCustomSprite) dir = isFront ? 'front' : 'back';
+		if (fakeSprite) dir = isFront ? 'front' : 'back';
 		// Decide which gen sprites to use.
 		//
 		// There are several different generations we care about here:
@@ -645,7 +642,7 @@ const Dex = new class implements ModdedDex {
 		if (options.shiny && mechanicsGen > 1) dir += '-shiny';
 
 		// April Fool's 2014
-		if (window.Config?.server?.afd || Dex.prefs('afd') || options.afd) {
+		if (window.Config && Config.server && Config.server.afd || options.afd) {
 			dir = 'afd' + dir;
 			spriteData.url += dir + '/' + name + '.png';
 			// Duplicate code but needed to make AFD tinymax work
@@ -664,28 +661,19 @@ const Dex = new class implements ModdedDex {
 
 		// Mod Cries
 		if (options.mod === 'digimon') {
-			spriteData.cryurl = `sprites/${options.mod}/audio/${toID(species.baseSpecies)}.mp3`;
-		}
-		//If we already have a cry url we load from the main server, otherwise we try to search for the presence of a custom cry
-		if (!(spriteData.cryurl &&= 'https://' + Config.routes.psmain + '/' + spriteData.cryurl)) {			
-			//For whatever reason if there is a cry but no true sprite data then options.mod becomes '' regardless of mod
-			//TODO: Possibly fix that? I wouldn't prioritize it though
-			if (window.ModSprites[modSpriteId]?.[options.mod]?.includes('cries')) {
-				spriteData.cryurl = resourcePrefix + options.mod + '/audio/cries/' + speciesid + '.mp3';
-			} else { //We couldn't find a cry
-				spriteData.cryurl = '';
-			}
+			spriteData.cryurl = `sprites/${options.mod}/audio/${toID(species.baseSpecies)}`;
+			spriteData.cryurl += '.mp3';
 		}
 		
-		let hasCustomAnim = false;
-		if (hasCustomSprite && window.ModSprites[modSpriteId][options.mod].includes('ani' + facing)){
-			hasCustomAnim = true;
+		let fakeAnim = false;
+		if (fakeSprite && window.ModSprites[id][options.mod].includes('ani' + facing)){
+			fakeAnim = true;
 			animationData[facing] = {};
 			animationData[facing].w = 192;
 			animationData[facing].h = 192;
 		}
 		if (animationData[facing + 'f'] && options.gender === 'F') facing += 'f';
-		let allowAnim = (!hasCustomSprite || (hasCustomSprite && hasCustomAnim)) && !Dex.prefs('noanim') && !Dex.prefs('nogif');
+		let allowAnim = (!fakeSprite || (fakeSprite && fakeAnim)) && !Dex.prefs('noanim') && !Dex.prefs('nogif');
 		if (allowAnim && spriteData.gen >= 6) spriteData.pixelated = false;
 		if (allowAnim && animationData[facing] && spriteData.gen >= 5) {
 			if (facing.slice(-1) === 'f') name += '-f';
@@ -698,19 +686,12 @@ const Dex = new class implements ModdedDex {
 		} else {
 			// There is no entry or enough data in pokedex-mini.js
 			// Handle these in case-by-case basis; either using BW sprites or matching the played gen.
-			if (!hasCustomSprite) dir = (baseDir || 'gen5') + dir;
+			if (!fakeSprite) dir = (baseDir || 'gen5') + dir;
 
 			// Gender differences don't exist prior to Gen 4,
 			// so there are no sprites for it
-			if (spriteData.gen >= 4 && options.gender === 'F') {
-				//Is it a realmon with a gender difference?
-				if (miscData['frontf']) {
-					name += '-f';
-				}
-				//If it's a custom sprite, does it have separate sprites for male and female?
-				else if (window.ModSprites[modSpriteId] && window.ModSprites[modSpriteId + 'f']) {
-					name += 'f';
-				}
+			if (spriteData.gen >= 4 && miscData['frontf'] && options.gender === 'F') {
+				name += '-f';
 			}
 
 			spriteData.url += dir + '/' + name + '.png';
@@ -740,14 +721,7 @@ const Dex = new class implements ModdedDex {
 			spriteData.h *= 1.5;
 			spriteData.y += -11;
 		}
-		if (window.BattlePokemonSprites) {
-			if (!window.ModSprites[modSpriteId] && !window.BattlePokemonSprites[modSpriteId] && pokemon !== 'substitute') {
-				spriteData = Dex.getSpriteData('substitute', spriteData.isFrontSprite, {
-					gen: options.gen,
-					mod: options.mod,
-				});
-			}
-		}
+
 		return spriteData;
 	}
 
@@ -831,15 +805,6 @@ const Dex = new class implements ModdedDex {
 			};
 		}
 		if (species.exists === false) return { spriteDir: 'sprites/gen5', spriteid: '0', x: 10, y: 5 };
-		if (window.Config?.server?.afd || Dex.prefs('afd')) {
-			return {
-				spriteid,
-				spriteDir: 'sprites/afd',
-				shiny: !!pokemon.shiny,
-				x: 10,
-				y: 5,
-			};
-		}
 		const spriteData: TeambuilderSpriteData = {
 			spriteid,
 			spriteDir: 'sprites/dex',
@@ -1028,14 +993,14 @@ class ModdedDex {
 				data.name = table.fullItemName[id];
 				data.exists = true;
 			}
-			for(let i = Dex.gen - 1; i >= this.gen; i--) {
-				const genTable = window.BattleTeambuilderTable[`gen${i}`];
-				if (genTable.overrideItemInfo[id]) {
-					Object.assign(data, table.overrideItemInfo[id]);
+			if (id in table.overrideItemDesc) data.shortDesc = table.overrideItemDesc[id];
+	
+			for (let i = this.gen; i < 9; i++) {
+				const table = window.BattleTeambuilderTable['gen' + i];
+				if (table.overrideItemDesc && id in table.overrideItemDesc) {
+					data.shortDesc = table.overrideItemDesc[id];
+					break;
 				}
-			}
-			if (this.modid !== `gen${this.gen}` && table.overrideItemInfo[id]) {
-					Object.assign(data, table.overrideItemInfo[id]);
 			}
 
 			const item = new Item(id, name, data);
@@ -1195,257 +1160,6 @@ class ModdedDex {
 		return this.pokeballs;
 	}
 }
-
-const Teams = new class {
-	unpack(buf: string) {
-		if (!buf) return [];
-
-		const team = [];
-		let i = 0;
-		let j = 0;
-
-		while (true) {
-			const set: PokemonSet = {} as any;
-			team.push(set);
-
-			// name
-			j = buf.indexOf('|', i);
-			set.name = buf.substring(i, j);
-			i = j + 1;
-
-			// species
-			j = buf.indexOf('|', i);
-			set.species = Dex.species.get(buf.substring(i, j)).name || set.name;
-			i = j + 1;
-
-			// item
-			j = buf.indexOf('|', i);
-			set.item = Dex.items.get(buf.substring(i, j)).name;
-			i = j + 1;
-
-			// ability
-			j = buf.indexOf('|', i);
-			const ability = Dex.abilities.get(buf.substring(i, j)).name;
-			const species = Dex.species.get(set.species);
-			set.ability = (species.abilities &&
-				['', '0', '1', 'H', 'S'].includes(ability) ? species.abilities[ability as '0' || '0'] : ability);
-			i = j + 1;
-
-			// moves
-			j = buf.indexOf('|', i);
-			set.moves = buf.substring(i, j).split(',').map(function (moveid) {
-				return Dex.moves.get(moveid).name;
-			});
-			i = j + 1;
-
-			// nature
-			j = buf.indexOf('|', i);
-			set.nature = buf.substring(i, j) as NatureName;
-			if (set.nature as any === 'undefined') delete set.nature;
-			i = j + 1;
-
-			// evs
-			j = buf.indexOf('|', i);
-			if (j !== i) {
-				const evstring = buf.substring(i, j);
-				if (evstring.length > 5) {
-					const evs = evstring.split(',');
-					set.evs = {
-						hp: Number(evs[0]) || 0,
-						atk: Number(evs[1]) || 0,
-						def: Number(evs[2]) || 0,
-						spa: Number(evs[3]) || 0,
-						spd: Number(evs[4]) || 0,
-						spe: Number(evs[5]) || 0,
-					};
-				} else if (evstring === '0') {
-					set.evs = {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
-				}
-			}
-			i = j + 1;
-
-			// gender
-			j = buf.indexOf('|', i);
-			if (i !== j) set.gender = buf.substring(i, j);
-			i = j + 1;
-
-			// ivs
-			j = buf.indexOf('|', i);
-			if (j !== i) {
-				const ivs = buf.substring(i, j).split(',');
-				set.ivs = {
-					hp: ivs[0] === '' ? 31 : Number(ivs[0]),
-					atk: ivs[1] === '' ? 31 : Number(ivs[1]),
-					def: ivs[2] === '' ? 31 : Number(ivs[2]),
-					spa: ivs[3] === '' ? 31 : Number(ivs[3]),
-					spd: ivs[4] === '' ? 31 : Number(ivs[4]),
-					spe: ivs[5] === '' ? 31 : Number(ivs[5]),
-				};
-			}
-			i = j + 1;
-
-			// shiny
-			j = buf.indexOf('|', i);
-			if (i !== j) set.shiny = true;
-			i = j + 1;
-
-			// level
-			j = buf.indexOf('|', i);
-			if (i !== j) set.level = parseInt(buf.substring(i, j), 10);
-			i = j + 1;
-
-			// happiness
-			j = buf.indexOf(']', i);
-			let misc;
-			if (j < 0) {
-				if (i < buf.length) misc = buf.substring(i).split(',', 6);
-			} else {
-				if (i !== j) misc = buf.substring(i, j).split(',', 6);
-			}
-			if (misc) {
-				set.happiness = (misc[0] ? Number(misc[0]) : 255);
-				set.hpType = misc[1];
-				set.pokeball = misc[2];
-				set.gigantamax = !!misc[3];
-				set.dynamaxLevel = (misc[4] ? Number(misc[4]) : 10);
-				set.teraType = misc[5];
-			}
-			if (j < 0) break;
-			i = j + 1;
-		}
-
-		return team;
-	}
-	export(team: PokemonSet[] | string, gen: number, hidestats = false) {
-		if (!team) return '';
-		if (typeof team === 'string') {
-			if (team.indexOf('\n') >= 0) return team;
-			team = this.unpack(team);
-		}
-		let text = '';
-		for (const curSet of team) {
-			if (curSet.name && curSet.name !== curSet.species) {
-				text += '' + curSet.name + ' (' + curSet.species + ')';
-			} else {
-				text += '' + curSet.species;
-			}
-			if (curSet.gender === 'M') text += ' (M)';
-			if (curSet.gender === 'F') text += ' (F)';
-			if (curSet.item) {
-				text += ' @ ' + curSet.item;
-			}
-			text += "  \n";
-			if (curSet.ability) {
-				text += 'Ability: ' + curSet.ability + "  \n";
-			}
-			if (curSet.level && curSet.level !== 100) {
-				text += 'Level: ' + curSet.level + "  \n";
-			}
-			if (curSet.shiny) {
-				text += 'Shiny: Yes  \n';
-			}
-			if (typeof curSet.happiness === 'number' && curSet.happiness !== 255 && !isNaN(curSet.happiness)) {
-				text += 'Happiness: ' + curSet.happiness + "  \n";
-			}
-			if (curSet.pokeball) {
-				text += 'Pokeball: ' + curSet.pokeball + "  \n";
-			}
-			if (curSet.hpType) {
-				text += 'Hidden Power: ' + curSet.hpType + "  \n";
-			}
-			if (typeof curSet.dynamaxLevel === 'number' && curSet.dynamaxLevel !== 10 && !isNaN(curSet.dynamaxLevel)) {
-				text += 'Dynamax Level: ' + curSet.dynamaxLevel + "  \n";
-			}
-			if (curSet.gigantamax) {
-				text += 'Gigantamax: Yes  \n';
-			}
-			if (gen === 9) {
-				const species = Dex.species.get(curSet.species);
-				text += 'Tera Type: ' + (species.forceTeraType || curSet.teraType || species.types[0]) + "  \n";
-			}
-			if (!hidestats) {
-				let first = true;
-				if (curSet.evs) {
-					let j: StatName;
-					for (j in BattleStatNames) {
-						if (!curSet.evs[j]) continue;
-						if (first) {
-							text += 'EVs: ';
-							first = false;
-						} else {
-							text += ' / ';
-						}
-						text += '' + curSet.evs[j] + ' ' + BattleStatNames[j];
-					}
-				}
-				if (!first) {
-					text += "  \n";
-				}
-				if (curSet.nature) {
-					text += '' + curSet.nature + ' Nature' + "  \n";
-				}
-				first = true;
-				if (curSet.ivs) {
-					let defaultIvs = true;
-					let hpType = '';
-					for (const move of curSet.moves) {
-						if (move.substr(0, 13) === 'Hidden Power ' && move.substr(0, 14) !== 'Hidden Power [') {
-							hpType = move.substr(13);
-							if (!Dex.types.isName(hpType)) {
-								alert(move + " is not a valid Hidden Power type.");
-								continue;
-							}
-							let stat: StatName;
-							for (stat in BattleStatNames) {
-								if ((curSet.ivs[stat] === undefined ? 31 : curSet.ivs[stat]) !== (Dex.types.get(hpType).HPivs?.[stat] || 31)) {
-									defaultIvs = false;
-									break;
-								}
-							}
-						}
-					}
-					if (defaultIvs && !hpType) {
-						let stat: StatName;
-						for (stat in BattleStatNames) {
-							if (curSet.ivs[stat] !== 31 && curSet.ivs[stat] !== undefined) {
-								defaultIvs = false;
-								break;
-							}
-						}
-					}
-					if (!defaultIvs) {
-						let stat: StatName;
-						for (stat in BattleStatNames) {
-							if (typeof curSet.ivs[stat] === 'undefined' || isNaN(curSet.ivs[stat]) || curSet.ivs[stat] === 31) continue;
-							if (first) {
-								text += 'IVs: ';
-								first = false;
-							} else {
-								text += ' / ';
-							}
-							text += '' + curSet.ivs[stat] + ' ' + BattleStatNames[stat];
-						}
-					}
-				}
-				if (!first) {
-					text += "  \n";
-				}
-			}
-			if (curSet.moves) {
-				for (let move of curSet.moves) {
-					if (move.substr(0, 13) === 'Hidden Power ') {
-						move = move.substr(0, 13) + '[' + move.substr(13) + ']';
-					}
-					if (move) {
-						text += '- ' + move + "  \n";
-					}
-				}
-			}
-			text += "\n";
-		}
-		return text;
-	}
-};
 
 if (typeof require === 'function') {
 	// in Node
