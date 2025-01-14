@@ -1002,8 +1002,7 @@ class ModdedDex {
 					break;
 				}
 			}
-				}
-			}
+
 			if (this.modid !== `gen${this.gen}` && table.overrideItemInfo[id]) {
 					Object.assign(data, table.overrideItemInfo[id]);
 			}
