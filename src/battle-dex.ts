@@ -1002,6 +1002,11 @@ class ModdedDex {
 					break;
 				}
 			}
+				}
+			}
+			if (this.modid !== `gen${this.gen}` && table.overrideItemInfo[id]) {
+					Object.assign(data, table.overrideItemInfo[id]);
+			}
 
 			const item = new Item(id, name, data);
 			this.cache.Items[id] = item;
