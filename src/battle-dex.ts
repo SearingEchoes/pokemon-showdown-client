@@ -993,14 +993,14 @@ class ModdedDex {
 				data.name = table.fullItemName[id];
 				data.exists = true;
 			}
-			if (id in table.overrideItemDesc) data.shortDesc = table.overrideItemDesc[id];
-	
-			for (let i = this.gen; i < 9; i++) {
-				const table = window.BattleTeambuilderTable['gen' + i];
-				if (table.overrideItemDesc && id in table.overrideItemDesc) {
-					data.shortDesc = table.overrideItemDesc[id];
-					break;
+			for(let i = Dex.gen - 1; i >= this.gen; i--) {
+				const genTable = window.BattleTeambuilderTable[`gen${i}`];
+				if (genTable.overrideItemInfo[id]) {
+					Object.assign(data, table.overrideItemInfo[id]);
 				}
+			}
+			if (this.modid !== `gen${this.gen}` && table.overrideItemInfo[id]) {
+					Object.assign(data, table.overrideItemInfo[id]);
 			}
 
 			const item = new Item(id, name, data);
