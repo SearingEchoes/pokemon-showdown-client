@@ -1677,7 +1677,7 @@ const itemList = Object.keys(Dex.data.Items);
 	let blockIndex = 0;
 
 	console.log("writing BattleTeambuilderTable...");
-	const tableDir = '/data/teambuilder-tables.js';
+	const tableDir = 'data/teambuilder-tables.js';
 	fs.writeFileSync(tableDir, '// DO NOT EDIT - automatically built with build-tools/build-indexes\n\n');
 	fs.appendFileSync(tableDir, 'exports.BattleTeambuilderTable = JSON.parse(\'{')
 
