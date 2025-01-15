@@ -1216,13 +1216,21 @@ const itemList = Object.keys(Dex.data.Items);
 			}
 		}
 
-		const overrideItemDesc = {};
-		BattleTeambuilderTable[gen].overrideItemDesc = overrideItemDesc;
+		const overrideItemInfo = {};
+		BattleTeambuilderTable[gen].overrideItemInfo = overrideItemInfo;
 		for (const id in genData.Items) {
 			const curEntry = genDex.items.get(id);
 			const nextEntry = nextGenDex.items.get(id);
-			if ((curEntry.shortDesc || curEntry.desc) !== (nextEntry.shortDesc || nextEntry.desc)) {
-				overrideItemDesc[id] = (curEntry.shortDesc || curEntry.desc);
+			for (const key in curEntry) {
+				if (!overrideItemKeys.includes(key)) continue;
+				const curString = JSON.stringify(curEntry[key]);
+				const nextString = JSON.stringify(nextEntry[key]);
+				if (curString !== nextString) {
+					if (!overrideItemInfo[id]) overrideItemInfo[id] = {};
+					if (curString === undefined) overrideItemInfo[id][key] = null;
+					else overrideItemInfo[id][key] = JSON.parse(curString);
+					if(key === 'desc' && !curEntry['shortDesc']) overrideItemInfo[id]['shortDesc'] = JSON.parse(curString);
+				}
 			}
 		}
 
