@@ -1368,8 +1368,8 @@ function buildTeambuilderTables() {
 					specificItems.push(id);
 					continue;
 				}
-				if (modEntry.isPokeball || modEntry.name.startsWith("TR")) {
-					badItems.push(id);
+				if (modEntry.isPokeball || modEntry.name.startsWith("TR")|| modEntry.name.endsWith("Fossil")) {
+					//badItems.push(id);
 					continue;
 				}
 				switch (modEntry.rating) {
