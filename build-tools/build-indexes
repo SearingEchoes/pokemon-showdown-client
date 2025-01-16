@@ -1345,6 +1345,7 @@ function buildTeambuilderTables() {
 					overrideItemInfo[id].exists = true;
 					fullItemName[id] = modData.Items[id].name;
 				} else {
+					console.log(modConfigId);
 					if(baseEntry.gen > modGen) continue;
 					for (const key in modEntry) {
 						if (!overrideItemKeys.includes(key)) continue;
