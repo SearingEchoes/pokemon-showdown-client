@@ -1364,7 +1364,7 @@ function buildTeambuilderTables() {
 					}
 				}
 
-				if (modEntry.isNonStandard == "Unobtainable") {
+				if (modEntry.isNonstandard === 'Unobtainable') {
 					continue;
 				}
 
