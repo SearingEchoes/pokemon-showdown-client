@@ -1363,7 +1363,11 @@ function buildTeambuilderTables() {
 						}
 					}
 				}
-				
+
+				if (modEntry.isNonStandard == "Unobtainable") {
+					continue;
+				}
+
 				if (modEntry.itemUser || modEntry.megaStone || id === 'boosterenergy') {
 					specificItems.push(id);
 					continue;
