@@ -1406,7 +1406,7 @@ function buildTeambuilderTables() {
 			goodItems.unshift(['header', "Items"]);
 			items.push(...goodItems);
 			specificItems.sort();
-			specificItems.unshift(['header', "Pok&eacute;mon-specific items"]);
+			specificItems.unshift(['header', "User-specific items"]);
 			items.push(...specificItems);
 			poorItems.sort();
 			poorItems.unshift(['header', "Usually useless items"]);
