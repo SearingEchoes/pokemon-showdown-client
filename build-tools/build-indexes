@@ -692,7 +692,7 @@ function buildTeambuilderTables() {
 		const goodItems = [['header', "Items"]];
 		const specificItems = [['header', "User-specific items"]];
 		const poorItems = [['header', "Usually useless items"]];
-		const badItems = [['header', "Useless items"]];
+		const badItems = [['header', "Useless/Banned items"]];
 		for (const id of itemList) {
 			const item = Dex.mod(gen).items.get(id);
 			if (item.gen > genNum) {
@@ -1412,7 +1412,7 @@ function buildTeambuilderTables() {
 			poorItems.unshift(['header', "Usually useless items"]);
 			items.push(...poorItems);
 			badItems.sort();
-			badItems.unshift(['header', "Useless items"]);
+			badItems.unshift(['header', "Useless/Banned items"]);
 			items.push(...badItems);
 			//moves
 			const overrideMoveInfo = {};
