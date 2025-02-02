@@ -690,13 +690,13 @@ export class Side {
 			this.sideConditions[condition] = [effect.name, 1, 5, 8];
 			break;
 		case 'reflect':
-			this.sideConditions[condition] = [effect.name, 1, 5, this.battle.gen >= 4 ? 8 : 0];
+			this.sideConditions[condition] = [effect.name, 1, 5, this.battle.gen >= 2 ? 8 : 0];
 			break;
 		case 'safeguard':
 			this.sideConditions[condition] = [effect.name, 1, persist ? 7 : 5, 0];
 			break;
 		case 'lightscreen':
-			this.sideConditions[condition] = [effect.name, 1, 5, this.battle.gen >= 4 ? 8 : 0];
+			this.sideConditions[condition] = [effect.name, 1, 5, this.battle.gen >= 2 ? 8 : 0];
 			break;
 		case 'mist':
 			this.sideConditions[condition] = [effect.name, 1, 5, 0];
