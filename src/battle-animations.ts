@@ -1825,6 +1825,7 @@ export class PokemonSprite extends Sprite {
 		embargo: ['Embargo', 'bad'],
 		ingrain: ['Ingrain', 'good'],
 		aquaring: ['Aqua Ring', 'good'],
+		aquaveil: ['Aqua Veil', 'good'],
 		stockpile1: ['Stockpile', 'good'],
 		stockpile2: ['Stockpile&times;2', 'good'],
 		stockpile3: ['Stockpile&times;3', 'good'],
