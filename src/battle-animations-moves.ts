@@ -37029,6 +37029,8 @@ BattleMoveAnims['poisonwave'] = {anim: BattleMoveAnims['sludgewave'].anim};
 BattleMoveAnims['glacialbash'] = {anim: BattleMoveAnims['iciclecrash'].anim};
 BattleMoveAnims['mysticfire'] = {anim: BattleMoveAnims['mysticalfire'].anim};
 BattleMoveAnims['cheer'] = {anim: BattleMoveAnims['helpinghand'].anim};
+BattleMoveAnims['multipulse'] = {anim: BattleMoveAnims['hiddenpower'].anim};
+BattleMoveAnims['eeriewave'] = {anim: BattleMoveAnims['hypnosis'].anim};
 
 //1.8 move anims begin here
 
@@ -37384,6 +37386,8 @@ BattleMoveAnims['wrap2'] = {anim: BattleMoveAnims['wrap'].anim};
 BattleMoveAnims['yawn2'] = {anim: BattleMoveAnims['yawn'].anim};
 BattleMoveAnims['zenheadbutt2'] = {anim: BattleMoveAnims['zenheadbutt'].anim};
 BattleMoveAnims['checkmaid'] = {anim: BattleMoveAnims['judgment'].anim};
+
+//illegal moves
 
 BattleMoveAnims['chaoswave'] = {anim: BattleMoveAnims['psybeam'].anim};
 BattleMoveAnims['kakarot'] = {anim: BattleMoveAnims['roar'].anim};
