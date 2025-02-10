@@ -690,13 +690,13 @@ export class Side {
 			this.sideConditions[condition] = [effect.name, 1, 5, 8];
 			break;
 		case 'reflect':
-			this.sideConditions[condition] = [effect.name, 1, 5, this.battle.gen >= 4 ? 8 : 0];
+			this.sideConditions[condition] = [effect.name, 1, 5, this.battle.gen >= 2 ? 8 : 0];
 			break;
 		case 'safeguard':
 			this.sideConditions[condition] = [effect.name, 1, persist ? 7 : 5, 0];
 			break;
 		case 'lightscreen':
-			this.sideConditions[condition] = [effect.name, 1, 5, this.battle.gen >= 4 ? 8 : 0];
+			this.sideConditions[condition] = [effect.name, 1, 5, this.battle.gen >= 2 ? 8 : 0];
 			break;
 		case 'mist':
 			this.sideConditions[condition] = [effect.name, 1, 5, 0];
@@ -1417,14 +1417,14 @@ export class Battle {
 				if (ability) {
 					this.activateAbility(poke, ability.name);
 				}
-				this.weatherTimeLeft = (this.gen <= 5 || isExtremeWeather) ? 0 : 8;
-				this.weatherMinTimeLeft = (this.gen <= 5 || isExtremeWeather) ? 0 : 5;
+				this.weatherTimeLeft = (this.gen <= 2 || isExtremeWeather) ? 0 : 8;
+				this.weatherMinTimeLeft = (this.gen <= 2 || isExtremeWeather) ? 0 : 5;
 			} else if (isExtremeWeather) {
 				this.weatherTimeLeft = 0;
 				this.weatherMinTimeLeft = 0;
 			} else {
-				this.weatherTimeLeft = (this.gen <= 3 ? 5 : 8);
-				this.weatherMinTimeLeft = (this.gen <= 3 ? 0 : 5);
+				this.weatherTimeLeft = (this.gen <= 2 ? 5 : 8);
+				this.weatherMinTimeLeft = (this.gen <= 2 ? 0 : 5);
 			}
 		}
 		this.weather = weather;

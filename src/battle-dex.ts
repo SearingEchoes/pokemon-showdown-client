@@ -181,7 +181,7 @@ const Dex = new class implements ModdedDex {
 
 
 	//TODO we might want to move this to something like data/petmods
-	readonly modResourcePrefix = 'https://raw.githubusercontent.com/SearingEchoes/pokemon-showdown/master/data/mods/';
+	readonly modResourcePrefix = 'https://raw.githubusercontent.com/SearingEchoes/pokemon-showdown/testing/data/mods/';
 
 
 	resourcePrefix = 'https://s.echoes.wtf/';
@@ -190,7 +190,7 @@ const Dex = new class implements ModdedDex {
 
 	//fxPrefix = (() => {
 	//	const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
-	//	return `${protocol}//${'play.pokemonshowdown.com'}/fx/`;
+	//	return `${protocol}//${'s.echoes.wtf'}/fx/`;
 	//})();
 
 	loadedSpriteData = {xy: 1, bw: 0};
@@ -993,14 +993,14 @@ class ModdedDex {
 				data.name = table.fullItemName[id];
 				data.exists = true;
 			}
-			if (id in table.overrideItemDesc) data.shortDesc = table.overrideItemDesc[id];
-	
-			for (let i = this.gen; i < 9; i++) {
-				const table = window.BattleTeambuilderTable['gen' + i];
-				if (table.overrideItemDesc && id in table.overrideItemDesc) {
-					data.shortDesc = table.overrideItemDesc[id];
-					break;
+			for(let i = Dex.gen - 1; i >= this.gen; i--) {
+				const genTable = window.BattleTeambuilderTable[`gen${i}`];
+				if (genTable.overrideItemInfo[id]) {
+					Object.assign(data, table.overrideItemInfo[id]);
 				}
+			}
+			if (this.modid !== `gen${this.gen}` && table.overrideItemInfo[id]) {
+					Object.assign(data, table.overrideItemInfo[id]);
 			}
 
 			const item = new Item(id, name, data);
