@@ -1860,7 +1860,7 @@ class BattleTooltips {
 		if (!value.value) return value;
 
 		// Other ability boosts
-		if (pokemon.status === 'brn' && move.category === 'Special') {
+		if (pokemon.status === 'brn' && move.category === 'Special' && this.battle.gen > 3) {
 			value.abilityModify(1.5, "Flare Boost");
 		}
 		if (move.flags['punch']) {
@@ -1875,7 +1875,7 @@ class BattleTooltips {
 		if (value.value <= 60) {
 			value.abilityModify(1.5, "Technician");
 		}
-		if (['psn', 'tox'].includes(pokemon.status) && move.category === 'Physical') {
+		if (['psn', 'tox'].includes(pokemon.status) && move.category === 'Physical' && this.battle.gen > 3) {
 			value.abilityModify(1.5, "Toxic Boost");
 		}
 		if (this.battle.gen > 2 && serverPokemon.status === 'brn' && move.id !== 'facade' && move.category === 'Physical') {
