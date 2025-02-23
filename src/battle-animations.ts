@@ -1865,6 +1865,7 @@ export class PokemonSprite extends Sprite {
 		doomdesire: null,
 		futuresight: null,
 		alicesbroom: null,
+		lifeaura: ['Life Aura', 'good'],
 		mimic: ['Mimic', 'good'],
 		watersport: ['Water Sport', 'good'],
 		mudsport: ['Mud Sport', 'good'],
