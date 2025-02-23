@@ -2089,7 +2089,7 @@ class BattleTooltips {
 		}
 
 		// Type-enhancing items
-		if (BattleTooltips.itemTypes[item.name] === moveType) {
+		if (BattleTooltips.itemTypes[item.name] === moveType && this.battle.gen > 3) {
 			//value.itemModify(this.battle.gen < 4 ? 1.1 : 1.2);
 			value.itemModify(this.battle.gen < 4 ? 1 : 1.2);
 			return value;
