@@ -36280,11 +36280,10 @@ export const BattleMoveAnims: AnimTable = {
 				x: attacker.x,
 				y: attacker.y,
 				z: attacker.z,
-				scale: 0.5,
-				opacity: 0.8,
-				time: 200,
-			}, {
 				scale: 1,
+				opacity: 0.8,
+			}, {
+				scale: 1.2,
 				opacity: 0,
 				time: 600,
 			}, 'decel');
