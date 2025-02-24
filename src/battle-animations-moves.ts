@@ -36274,6 +36274,21 @@ export const BattleMoveAnims: AnimTable = {
 			}, 'decel', 'explode');
 		},
 	},
+	lifeaura: {
+		anim(scene, [attacker]) {
+			scene.showEffect('lifeaura', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 0.7,
+			}, {
+				scale: 1,
+				opacity: 0,
+				time: 600,
+			}, 'decel');
+		},
+	},
 	icebarrage: { // Reminder: Improve this later
 		anim(scene, [attacker, defender]) {
 			scene.backgroundEffect(`url('https://${Config.routes.psmain}/sprites/gen6bgs/bg-icecave.jpg')`, 1000, 0.6);
