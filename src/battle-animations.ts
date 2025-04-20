@@ -1865,7 +1865,6 @@ export class PokemonSprite extends Sprite {
 		doomdesire: null,
 		futuresight: null,
 		alicesbroom: null,
-		lifeaura: ['Life Aura', 'good'],
 		mimic: ['Mimic', 'good'],
 		watersport: ['Water Sport', 'good'],
 		mudsport: ['Mud Sport', 'good'],
@@ -2938,15 +2937,11 @@ const BattleEffects: {[k: string]: SpriteData} = {
 	},
 	saurian: {
 		url: 'saurian.png',
-		w: 150, h: 165,
+		w: 113, h: 165,
 	},
 	ninja: {
 		url: 'ninja.png',
-		w: 150, h: 165,
-	},
-	lifeaura: {
-		url: 'aura.png',
-		w: 124, h: 124,
+		w: 113, h: 165,
 	},
 	ninjastar: {
 		url: 'ninjastar.png',
