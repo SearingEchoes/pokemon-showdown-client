@@ -37031,6 +37031,7 @@ BattleMoveAnims['mysticfire'] = {anim: BattleMoveAnims['mysticalfire'].anim};
 BattleMoveAnims['cheer'] = {anim: BattleMoveAnims['helpinghand'].anim};
 BattleMoveAnims['multipulse'] = {anim: BattleMoveAnims['hiddenpower'].anim};
 BattleMoveAnims['eeriewave'] = {anim: BattleMoveAnims['hypnosis'].anim};
+BattleMoveAnims['nervepress'] = {anim: BattleMoveAnims['bodypress'].anim};
 
 //1.8 move anims begin here
 
