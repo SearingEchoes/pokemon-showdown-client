@@ -1609,26 +1609,26 @@ export class BattleScene implements BattleSceneStub {
 			this.bgm = BattleSound.loadBgm('audio/xy-trainer.mp3', 7802, 82469, this.bgm);
 			break;
 		case 11:
-			this.bgm = BattleSound.loadBgm('audio/xy-rival.mp3', 7802, 58634, this.bgm);
+			this.bgm = BattleSound.loadBgm('audio/gen1-trainer.mp3', 14350, 97300, this.bgm);
 			break;
 		case 12:
-			this.bgm = BattleSound.loadBgm('audio/oras-trainer.mp3', 13579, 91548, this.bgm);
+			this.bgm = BattleSound.loadBgm('audio/gen1-trainer.mp3', 14350, 97300, this.bgm);
 			break;
 		case 13:
-			this.bgm = BattleSound.loadBgm('audio/oras-rival.mp3', 14303, 69149, this.bgm);
+			this.bgm = BattleSound.loadBgm('audio/gen1-trainer.mp3', 14350, 97300, this.bgm);
 			break;
 		case 14:
-			this.bgm = BattleSound.loadBgm('audio/sm-trainer.mp3', 8323, 89230, this.bgm);
+			this.bgm = BattleSound.loadBgm('audio/gen1-trainer.mp3', 14350, 97300, this.bgm);
 			break;
 		case -101:
-			this.bgm = BattleSound.loadBgm('audio/spl-elite4.mp3', 3962, 152509, this.bgm);
+			this.bgm = BattleSound.loadBgm('audio/gen1-trainer.mp3', 14350, 97300, this.bgm);
 			break;
 		case 15:
-			this.bgm = BattleSound.loadBgm('audio/sm-rival.mp3', 11389, 62158, this.bgm);
+			this.bgm = BattleSound.loadBgm('audio/gen1-trainer.mp3', 14350, 97300, this.bgm);
 			break;
 		case 16:
 		default:
-			this.bgm = BattleSound.loadBgm('audio/x-vs-zero.mp3', 2659, 67261, this.bgm);
+			this.bgm = BattleSound.loadBgm('audio/gen1-trainer.mp3', 14350, 97300, this.bgm);
 			break;
 		case 17:
 			this.bgm = BattleSound.loadBgm('audio/bd-boss.mp3', 12319, 165313, this.bgm);
